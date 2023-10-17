@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Days+One&display=swap');
+
+.home {
+    margin-top: 28vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 140px;
+    font-family: "Archivo",sans-serif;
+    
+    
+  
+    .right {
+      z-index: 1;
+      .img {
+        width: 600px;
+        position: absolute;
+        top: 0;
+        right: 60px;
+        img {
+          width: 100%;
+          border-radius: 0 0 362px 362px;
+        }
+      }
+      .helpdesk {
+        position: absolute;
+        top: 40px;
+        right:-20px;
+        background-color: white;
+        padding: 20px 30px;
+        border-radius: 5px 0px 0px 5px;
+        margin-right: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+  
+        .icon {
+          color: blue;
+        }
+  
+        .text {
+          span {
+            color: #8a879f;
+          }
+        }
+      }
+    }
+    .left {
+        h6{
+            color: #0e63ff;
+            font-weight: 600;
+            
+            line-height: 34px;
+            font-size: 17px;
+        }
+        h1{
+            color: #171151;
+            font-size: 55px;
+            font-family: "Days One",sans-serif;
+            letter-spacing: 1px;
+        }
+        p{
+            color: #8a879f;
+            line-height: 1.5;
+            font-size: 1.3rem;
+            margin: 30px 0;
+        }
+        button{
+            background-color: #10d0a1;
+            color: white;
+            font-weight: 700;
+            border: none;
+            border-radius: 3px;
+            padding: 16px 30px;
+        }
+    }
+  }
+  
+  
