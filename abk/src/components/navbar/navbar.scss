@@ -13,7 +13,7 @@ nav {
   .left {
     display: flex;
     align-items: center;
-    gap: 6rem;
+    gap: 7rem;
 
     .logo {
       width: 250px;
@@ -25,7 +25,19 @@ nav {
 
     .links {
       display: flex;
-      gap: 2rem;
+      gap: 3rem;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #8a879f;
+
+      span{
+        transition: all .3s ease-in-out;
+        &:hover{
+          color: black;
+          cursor: pointer;
+        }
+      }
     }
   }
 
@@ -57,13 +69,20 @@ nav {
   }
 }
 
-body {
-  height: 200vh;
-  background-color: #f5f5f55b;
-}
+
 
 .navActive{
   z-index: 12;
   background-color: white;
   box-shadow: rgba(139, 139, 139, 0.15) 10px 1px 10px 1px;
+}
+
+@media (max-width:1600px) {
+  nav{
+    .left{
+      .links{
+        gap: 2rem;
+      }
+    }
+  }
 }
