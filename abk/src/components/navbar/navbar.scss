@@ -1,0 +1,69 @@
+.navbar {
+  .flex {
+    display: flex;
+    gap: 1rem;
+  }
+  .logo {
+    margin: 2rem;
+    height: 50px;
+  }
+
+  .primary-header {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .primary-navigation{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    [aria-hidden="true"] {
+        font-weight: 700;
+        margin-inline-end: 0.75em;
+    }
+
+   
+  }
+  .mobile-nav-toggle{
+    display: none;
+  }
+  
+  
+}
+
+@media (max-width:35rem) {
+    .primary-navigation{
+      z-index: 9;
+        position: fixed;
+        inset: 0 0 0 30%;
+        background-color: #17115142;
+        flex-direction: column;
+        gap: 2rem !important;
+        padding: min(30vh, 10rem) 2em !important;
+        transform: translateX(100%);
+
+        a{
+            color: white !important;
+        }
+
+        
+    }
+    .mobile-nav-toggle{
+      z-index: 10;
+      position: absolute;
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png");
+      width: 2rem;
+      background-color: red;
+      aspect-ratio: 1;
+      top: 2rem;
+      right: 2rem;
+      display: block !important;
+    }
+}   
