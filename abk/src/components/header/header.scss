@@ -85,6 +85,7 @@
       font-size: 17px;
     }
     h1 {
+      width: 800px;
       color: #171151;
       font-size: 62px;
       font-family: "Days One", sans-serif;
@@ -96,6 +97,7 @@
       line-height: 1.5;
       font-size: 1.3rem;
       margin: 30px 0;
+      width: 650px;
     }
     button {
       background-color: #10d0a1;
@@ -131,14 +133,70 @@
 
 @media (max-width:1350px) {
   .header{
+    padding: 40px;
     .right{
       .img{
         top: 14vh;
+        right: 0;
 
         .helpdesk{
           display: none;
         }
       }
     }
+    .left{
+      h1{
+        font-size: 50px;
+      }
+      h6{
+        font-size: 15px;
+      }
+      p{
+        font-size: 1.1rem;
+        width: 550px;
+      }
+    }
+  }
+}
+
+@media (max-width:1050px) {
+  .header{
+       .right{
+        .img{
+          display: none;
+        }
+       }
+       .left{
+        width: 100%;
+       }
+  }
+}
+
+@media (max-width:800px) {
+  .header{
+    padding: 20px !important;
+       .left{
+        text-align: center;
+        h1{
+          width: 100%;
+          font-size: 30px;
+          margin: 15px 0;
+        }
+        h6{
+          font-size: 15px;
+          line-height: 26px;
+        }
+        p{
+          font-size: 16px;
+          width: 100%;
+        }
+        button {
+          font-weight: 700;
+          border: none;
+          border-radius: 3px;
+          padding: 15px 30px;
+          font-size: 19px;
+        }
+       }
   }
 }

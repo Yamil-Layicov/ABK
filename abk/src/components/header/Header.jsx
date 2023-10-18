@@ -7,11 +7,11 @@ const Header = () => {
       <div className="left">
         <h6>WELCOOME TO BIOXLAB</h6>
         <h1>
-          Passion For Better <br /> Medicine
+          Passion For Better Medicine
         </h1>
         <p>
           Your full service lab for clinical trials. Our mission is to ensure
-          the <br /> generation of accurate and precise findings
+          the  generation of accurate and precise findings
         </p>
         <button>Haqqimizda</button>
       </div>
