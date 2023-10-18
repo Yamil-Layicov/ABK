@@ -3,8 +3,6 @@
 
 .header {
   margin-top: 28vh;
-  display: flex;
-  justify-content: space-between;
   padding: 40px 140px;
   font-family: "Archivo", sans-serif;
 
@@ -109,49 +107,114 @@
       font-size: 21px;
     }
   }
+  .features {
+    margin-top: 140px;
+    .boxes {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+
+      .box {
+        padding: 20px 22px;
+        border: 1px solid #eceef3;
+        border-radius: 10px;
+        width: 280px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        font-size: 17px;
+        transition: all 0.3s ease-in-out;
+
+        &:nth-child(1) {
+          .iconPerson {
+            background-color: rgba(0, 0, 255, 0.263);
+            color: rgba(0, 0, 255, 0.793);
+          }
+          &:hover {
+            border: 1px solid blue;
+          }
+        }
+
+        &:nth-child(2) {
+          .iconPerson {
+            background-color: rgba(255, 0, 0, 0.349);
+            color: red;
+          }
+          &:hover {
+            border: 1px solid red;
+          }
+        }
+
+        &:nth-child(3) {
+          .iconPerson {
+            background-color: rgba(0, 128, 0, 0.252);
+            color: green;
+          }
+          &:hover {
+            border: 1px solid green;
+          }
+        }
+
+        .iconPerson {
+          padding: 13px;
+          clip-path: polygon(
+            50% 0%,
+            100% 25%,
+            100% 75%,
+            50% 100%,
+            0% 75%,
+            0% 25%
+          );
+        }
+      }
+    }
+  }
 }
 
-@media (max-width:1600px) {
-  .header{
-    .right{
-      .img{
+@media (max-width: 1600px) {
+  .header {
+    .right {
+      .img {
         width: 500px;
       }
     }
   }
 }
 
-@media (max-width:1450px) {
-  .header{
-    .right{
-      .img{
+@media (max-width: 1450px) {
+  .header {
+    .right {
+      .img {
         width: 450px;
       }
     }
   }
 }
 
-@media (max-width:1350px) {
-  .header{
+@media (max-width: 1350px) {
+  .header {
     padding: 40px;
-    .right{
-      .img{
+    .right {
+      .img {
         top: 14vh;
         right: 0;
 
-        .helpdesk{
+        .helpdesk {
           display: none;
         }
       }
     }
-    .left{
-      h1{
+    .left {
+      h1 {
         font-size: 50px;
       }
-      h6{
+      h6 {
         font-size: 15px;
       }
-      p{
+      p {
         font-size: 1.1rem;
         width: 550px;
       }
@@ -159,44 +222,58 @@
   }
 }
 
-@media (max-width:1050px) {
-  .header{
-       .right{
-        .img{
-          display: none;
-        }
-       }
-       .left{
-        width: 100%;
-       }
+@media (max-width: 1050px) {
+  .header {
+    .right {
+      .img {
+        display: none;
+      }
+    }
+    .left {
+      width: 100%;
+    }
   }
 }
 
-@media (max-width:800px) {
-  .header{
+@media (max-width: 800px) {
+  .header {
     padding: 20px !important;
-       .left{
-        text-align: center;
-        h1{
-          width: 100%;
-          font-size: 30px;
-          margin: 15px 0;
+    .left {
+      text-align: center;
+      h1 {
+        width: 100%;
+        font-size: 30px;
+        margin: 15px 0;
+      }
+      h6 {
+        font-size: 15px;
+        line-height: 26px;
+      }
+      p {
+        font-size: 16px;
+        width: 100%;
+      }
+      button {
+        font-weight: 700;
+        border: none;
+        border-radius: 3px;
+        padding: 15px 30px;
+        font-size: 19px;
+      }
+    }
+
+    .features {
+      .boxes {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+        .box {
+          width: 98%;
+          display: flex;
+          justify-content: start;
         }
-        h6{
-          font-size: 15px;
-          line-height: 26px;
-        }
-        p{
-          font-size: 16px;
-          width: 100%;
-        }
-        button {
-          font-weight: 700;
-          border: none;
-          border-radius: 3px;
-          padding: 15px 30px;
-          font-size: 19px;
-        }
-       }
+      }
+    }
   }
 }

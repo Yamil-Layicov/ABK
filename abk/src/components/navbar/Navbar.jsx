@@ -2,11 +2,12 @@ import BlurOnOutlinedIcon from "@mui/icons-material/BlurOnOutlined";
 import "./navbar.scss";
 import { useEffect, useState } from "react";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
+import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
+import {BiLogoFacebook} from 'react-icons/bi'
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
-  const [isMenuCollapsed, setIsMenuCollapsed] = useState(true);
   const [isOpenNavbar, setIsOpenNavbar] = useState(false);
 
   const changeBackground = () => {
@@ -32,8 +33,8 @@ const Navbar = () => {
   }, []);
 
   const openNavbar = () => {
-    setIsOpenNavbar(!isOpenNavbar)
-  }
+    setIsOpenNavbar(!isOpenNavbar);
+  };
 
   return (
     <>
@@ -76,7 +77,9 @@ const Navbar = () => {
                 src="https://bioxlab-next-js.vercel.app/assets/img/logo/white-logo.png"
                 alt=""
               />
-              <div onClick={() => setIsOpenNavbar(false)} className="iconMenu"><CloseOutlinedIcon/></div>
+              <div onClick={() => setIsOpenNavbar(false)} className="iconMenu">
+                <CloseOutlinedIcon />
+              </div>
             </div>
             <div className="links">
               <span>Home</span>
@@ -86,8 +89,45 @@ const Navbar = () => {
               <span>Blog</span>
               <span>Contact</span>
             </div>
+            <div className="navContact">
+              <h5>Contact us</h5>
+              <p>
+                <span>
+                  <StarOutlinedIcon
+                    style={{ fill: "#FFCC00" }}
+                    fontSize="small"
+                  />
+                </span>
+                <span>Lorem ipsum dolor sit.asd</span>
+              </p>
+              <p>
+                <span>
+                  <StarOutlinedIcon
+                    style={{ fill: "#FFCC00" }}
+                    fontSize="small"
+                  />
+                </span>
+                <span>+234324324234</span>
+              </p>
+              <p>
+                <span>
+                  <StarOutlinedIcon
+                    style={{ fill: "#FFCC00" }}
+                    fontSize="small"
+                  />
+                </span>
+                <span>loremasd@mail.ru</span>
+              </p>
+              <div className="socials">
+                <span><BiLogoFacebook/></span>
+                <span><BiLogoFacebook/></span>
+                <span><BiLogoFacebook/></span>
+                <span><BiLogoFacebook/></span>
+              </div>
+            </div>
           </div>
         </div>
+        {isOpenNavbar && <div className="backBlack"></div>}
       </nav>
     </>
   );

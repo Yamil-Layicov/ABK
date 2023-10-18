@@ -1,17 +1,16 @@
 import "./header.scss";
 import BlurOnOutlinedIcon from "@mui/icons-material/BlurOnOutlined";
+import PersonAddAlt1OutlinedIcon from "@mui/icons-material/PersonAddAlt1Outlined";
 
 const Header = () => {
   return (
     <div className="header">
       <div className="left">
         <h6>WELCOOME TO BIOXLAB</h6>
-        <h1>
-          Passion For Better Medicine
-        </h1>
+        <h1>Passion For Better Medicine</h1>
         <p>
           Your full service lab for clinical trials. Our mission is to ensure
-          the  generation of accurate and precise findings
+          the generation of accurate and precise findings
         </p>
         <button>Haqqimizda</button>
       </div>
@@ -31,6 +30,28 @@ const Header = () => {
             <span className="text">
               <span>HELPDESK</span> :+554274545
             </span>
+          </div>
+        </div>
+      </div>
+      <div className="features">
+        <div className="boxes">
+          <div className="box">
+            <span className="iconPerson">
+              <PersonAddAlt1OutlinedIcon />
+            </span>
+            <span>100% Customer Satisfaction</span>
+          </div>
+          <div className="box">
+            <span className="iconPerson">
+              <PersonAddAlt1OutlinedIcon />
+            </span>
+            <span>100% Customer Satisfaction</span>
+          </div>
+          <div className="box">
+            <span className="iconPerson">
+              <PersonAddAlt1OutlinedIcon />
+            </span>
+            <span>100% Customer Satisfaction</span>
           </div>
         </div>
       </div>
