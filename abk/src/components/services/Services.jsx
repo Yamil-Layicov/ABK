@@ -1,120 +1,135 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useState, useRef } from "react";
 import "./services.scss";
 import EastOutlinedIcon from "@mui/icons-material/EastOutlined";
 import WestOutlinedIcon from "@mui/icons-material/WestOutlined";
+import BiotechOutlinedIcon from "@mui/icons-material/BiotechOutlined";
+
+const serviceData = [
+  {
+    id: 1,
+    logo: <BiotechOutlinedIcon fontSize="large" />,
+    title: "title-1",
+    desc: "desc-1",
+  },
+  {
+    id: 2,
+    logo: <BiotechOutlinedIcon fontSize="large" />,
+    title: "title-2",
+    desc: "desc-2",
+  },
+  {
+    id: 3,
+    logo: <BiotechOutlinedIcon fontSize="large" />,
+    title: "title-3",
+    desc: "desc-3",
+  },
+  {
+    id: 4,
+    logo: <BiotechOutlinedIcon fontSize="large" />,
+    title: "title-4",
+    desc: "desc-4",
+  },
+  {
+    id: 5,
+    logo: <BiotechOutlinedIcon fontSize="large" />,
+    title: "title-5",
+    desc: "desc-5",
+  },
+  {
+    id: 6,
+    logo: <BiotechOutlinedIcon fontSize="large" />,
+    title: "title-6",
+    desc: "desc-6",
+  },
+];
 
 const Services = () => {
-  const dragRef = useRef(null);
-  const firstImgRef = useRef(null);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const containerRef = useRef(null);
+  const boxWidth = 390;
+
+  const handleSlide = (direction) => {
+    const container = containerRef.current;
+    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+    let newScrollLeft;
+
+    if (direction === "right") {
+      newScrollLeft = scrollLeft + boxWidth;
+      if (newScrollLeft >= maxScrollLeft) {
+        newScrollLeft = 0;
+      }
+    } else {
+      newScrollLeft = scrollLeft - boxWidth;
+      if (newScrollLeft < 0) {
+        newScrollLeft = 0;
+      }
+    }
+
+    if (container) {
+      container.scrollLeft = newScrollLeft;
+      setScrollLeft(newScrollLeft);
+    }
+  };
+
   const [isDragStart, setIsDragStart] = useState(false);
   const [prevPageX, setPrevPageX] = useState(0);
   const [prevScrollLeft, setPrevScrollLeft] = useState(0);
-  const [firstImgWidth, setFirstImgWidth] = useState(0);
-
-  useEffect(() => {
-    setFirstImgWidth(firstImgRef.current && firstImgRef.current.clientWidth + 20);
-  }, []);
 
   const dragging = (e) => {
     if (!isDragStart) return;
     e.preventDefault();
     const positionDiff = e.pageX - prevPageX;
-    dragRef.current.scrollLeft = prevScrollLeft - positionDiff;
+    containerRef.current.scrollLeft = prevScrollLeft - positionDiff;
   };
 
   const dragStart = (e) => {
     setIsDragStart(true);
     setPrevPageX(e.pageX);
-    setPrevScrollLeft(dragRef.current.scrollLeft);
+    setPrevScrollLeft(containerRef.current.scrollLeft);
   };
 
   const dragStop = () => {
     setIsDragStart(false);
   };
 
-  const imgScroll = (direction) => {
-    const scrollAmount = direction === "left" ? -firstImgWidth : firstImgWidth;
-    const totalScrollWidth = dragRef.current.scrollWidth - dragRef.current.clientWidth;
-  
-    if (direction === "right" && dragRef.current.scrollLeft + scrollAmount >= totalScrollWidth) {
-      dragRef.current.scrollLeft = 0;
-    } else {
-      dragRef.current.scrollLeft += scrollAmount;
-    }
-  };
-  
-
   return (
     <div className="services">
-      <div className="wrapper">
+      <div className="serviceHeader">
+        <div className="headerTitle">
+          <h5>____our services</h5>
+          <h1>Service Area</h1>
+        </div>
         <div className="arrowIcons">
-          <span onClick={() => imgScroll("left")} className="leftIcon">
+          <span onClick={() => handleSlide("left")} className="leftIcon">
             <span>
               <WestOutlinedIcon fontSize="small" />
             </span>
           </span>
-          <span onClick={() => imgScroll("right")} className="rightIcon">
+          <span onClick={() => handleSlide("right")} className="rightIcon">
             <span>
               <EastOutlinedIcon fontSize="small" />
             </span>
           </span>
         </div>
-          <div
-          onMouseMove={dragging}
-          onMouseDown={dragStart}
-          onMouseUp={dragStop}
-          ref={dragRef}
-          className="carousel"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1696595883516-76c97aa3a164?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-            ref={firstImgRef}
-          />
-          <img
-            src="https://images.unsplash.com/photo-1696595883555-5a2f5ab967f8?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <img
-            src="https://images.unsplash.com/photo-1638368888223-687b8f4fa9b6?auto=format&fit=crop&q=80&w=1932&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <img
-            src="https://images.unsplash.com/photo-1608985925941-782148baea7c?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <img
-            src="https://images.unsplash.com/photo-1634718720631-f55677e21171?auto=format&fit=crop&q=80&w=1931&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <img
-            src="https://images.unsplash.com/photo-1696595883516-76c97aa3a164?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <img
-            src="https://images.unsplash.com/photo-1696595883555-5a2f5ab967f8?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <img
-            src="https://images.unsplash.com/photo-1638368888223-687b8f4fa9b6?auto=format&fit=crop&q=80&w=1932&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <img
-            src="https://images.unsplash.com/photo-1608985925941-782148baea7c?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <img
-            src="https://images.unsplash.com/photo-1634718720631-f55677e21171?auto=format&fit=crop&q=80&w=1931&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-        </div>
+      </div>
+      <div
+        ref={containerRef}
+        className="carousel"
+        onMouseMove={dragging}
+        onMouseDown={dragStart}
+        onMouseUp={dragStop}
+      >
+        {serviceData.map((box, index) => (
+          <div key={index} className={`box ${index === 0 && "box1"}`}>
+            <div>{box.logo}</div>
+            <div>{box.title}</div>
+            <div>{box.desc}</div>
+            <div>READ MORE</div>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
 export default Services;
-
-
-
-
