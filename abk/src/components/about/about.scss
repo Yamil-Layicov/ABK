@@ -1,0 +1,91 @@
+.about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 150px;
+  padding: 0 130px;
+
+  .imgContainer {
+    .img {
+      position: relative;
+      .experienceBox {
+        position: absolute;
+        bottom: -100px;
+        left: 140px;
+        background-color: #10d0a1;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        font-size: 24px;
+        color: white;
+        font-weight: 500;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        align-items: center;
+        padding-top: 45px;
+
+        .spanNum {
+          font-size: 125px;
+          font-family: "Days One", sans-serif;
+          line-height: 120px;
+        }
+      }
+      img {
+        border-radius: 0 0 362px 341px;
+      }
+    }
+  }
+
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h6 {
+      color: #0e63ff;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    h1 {
+      font-size: 40px;
+      line-height: 1.2;
+      font-weight: 500;
+      font-family: "Days One", sans-serif;
+    }
+
+    .first {
+      padding-right: 140px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #171151;
+    }
+
+    .second {
+      padding-right: 200px;
+    }
+
+    .doneBox {
+      display: flex;
+      gap: 12px;
+      font-size: 15px;
+      font-weight: 500;
+      .spanIcon {
+        color: #10d0a1;
+      }
+    }
+
+    button {
+      padding: 17px;
+      background-color: #10d0a1;
+      border: none;
+      color: white;
+      font-weight: bold;
+      width: 200px;
+      font-size: 20px;
+      border-radius: 7px;
+      margin-top: 20px;
+    }
+  }
+}
