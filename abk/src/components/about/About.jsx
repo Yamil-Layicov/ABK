@@ -12,8 +12,10 @@ const About = () => {
           />
           <div className="experienceBox">
             <div className="spanNum">12</div>
+            <div className="spanTexts">
             <div className="spanText">Years of</div>
             <div className="spanText">Experience</div>
+            </div>
           </div>
         </div>
       </div>
