@@ -1,15 +1,22 @@
-import './footer.scss'
-import fb from '../../assets/socials/facebook_icon.svg';
-import insta from '../../assets/socials/instagram_icon.svg';
-import twt from '../../assets/socials/twitter_icon.svg';
+import "./footer.scss";
+import fb from "../../assets/socials/facebook_icon.svg";
+import insta from "../../assets/socials/instagram_icon.svg";
+import twt from "../../assets/socials/twitter_icon.svg";
+import {BiLogoTelegram} from 'react-icons/bi'
 
 const Footer = () => {
   return (
     <div className="footer">
       <div className="boxes">
         <div className="firstBox">
-          <img src="https://bioxlab-next-js.vercel.app/assets/img/logo/white-logo.png" alt="" />
-          <p>Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea commodo claritatem itamconse quat.Exerci tation ullamcorper.</p>
+          <img
+            src="https://bioxlab-next-js.vercel.app/assets/img/logo/white-logo.png"
+            alt=""
+          />
+          <p>
+            Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea
+            commodo claritatem itamconse quat.Exerci tation ullamcorper.
+          </p>
           <div className="socials">
             <img src={fb} alt="" />
             <img src={insta} alt="" />
@@ -35,20 +42,28 @@ const Footer = () => {
         </div>
         <div className="subcriber">
           <h4>Subscribe Newslatter</h4>
-          <p>Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea commodo</p>
-          <div className="inputMsg"><input type="text" placeholder='enter email'/></div>
+          <p>
+            Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea
+            commodo
+          </p>
+          <div className="inputMsg">
+            <input type="text" placeholder="Enter Mail" />
+            <div className="sendBox"><BiLogoTelegram/></div>
+          </div>
         </div>
       </div>
       <div className="copyright">
-        <span>© Copyright © 2023 Theme_pure. All Rights Reserved Copyright</span>
-        <div>
+        <span>
+          © Copyright © 2023 Theme_pure. All Rights Reserved Copyright
+        </span>
+        <div className="right">
           <span>Terms and conditions</span>
           <span>Privacy policy</span>
           <span>Pricing</span>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
