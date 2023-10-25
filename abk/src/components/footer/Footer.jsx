@@ -54,7 +54,7 @@ const Footer = () => {
       </div>
       <div className="copyright">
         <span>
-          © Copyright © 2023 Theme_pure. All Rights Reserved Copyright
+          © Copyright © 2022 FİTOLAB. Bütün Hüquqlar Qorunur.
         </span>
         <div className="right">
           <span>Terms and conditions</span>

@@ -1,4 +1,5 @@
 import About from "../../components/about/About";
+import Feedback from "../../components/feedback/Feedback";
 import Gallery from "../../components/gallery/Gallery";
 import Header from "../../components/header/Header";
 import Services from '../../components/services/Services'
@@ -14,6 +15,7 @@ const Home = () => {
       <Gallery/>
       <WhyChooseUs/>
       <Team/>
+      <Feedback/>
     </>
   );
 };

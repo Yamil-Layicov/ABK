@@ -47,12 +47,12 @@ const Navbar = () => {
             />
           </div>
           <div className="links">
-            <span>Home</span>
-            <span>Page</span>
-            <span>Page</span>
-            <span>Page</span>
-            <span>Blog</span>
-            <span>Contact</span>
+            <span>Ana səhifə</span>
+            <span>Xidmətlər</span>
+            <span>Bloq</span>
+            <span>Haqqımızda</span>
+            <span>Əlaqə</span>
+            <span>faq</span>
           </div>
         </div>
         <div className="mainRight">
@@ -70,6 +70,9 @@ const Navbar = () => {
             <MenuOutlinedIcon fontSize="large" />
           </div>
         </div>
+
+
+
         <div className={`${isOpenNavbar ? "activeMobileNav" : "mobileNav"}`}>
           <div className="mobileLeft">
             <div className="logo">
@@ -127,6 +130,8 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+
+        
         {isOpenNavbar && <div className="backBlack"></div>}
       </nav>
     </>
