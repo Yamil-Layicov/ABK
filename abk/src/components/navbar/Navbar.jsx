@@ -5,6 +5,7 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
 import {BiLogoFacebook} from 'react-icons/bi'
+import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
@@ -18,11 +19,11 @@ const Navbar = () => {
     }
   };
 
-  // const moveToTop = () => {
-  //   window.scrollTo({
-  //     top:0,
-  //   })
-  // }
+  const moveToTop = () => {
+    window.scrollTo({
+      top:0,
+    })
+  }
 
   useEffect(() => {
     window.addEventListener("scroll", changeBackground);
@@ -47,12 +48,12 @@ const Navbar = () => {
             />
           </div>
           <div className="links">
-            <span>Ana səhifə</span>
-            <span>Xidmətlər</span>
-            <span>Bloq</span>
-            <span>Haqqımızda</span>
-            <span>Əlaqə</span>
-            <span>faq</span>
+          <NavLink style={({isActive}) => ({color: isActive ? "#171151" : ''})} onClick={() => moveToTop()} to='/' className='link'>Ana səhifə</NavLink>
+            <NavLink style={({isActive}) => ({color: isActive ? "#171151" : ''})} onClick={() => moveToTop()} to='/services' className='link'>Xidmətlər</NavLink>
+            <NavLink style={({isActive}) => ({color: isActive ? "#171151" : ''})} onClick={() => moveToTop()} to='/blog' className='link'>Bloq</NavLink>
+            <NavLink style={({isActive}) => ({color: isActive ? "#171151" : ''})} onClick={() => moveToTop()} to='/about' className='link'>Haqqımızda</NavLink>
+            <NavLink style={({isActive}) => ({color: isActive ? "#171151" : ''})} onClick={() => moveToTop()} to='/contact' className='link'>Əlaqə</NavLink>
+            <NavLink style={({isActive}) => ({color: isActive ? "#171151" : ''})} onClick={() => moveToTop()} to='/faq' className='link'>faq</NavLink>
           </div>
         </div>
         <div className="mainRight">

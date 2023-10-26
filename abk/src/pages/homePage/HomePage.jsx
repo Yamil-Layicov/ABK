@@ -6,7 +6,7 @@ import Services from '../../components/services/Services'
 import Team from "../../components/team/Team";
 import WhyChooseUs from "../../components/whyChooseUs/WhyChooseUs";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
       <Header />
@@ -20,4 +20,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
