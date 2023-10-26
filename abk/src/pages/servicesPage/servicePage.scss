@@ -1,23 +1,444 @@
-.servicePage{
-    .hedaer{
+.servicePage {
+    padding-bottom: 160px;
+  .hedaerSection {
+    margin-top: 119px;
+    position: relative;
 
-        &::after{
-            content: "";
-            background-color: rgba(12, 9, 79, 0.374);
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
+    .img {
+      width: 100%;
+      height: 65vh;
+      &::after {
+        content: "";
+        background-color: rgba(13, 9, 79, 0.586);
+        width: 100%;
+        height: 65vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      img {
+        width: 100%;
+        height: 65vh;
+        object-fit: cover;
+      }
+    }
+
+    h1 {
+      font-size: 55px;
+      line-height: 1.2;
+      font-weight: 500;
+      color: white;
+      position: absolute;
+      top: 28vh;
+      left: 12%;
+    }
+  }
+
+  .centerSection {
+    background-image: url("../../assets/servicesBg.png");
+
+    .textHeader{
+        text-align: center;
+        padding: 100px 0;
+
+        h5 {
+            color: #0e63ff;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding-bottom: 10px;
+          }
+          h1 {
+            color: #171151;
+            font-size: 45px;
+            padding-top: 10px;
+            font-family: "Days One", sans-serif;
+          }
+    }
+
+    .boxes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 0 150px;
+      gap: 50px;
+
+      .box {
+        display: inline-block;
+        background-color: white;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+        .intoBox {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: start;
+          gap: 20px;
+          padding: 70px 50px;
+          position: relative;
+
+          .labTitle {
+            font-size: 24px;
+            color: #171151;
+            font-weight: 800;
+            padding: 10px 0;
+          }
+
+          .labIcon {
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            padding: 30px;
+            clip-path: polygon(
+              45% 1.33975%,
+              46.5798% 0.60307%,
+              48.26352% 0.15192%,
+              50% 0,
+              51.73648% 0.15192%,
+              53.4202% 0.60307%,
+              55% 1.33975%,
+              89.64102% 21.33975%,
+              91.06889% 22.33956%,
+              92.30146% 23.57212%,
+              93.30127% 25%,
+              94.03794% 26.5798%,
+              94.48909% 28.26352%,
+              94.64102% 30%,
+              94.64102% 70%,
+              94.48909% 71.73648%,
+              94.03794% 73.4202%,
+              93.30127% 75%,
+              92.30146% 76.42788%,
+              91.06889% 77.66044%,
+              89.64102% 78.66025%,
+              55% 98.66025%,
+              53.4202% 99.39693%,
+              51.73648% 99.84808%,
+              50% 100%,
+              48.26352% 99.84808%,
+              46.5798% 99.39693%,
+              45% 98.66025%,
+              10.35898% 78.66025%,
+              8.93111% 77.66044%,
+              7.69854% 76.42788%,
+              6.69873% 75%,
+              5.96206% 73.4202%,
+              5.51091% 71.73648%,
+              5.35898% 70%,
+              5.35898% 30%,
+              5.51091% 28.26352%,
+              5.96206% 26.5798%,
+              6.69873% 25%,
+              7.69854% 23.57212%,
+              8.93111% 22.33956%,
+              10.35898% 21.33975%
+            );
+
+            &::after {
+              content: " ";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              z-index: -1;
+              scale: 0;
+              opacity: 0;
+              transition: all 0.4s ease-in-out;
+            }
+          }
+
+          .labDesc {
+            line-height: 26px;
+            font-family: "Archivo", sans-serif;
+          }
+
+          .readMore {
+            padding-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: #171151;
+            .redMoreBox {
+              transition: all 0.3s ease-in-out;
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              border-radius: 7px;
+            }
+          }
         }
+      }
 
-        h1{
-            font-size: 55px;
-            line-height: 1.2;
-            font-family: "Days One",sans-serif;
+      .box1 {
+        .readMore {
+          .redMoreBox {
+            background-color: #feeaf1;
+          }
+        }
+        .labIcon {
+          background-color: #feeaf1;
+          color: #f72a75;
+
+          &::after {
+            background-color: #f72a75;
+          }
+        }
+        &:hover {
+          .labIcon {
             color: white;
-            z-index: 2;
+            &::after {
+              scale: 1;
+              opacity: 1;
+            }
+          }
+          .readMore {
+            .redMoreBox {
+              background-color: #f72a75;
+            }
+          }
         }
+      }
+      .box2 {
+        .readMore {
+          .redMoreBox {
+            background-color: #e7faf6;
+          }
+        }
+        .labIcon {
+          background-color: #e7faf6;
+          color: #10d0a1;
+
+          &::after {
+            background-color: #10d0a1;
+          }
+        }
+        &:hover {
+          .labIcon {
+            color: white;
+            &::after {
+              scale: 1;
+              opacity: 1;
+            }
+          }
+          .readMore {
+            .redMoreBox {
+              background-color: #10d0a1;
+            }
+          }
+        }
+      }
+      .box3 {
+        .readMore {
+          .redMoreBox {
+            background-color: #ecf9ff;
+          }
+        }
+        .labIcon {
+          background-color: #ecf9ff;
+          color: #42bfff;
+
+          &::after {
+            background-color: #42bfff;
+          }
+        }
+        &:hover {
+          .labIcon {
+            color: white;
+            &::after {
+              scale: 1;
+              opacity: 1;
+            }
+          }
+          .readMore {
+            .redMoreBox {
+              background-color: #42bfff;
+            }
+          }
+        }
+      }
+      .box4 {
+        .readMore {
+          .redMoreBox {
+            background-color: #e7efff;
+          }
+        }
+        .labIcon {
+          background-color: #e7efff;
+          color: #0e63ff;
+
+          &::after {
+            background-color: #0e63ff;
+          }
+        }
+        &:hover {
+          .labIcon {
+            color: white;
+            &::after {
+              scale: 1;
+              opacity: 1;
+            }
+          }
+          .readMore {
+            .redMoreBox {
+              background-color: #0e63ff;
+            }
+          }
+        }
+      }
+      .box5 {
+        .readMore {
+          .redMoreBox {
+            background-color: #feeaf1;
+          }
+        }
+        .labIcon {
+          background-color: #feeaf1;
+          color: #f72a75;
+
+          &::after {
+            background-color: #f72a75;
+          }
+        }
+        &:hover {
+          .labIcon {
+            color: white;
+            &::after {
+              scale: 1;
+              opacity: 1;
+            }
+          }
+          .readMore {
+            .redMoreBox {
+              background-color: #f72a75;
+            }
+          }
+        }
+      }
+      .box6 {
+        .readMore {
+          .redMoreBox {
+            background-color: #e7faf6;
+          }
+        }
+        .labIcon {
+          background-color: #e7faf6;
+          color: #10d0a1;
+
+          &::after {
+            background-color: #10d0a1;
+          }
+        }
+        &:hover {
+          .labIcon {
+            color: white;
+            &::after {
+              scale: 1;
+              opacity: 1;
+            }
+          }
+          .readMore {
+            .redMoreBox {
+              background-color: #10d0a1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:1600px){
+    .servicePage{
+        .centerSection{
+            .boxes{
+                padding: 0 60px;
+            }
+        }
+        
+    }
+}
+
+@media (max-width:1400px){
+    .servicePage{
+        .centerSection{
+            .boxes{
+                grid-template-columns: repeat(2, 1fr);
+                padding: 0 120px;
+                .box{
+                    .intoBox{
+                        .labTitle{
+                            font-size: 18px;
+                        }
+                    }
+                   
+                }
+            }
+        }
+        
+    }
+}
+
+@media (max-width:1200px){
+    .servicePage{
+        .centerSection{
+            .boxes{
+                padding: 0 60px;
+                .box{
+                    .intoBox{
+                        .labTitle{
+                            
+                        }
+                    }
+                   
+                }
+            }
+        }
+        
+    }
+}
+
+@media (max-width:1000px){
+    .servicePage{
+        .centerSection{
+            .boxes{
+                padding: 0 20px;
+                gap: 20px;
+                .box{
+                    .intoBox{
+                        padding: 50px 40px;
+                        .labTitle{
+                            
+                        }
+                    }
+                   
+                }
+            }
+        }
+        
+    }
+}
+
+@media (max-width:800px){
+    .servicePage{
+        .centerSection{
+            .boxes{
+                grid-template-columns: repeat(1, 1fr);
+                padding: 0 15px;
+                gap: 45px;
+                .box{
+                    .intoBox{
+                        padding: 40px 25px;
+                        .labTitle{
+                            
+                        }
+                    }
+                   
+                }
+            }
+        }
+        
     }
 }
