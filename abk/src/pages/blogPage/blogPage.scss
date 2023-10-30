@@ -74,9 +74,8 @@
       }
       h1 {
         color: #171151;
-        font-size: 45px;
+        font-size: 40px;
         padding: 10px 0;
-        font-family: "Days One", sans-serif;
         transition: all .3s ease-in-out;
         width: 70%;
 
@@ -143,6 +142,7 @@
 
 @media (max-width:600px) {
   .blogPage{
+    padding-bottom: 50px;
     .blogContent{
       .icons{
         display: flex;

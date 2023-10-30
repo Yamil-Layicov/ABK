@@ -6,8 +6,7 @@ const WhyChooseUs = () => {
   return (
     <div className="whyChooseUs">
       <div className="headerText">
-        <h6>___OUR SPECIALISTS___</h6>
-        <h1>Why Choose Us</h1>
+        <h1>Nə üçün biz?</h1>
       </div>
       <div className="boxes">
         <div className="box">
@@ -16,8 +15,8 @@ const WhyChooseUs = () => {
             <ImLab />
             </span>
           </div>
-          <h3>High Quality Services</h3>
-          <p>Nam eget dui vel quam sodales semper quis porttitor tortor.</p>
+          <h3>Yüksək Keyfiyyətli Xidmətlər</h3>
+          <p> Keyfiyyətli xidmət göstərəcəyimizə zəmanət veririk.</p>
         </div>
         <div className="box">
           <div className="labIcon">
@@ -25,8 +24,8 @@ const WhyChooseUs = () => {
             <ImLab />
             </span>
           </div>
-          <h3>Fast Working Process</h3>
-          <p>Nam eget dui vel quam sodales semper quis porttitor tortor.</p>
+          <h3>Sürətli İş Prosesi</h3>
+          <p>İş prosesini vaxında yekunlaşdırımaq bizim üçün önəmlidir.</p>
         </div>
         <div className="box">
           <div className="labIcon">
@@ -34,8 +33,8 @@ const WhyChooseUs = () => {
             <ImLab />
             </span>
           </div>
-          <h3>24/7 Customer Support</h3>
-          <p>Nam eget dui vel quam sodales semper quis porttitor tortor.</p>
+          <h3>24/7 əlçatanlıq</h3>
+          <p> 24/7 bizimlə əlaqə mümkündür.</p>
         </div>
         <div className="box">
           <div className="labIcon">
@@ -43,8 +42,8 @@ const WhyChooseUs = () => {
             <ImLab />
             </span>
           </div>
-          <h3>We have Expert Team</h3>
-          <p>Nam eget dui vel quam sodales semper quis porttitor tortor.</p>
+          <h3>Mütəxəssislərdən ibarət komanda</h3>
+          <p>Əməkdaşlarımızın hər biri öz sahəsinin mütəxəssisidir.</p>
         </div>
       </div>
     </div>

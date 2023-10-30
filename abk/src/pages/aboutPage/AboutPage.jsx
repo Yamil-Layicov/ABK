@@ -22,8 +22,8 @@ const AboutPage = () => {
             />
             <div className="experinceBox">
               <span>12</span>
-              <span>Years of</span>
-              <span>Experience</span>
+              <span style={{paddingLeft:"38%"}}>İllik</span>
+              <span style={{paddingLeft:"20%"}}>Təcrübə</span>
             </div>
           </div>
           <div>
@@ -42,41 +42,36 @@ const AboutPage = () => {
           </div>
         </div>
         <div className="textContainer">
-          <h1>We’ll Ensure You Alwasy Get Best Results.</h1>
+          <h1>AQRAR SAHƏDƏ İXTİSASLAŞMIŞ LABORATORİYA.</h1>
           <p className="first">
-            Your full service lab for clinical trials. Our mission is to ensure
-            the generation of accurate and precise findings
+          Nə üçün biz?   
           </p>
           <p className="second">
-            Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea
-            commodo claritatem insitamconse quat.Exerci tation ullamcorper
-            suscipit loborti excommodo habent claritatem insitamconse
-            quat.Exerci tationlobortis nisl aliquip ex ea commodo habent
-            claritatem insitamconse quat.
+          2019-cu ildə yaradılan laboratoriya Azərbaycanda aqrar sahənin inkişafında böyük rol oynanıyır. Laboratoriyada öz sahələrində ixtisaslaşmış əməkdaşlar tərəfindən ən son texnoloji avadanlıqlardan istifadə edilərək analizlər edilir və nəticələrin dəqiq və düzgün təhlili aparılır. Hazırda laboratoriyada fitosanitar, virusoloji, qida məhsullarının analizi, toxum, su, torpaq analizləri, monitorinq, təlim və konsultasya xidmətləri göstərilməkdədir.   Ən son texnoloji avadanlıqlardan istifadə edərək müştərilərə yüksək keyfiyyətli nəticələri təqdim edirik. Daima müştəri məmnuniyyətinə önəm verir, işimizin sürətli və dəqiq olmasına çalışırıq, bu proses zamanı ətrafı mühitin mühafizəsini əsas götürüb ekoloji təmizliyi təbliğ edir, sağlam gələcək üçün irəliləyik.
           </p>
           <div className="doneBox">
             <span className="spanIcon">
               <DoneOutlinedIcon />
             </span>
-            <span>Extramural Funding</span>
+            <span>Yüksək Keyfiyyətli Xidmətlər</span>
           </div>
           <div className="doneBox">
             <span className="spanIcon">
               <DoneOutlinedIcon />
             </span>
-            <span>Bacteria Markers</span>
+            <span>Sürətli İş Prosesi</span>
           </div>
           <div className="doneBox">
             <span className="spanIcon">
               <DoneOutlinedIcon />
             </span>
-            <span>Nam nec mi euismod euismod</span>
+            <span>24/7 əlçatanlıq</span>
           </div>
           <div className="doneBox">
             <span className="spanIcon">
               <DoneOutlinedIcon />
             </span>
-            <span>In aliquet dui nec lectus</span>
+            <span>Mütəxəssislərdən ibarət komanda</span>
           </div>
         </div>
       </div>

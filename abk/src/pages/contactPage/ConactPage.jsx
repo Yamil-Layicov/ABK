@@ -45,7 +45,7 @@ const ConactPage = () => {
             <div className="upInputs">
               <input type="text" placeholder="adınızı daxil edin" />
               <input type="email" placeholder="e-poçt daxil edin " />
-              <input type="text" placeholder="mesajınızı yazın" />
+              <input type="text" placeholder="nömrənizi yazın" />
             </div>
             <textarea style={{padding:"20px"}} placeholder="mesajınızı yazın" name="" id="" cols="30" rows="10"></textarea>
             <button>Mesaj göndər</button>

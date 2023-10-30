@@ -6,13 +6,12 @@ const Header = () => {
   return (
     <div className="header">
       <div className="left">
-        <h6>WELCOOME TO BIOXLAB</h6>
-        <h1>Passion For Better Medicine</h1>
+        <h6>Agro Bitki Klinikasına xoşgəlmisiniz</h6>
+        <h1>SAĞLAM TƏBİƏT SAĞLAM GƏLƏCƏK</h1>
         <p>
-          Your full service lab for clinical trials. Our mission is to ensure
-          the generation of accurate and precise findings
+        Ən son texnoloji avadanlıqlarla təmin olunmuş tam lisenziyalı və akkreditə olunmuş laboratoriya. 
         </p>
-        <button>Haqqimizda</button>
+        <button>Haqqımızda</button>
       </div>
       <div className="right">
         <div className="img">
@@ -39,19 +38,19 @@ const Header = () => {
             <span className="iconPerson">
               <PersonAddAlt1OutlinedIcon />
             </span>
-            <span>100% Customer Satisfaction</span>
+            <span>Müştəri Məmnuniyyəti</span>
           </div>
           <div className="box">
             <span className="iconPerson">
               <PersonAddAlt1OutlinedIcon />
             </span>
-            <span>100% Customer Satisfaction</span>
+            <span>Sürətli İş Prosesi</span>
           </div>
           <div className="box">
             <span className="iconPerson">
               <PersonAddAlt1OutlinedIcon />
             </span>
-            <span>100% Customer Satisfaction</span>
+            <span>Yüksək Keyfiyyətli Xidmətlər</span>
           </div>
         </div>
       </div>

@@ -1,7 +1,6 @@
 .about {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   gap: 150px;
   padding: 0 130px;
 
@@ -34,6 +33,13 @@
         .spanTexts{
           padding-top: 20px;
         }
+
+        .spanText1{
+          padding-left: 25px;
+        }
+        .spanText2{
+          padding-left: 4px;
+        }
       }
       img {
         border-radius: 0 0 362px 341px;
@@ -50,13 +56,13 @@
       color: #0e63ff;
       font-weight: 700;
       font-size: 15px;
+      padding-top: 60px;
     }
 
     h1 {
       font-size: 40px;
       line-height: 1.2;
       font-weight: 500;
-      font-family: "Days One", sans-serif;
     }
 
     .first {
@@ -178,6 +184,10 @@
 
     .textContainer{
       padding-top: 150px;
+
+      h6{
+        padding-top: 20px;
+      }
     }
   }
 }

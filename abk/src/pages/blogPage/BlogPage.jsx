@@ -20,16 +20,36 @@ const BlogPage = () => {
           </div>
           <div className="icon">
             <span><AiOutlineUser/></span>
-            <span>Dec 28, 2022</span>
+            <span>Dek 28, 2022</span>
           </div>
           <div className="icon">
             <span><AiOutlineUser/></span>
-            <span>1,526 views</span>
+            <span>1,526 baxış </span>
           </div>
         </div>
-        <h1>Lavoratories used for scientic reseach take many froms.</h1>
-        <p>Laboratories used for scientific research take many forms because of the differing requirements of specialists in the various fields of science and engineering. A physics laboratory</p>
-        <button>Read More</button>
+        <h1>Letgen firmasının rəhbəri Fahrettin Özcan Aqro bitki klinikasının mütəxəssislərinə təlim keçmişdir.</h1>
+        <p>Təlim zamanı mütəxəssislərin bilik və bacarıqları yüksək səviyyədə qiymətləndirilmiş, əlavə məlumatlar verilmiş və gələcək əməkdaşlıq üçün ilkin danışıqlar aparılmışdır.</p>
+        {/* <button>Read More</button>   */}
+      </div>
+      <div className="blogContent">
+        <img src="https://bioxlab-next-js.vercel.app/assets/img/blog/blog-in-01.jpg" alt="" />
+        <div className="icons">
+          <div className="icon">
+            <span><AiOutlineUser/></span>
+            <span>ALEXTINA</span>
+          </div>
+          <div className="icon">
+            <span><AiOutlineUser/></span>
+            <span>Yan 28, 2022</span>
+          </div>
+          <div className="icon">
+            <span><AiOutlineUser/></span>
+            <span>1,152 baxış </span>
+          </div>
+        </div>
+        <h1>Koreyalı mütəxəssislər Agro Bitki Klinikasına baxış keçirmişlər.</h1>
+        <p>Koreyalı mütəxəssislər və klinikanın mütəxəssisləri arasında qarşılıqlı fikir mübadiləsi aparılmış və gələcək əməkdaşlıqla bağlı müəyyən razılığa gəlinmişdir.</p>
+        {/* <button>Read More</button> */}
       </div>
     </div>
   );

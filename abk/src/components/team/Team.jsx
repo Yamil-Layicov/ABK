@@ -83,8 +83,8 @@ const Team = () => {
   return (
     <div className="team">
       <div className="galleryHeader">
-        <h6>___OUR TEAM</h6>
-        <h1>Meet Specialist</h1>
+        <h6>___KOMANDAMIZ</h6>
+        <h1>Əməkdaşlarımızla tanış olun</h1>
       </div>
       <div className="gallerySlider">
         <motion.div

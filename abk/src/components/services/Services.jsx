@@ -3,55 +3,59 @@ import "./services.scss";
 import EastOutlinedIcon from "@mui/icons-material/EastOutlined";
 import WestOutlinedIcon from "@mui/icons-material/WestOutlined";
 import BiotechOutlinedIcon from "@mui/icons-material/BiotechOutlined";
+import {useNavigate} from 'react-router-dom'
 
 const serviceData = [
   {
     id: 1,
     logo: <BiotechOutlinedIcon fontSize="large" />,
-    title: "BLOOD TESTING",
-    desc: "Nam eget dui vel quam sodales semper quis ",
-    desc1: "Nam eget dui vel quam sodales semper  ",
-    desc2: "Nam eget dui  ",
+    title: "Fitosanitar laboratoriya ",
+    desc: "Laboratoriyada fitosanitar nəzarətində olan ",
+    desc1: "materiallarda entomoloji, herboloji, fitohelmintoloji, ",
+    desc2: " mikoloji analizlər həyata keçirir. ",
   },
   {
     id: 2,
     logo: <BiotechOutlinedIcon fontSize="large" />,
-    title: "BLOOD TESTING",
-    desc: "Nam eget dui vel quam sodales semper quis ",
-    desc1: "Nam eget dui vel quam sodales semper  ",
-    desc2: "Nam eget dui  ",
+    title: "Virusoloji  laboratoriya",
+    desc: " bitki nümunələrində karantin nəzarətində olan virus ",
+    desc1: "xəstəliklərinin aşkarlanması, onların molekulyar ",
+    desc2: "mexanizm vasitəsilə daha dəqiq və qısa zamanda ",
+    desc3: "diaqnostikasını həyata keçirir. ",
   },
   {
     id: 3,
     logo: <BiotechOutlinedIcon fontSize="large" />,
-    title: "BLOOD TESTING",
-    desc: "Nam eget dui vel quam sodales semper quis ",
-    desc1: "Nam eget dui vel quam sodales semper  ",
-    desc2: "Nam eget dui vel  ",
+    title: "Qida məhsullarının GMO ",
+    title1: "analizi ",
+    desc: "Laboratoriamızda qida məhsullarında geni",
+    desc1: "modifikasiya olunmuş orqanizmlərin Real vaxtda ",
+    desc2: "PZR ilə təyini həyata keçirilir. ",
   },
   {
     id: 4,
     logo: <BiotechOutlinedIcon fontSize="large" />,
-    title: "BLOOD TESTING",
-    desc: "Nam eget dui vel quam sodales semper quis ",
-    desc1: "Nam eget dui vel quam sodales semper  ",
-    desc2: "Nam eget dui  ",
+    title: "Bakterioloji laboratoriya",
+    desc: "Fitopatoloji ekspertiza zamanı  bakteriya mənşəli ",
+    desc1: "xəstəlik törədicilərinin təbii substratdan ayrılması ",
+    desc2: "və qida mühitlərinə əkilməsi, morfoloji və ",
+    desc3: "morfometrik əlamətlərə əsasən xəstəlik ",
+    desc4: "törədicilərinin aşkarlanması aparılır."
   },
   {
     id: 5,
     logo: <BiotechOutlinedIcon fontSize="large" />,
-    title: "BLOOD TESTING",
-    desc: "Nam eget dui vel quam sodales semper quis ",
-    desc1: "Nam eget dui vel quam sodales semper  ",
-    desc2: "Nam eget dui vel  ",
+    title: "Monitorinq ",
+    desc: "Tarla, bağ, bostan və istixana sahələrində ",
+    desc1: "monitorinqlərin aparılması.",
   },
   {
     id: 6,
     logo: <BiotechOutlinedIcon fontSize="large" />,
-    title: "BLOOD TESTING",
-    desc: "Nam eget dui vel quam sodales semper quis ",
-    desc1: "Nam eget dui vel quam sodales semper  ",
-    desc2: "Nam eget dui   ",
+    title: "Təlim",
+    desc: "Öz sahələrində ixtisaslaşmış əməkdaşlar daha yaxşı ",
+    desc1: "nəticə əldə etmək, aqrar sahədə inkişaflar üçün ",
+    desc2: "xüsusi təlimlər keçirirlər",
   },
 ];
 
@@ -59,6 +63,7 @@ const Services = () => {
   const [scrollLeft, setScrollLeft] = useState(0);
   const containerRef = useRef(null);
   const boxWidth = 410;
+  const navigate = useNavigate()
 
   const handleSlide = (direction) => {
     const container = containerRef.current;
@@ -87,6 +92,15 @@ const Services = () => {
   const [prevPageX, setPrevPageX] = useState(0);
   const [prevScrollLeft, setPrevScrollLeft] = useState(0);
 
+  
+
+  const navigateReadMore = () => {
+    navigate("/services")
+    window.scrollTo({
+      top:0,
+    })
+  }
+
   const dragging = (e) => {
     if (!isDragStart) return;
     e.preventDefault();
@@ -108,8 +122,8 @@ const Services = () => {
     <div className="services">
       <div className="serviceHeader">
         <div className="headerTitle">
-          <h5>____our services</h5>
-          <h1>Service Area</h1>
+          <h5>____XİDMƏTLƏRİMİZ</h5>
+          <h1>Xidmət Sahəsi</h1>
         </div>
         <div className="arrowIcons">
           <span onClick={() => handleSlide("left")} className="leftIcon">
@@ -142,15 +156,19 @@ const Services = () => {
           >
             <div className="intoBox">
               <span className="labIcon">{box.logo}</span>
-              <div className="labTitle">{box.title}</div>
+              <div className="labTitle">
+                {box.title} <br /> {box.title1}
+              </div>
               <div className="labDesc">
                 <div>{box.desc}</div>
                 <div>{box.desc1}</div>
                 <div>{box.desc2}</div>
+                <div>{box.desc3}</div>
+                <div>{box.desc4}</div>
               </div>
               <div className="readMore">
                 <div className="redMoreBox"></div>
-                <span>READ MORE</span>
+                <span onClick={navigateReadMore}>READ MORE</span>
               </div>
             </div>
           </div>

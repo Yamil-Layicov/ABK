@@ -6,50 +6,38 @@ const serviceData = [
   {
     id: 1,
     logo: <BiotechOutlinedIcon fontSize="large" />,
-    title: "BLOOD TESTING",
-    desc: "Nam eget dui vel quam sodales semper quis ",
-    desc1: "Nam eget dui vel quam sodales semper  ",
-    desc2: "Nam eget dui  ",
+    title: "Virusoloji",
+    desc: "Virusologiya şöbəsi – bitki nümunələrində karantin nəzarətində olan virus xəstəliklərinin aşkarlanması, onların molekulyar mexanizm vasitəsilə daha dəqiq və qısa zamanda diaqnostikasını həyata keçirir. " ,
   },
   {
     id: 2,
     logo: <BiotechOutlinedIcon fontSize="large" />,
-    title: "BLOOD TESTING",
-    desc: "Nam eget dui vel quam sodales semper quis ",
-    desc1: "Nam eget dui vel quam sodales semper  ",
-    desc2: "Nam eget dui  ",
+    title: "Qida məhsullarının GMO analizi",
+    desc: "Laboratoriamızda qida məhsullarında geni modifikasiya olunmuş orqanizmlərin Real vaxtda PZR ilə təyini həyata keçirilir. ",
   },
   {
     id: 3,
     logo: <BiotechOutlinedIcon fontSize="large" />,
-    title: "BLOOD TESTING",
-    desc: "Nam eget dui vel quam sodales semper quis ",
-    desc1: "Nam eget dui vel quam sodales semper  ",
-    desc2: "Nam eget dui vel  ",
+    title: "Bakterioloji ",
+    desc: "Fitopatoloji ekspertiza zamanı  bakteriya mənşəli xəstəlik törədicilərinin təbii substratdan ayrılması və qida mühitlərinə əkilməsi, SZ810 B2/L stereo mikroskop, EXT 20 biolojik mikroskop kimi müasir optik cihazlardan istifadə olunmaqla morfoloji və morfometrik əlamətlərə əsasən xəstəlik törədicilərinin aşkarlanması aparılır",
   },
   {
     id: 4,
     logo: <BiotechOutlinedIcon fontSize="large" />,
-    title: "BLOOD TESTING",
-    desc: "Nam eget dui vel quam sodales semper quis ",
-    desc1: "Nam eget dui vel quam sodales semper  ",
-    desc2: "Nam eget dui  ",
+    title: "Təlim",
+    desc: "Öz sahələrində ixtisaslaşmış əməkdaşlar daha yaxşı nəticə əldə etmək, aqrar sahədə inkişaflar üçün xüsusi təlimlər keçirirlər",
   },
   {
     id: 5,
     logo: <BiotechOutlinedIcon fontSize="large" />,
-    title: "BLOOD TESTING",
-    desc: "Nam eget dui vel quam sodales semper quis ",
-    desc1: "Nam eget dui vel quam sodales semper  ",
-    desc2: "Nam eget dui vel  ",
+    title: "Konsultasiya",
+    desc: "Konsultasiya təcrübəli personalımız tərəfindən həyata keçirilir. Ərazilərdən nümunəgötürmə xidmətləri və laboratoriya testləri ən müasir metodlar və avadanlıqlarla, beynəlxalq standartlar və metodlara uyğun olaraq həyata keçirilir.",
   },
   {
     id: 6,
     logo: <BiotechOutlinedIcon fontSize="large" />,
-    title: "BLOOD TESTING",
-    desc: "Nam eget dui vel quam sodales semper quis ",
-    desc1: "Nam eget dui vel quam sodales semper  ",
-    desc2: "Nam eget dui   ",
+    title: "Monitorinq",
+    desc: "Tarla bitkiləri, meyvə bağları və istixanalarda ziyanverici təsirlərinin müəyyən olunması üçün mütəxəssislər tərəfindən sahələrdə monitorinqlər aparılır.",
   },
 ];
 
@@ -64,8 +52,8 @@ const ServicePage = () => {
       </div>
       <div className="centerSection">
       <div className="textHeader">
-         <h5> ___OUR SERVICES___</h5>
-         <h1>Service Area</h1>
+         <h5> ___XİDMƏTLƏRİMİZ___</h5>
+         <h1>Xidmət Sahəsi</h1>
         </div>
         <div className="boxes">
         {serviceData.map((box, index) => (
@@ -85,10 +73,10 @@ const ServicePage = () => {
                 <div>{box.desc1}</div>
                 <div>{box.desc2}</div>
               </div>
-              <div className="readMore">
+              {/* <div className="readMore">
                 <div className="redMoreBox"></div>
                 <span>READ MORE</span>
-              </div>
+              </div> */}
             </div>
           </div>
         ))}
