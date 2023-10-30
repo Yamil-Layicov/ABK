@@ -2,6 +2,7 @@ import bgImg from "../../assets/pageBanner.jpg";
 import "./aboutPage.scss";
 import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
 
+
 const AboutPage = () => {
   return (
     <div className="aboutPage">
