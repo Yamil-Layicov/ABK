@@ -12,8 +12,9 @@ const FaqPage = () => {
       </div>
       <div className="faqText">
         <h1>Tez-tez soruşulan suallar</h1>
+        <p>Aşağıda Agro Bitki Klinikasına ən çox verilən suallara cavab tapa bilərsiniz. <br /> Əlavə sual yaranarsa faq@abk-fito.az ünvanına e-poçt göndərmək və tezliklə cavab almaq mümkündür</p>
       </div>
-      <div className="accordion" id="accordionExample">
+      <div className="accordion accordions" id="accordionExample">
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingOne">
             <button
@@ -65,6 +66,18 @@ const FaqPage = () => {
               ixtisaslaşmış mütəxəssislər tərəfindən həyata keçirilir.
             </div>
           </div>
+        </div>
+      </div>
+      <div className="messageBox">
+        <h1>Hər hansı bir kömək lazımdır</h1>
+        <div className="form">
+          <h4>Bizimlə Birbaşa Əlaqə</h4>
+          <form>
+            <input type="text" placeholder="adınızı daxil edin"/>
+            <input type="text" placeholder="e-poçt daxil edin "/>
+            <textarea name="" id="" cols="30" placeholder="mesajınızı yazın" rows="10"></textarea>
+          </form>
+          <button>Mesaj göndərin</button>
         </div>
       </div>
     </div>

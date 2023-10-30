@@ -1,5 +1,4 @@
 .faqPage{
-    padding-bottom: 160px;
     .hedaerSection {
       margin-top: 125px;
       position: relative;
@@ -40,15 +39,111 @@
 
     .faqText{
       text-align: center;
-      padding: 80px 0;
+      padding: 80px 0 60px 0;
       h1{
         color: #171151;
       font-family: "Days One",sans-serif;
       font-weight: 500;
       }
+      p{
+        color: #171151;
+        font-size: 20px;
+        padding-top: 20px;
+      }
     }
+
+    .accordions{
+     padding: 0 200px 100px 200px;
+     .accordion-item{
+      margin: 30px 0;
+      .accordion-button{
+        padding: 20px;
+      }
+     }
+    }
+
+    .messageBox{
+      background-color: #F2F5FA;
+      padding: 100px 20%;
+      color: #171151;
+
+      h1,h6{
+        text-align: center;
+      }
+      h1{
+        padding-bottom: 50px;
+        font-size: 43px;
+      }
+
+      .form{
+        background-color: white;
+         box-shadow: rgba(155, 155, 155, 0.132) 0px 2px 8px 0px;
+         padding: 80px;
+         border-bottom: 5px solid #0E63FF;
+
+         h4{
+          padding-bottom: 30px;
+          font-size: 26px;
+         }
+
+
+         form{
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          input,textarea{
+            padding: 20px 20px;
+            outline: none;
+            border: 1px solid rgba(128, 128, 128, 0.344);
+            border-radius: 4px;
+            box-shadow: rgba(155, 155, 155, 0.111) 0px 2px 8px 0px;
+            color: gray;
+          }
+         }
+
+         button{
+          width: 200px;
+          background-color: #0E63FF;
+          border: none;
+          color: white;
+          font-weight: 500;
+          font-size: 22px;
+          padding: 16px 22px;
+          border-radius: 4px;
+          margin-top: 30px;
+        }
+      }
+    }
+    
 }
 
+@media (max-width:1000px) {
+  .faqPage{
+    .accordions{
+      padding: 0 100px 100px 100px;
+    }
+    .messageBox{
+      padding: 100px 10%;
+    }
+  }
+}
+
+@media (max-width:800px) {
+  .faqPage{
+    .faqText{
+      padding: 80px 15px 60px 15px;
+    }
+    .accordions{
+      padding: 0 20px 100px 20px;
+    }
+    .messageBox{
+      padding: 100px 15px;
+      .form{
+        padding: 15px;
+      }
+    }
+  }
+}
 
 @media (max-width:600px) {
   .faqPage{
@@ -57,6 +152,11 @@
       h1{
         font-size: 45px;
         left: 5%;
+      }
+    }
+    .messageBox{
+      h1{
+        font-size: 34px;
       }
     }
   }
