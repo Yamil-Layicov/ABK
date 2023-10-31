@@ -2,53 +2,32 @@ import "./gallery.scss";
 import { motion } from "framer-motion";
 import { Suspense, lazy, useEffect, useRef, useState } from "react";
 import AddIcon from '@mui/icons-material/Add';
-
+import img1 from './imgs/abk-gallery-1.jpg';
+import img2 from './imgs/abk-gallery-2.jpg';
+import img3 from './imgs/abk-gallery-3.jpg';
+import img4 from './imgs/abk-gallery-4.jpg';
+import img5 from './imgs/abk-gallery-5.jpg';
 
 const images = [
     {
       id: 1,
-      title:
-        "https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      title: img1
     },
     {
       id: 2,
-      title:
-        "https://images.pexels.com/photos/8942631/pexels-photo-8942631.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      title: img2
     },
     {
       id: 3,
-      title:
-        "https://images.pexels.com/photos/4225880/pexels-photo-4225880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      title: img3
     },
     {
       id: 4,
-      title:
-        "https://images.pexels.com/photos/4066426/pexels-photo-4066426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      title: img4
     },
     {
       id: 5,
-      title:
-        "https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-    {
-      id: 6,
-      title:
-        "https://images.pexels.com/photos/3786211/pexels-photo-3786211.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-    {
-      id: 7,
-      title:
-        "https://images.pexels.com/photos/5726706/pexels-photo-5726706.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-    {
-      id: 8,
-      title:
-        "https://images.pexels.com/photos/5726706/pexels-photo-5726706.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-    {
-      id: 9,
-      title:
-        "https://images.pexels.com/photos/5726706/pexels-photo-5726706.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      title: img5
     },
   ];
 

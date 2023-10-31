@@ -1,15 +1,26 @@
 import "./header.scss";
 import BlurOnOutlinedIcon from "@mui/icons-material/BlurOnOutlined";
 import PersonAddAlt1OutlinedIcon from "@mui/icons-material/PersonAddAlt1Outlined";
-import {useNavigate} from 'react-router-dom';
-import img1 from './img1.jpg' ;
+import { useNavigate } from "react-router-dom";
+import img1 from "./img1.jpg";
+import { Suspense, lazy, useState } from "react";
+import {MdOutlineWorkHistory} from 'react-icons/md'
+import {GoClock} from 'react-icons/go'
+
+const Modal = lazy(() => import("./modal/Modal"));
 
 const Header = () => {
-  const navigate = useNavigate()
+  const [showModal, setShowModal] = useState(false);
+
+  const navigate = useNavigate();
 
   const navigateAbout = () => {
-    navigate("haqqımızda")
-  }
+    navigate("haqqımızda");
+  };
+
+  const showVideo = () => {
+    setShowModal(true);
+  };
 
   return (
     <div className="header">
@@ -17,17 +28,15 @@ const Header = () => {
         <h6>Agro Bitki Klinikasına xoşgəlmisiniz</h6>
         <h1>SAĞLAM TƏBİƏT SAĞLAM GƏLƏCƏK</h1>
         <p>
-        Ən son texnoloji avadanlıqlarla təmin olunmuş tam lisenziyalı və akkreditə olunmuş laboratoriya. 
+          Ən son texnoloji avadanlıqlarla təmin olunmuş tam lisenziyalı və
+          akkreditə olunmuş laboratoriya.
         </p>
         <button onClick={navigateAbout}>Haqqımızda</button>
       </div>
       <div className="right">
         <div className="img">
-          <img
-            src={img1}
-            alt=""
-          />
-          <div className="video">
+          <img src={img1} alt="" />
+          <div onClick={showVideo} className="video">
             <div className="videClick"></div>
           </div>
           <div className="helpdesk">
@@ -49,19 +58,24 @@ const Header = () => {
             <span>Müştəri Məmnuniyyəti</span>
           </div>
           <div className="box">
-            <span className="iconPerson">
-              <PersonAddAlt1OutlinedIcon />
+            <span className="iconPerson" style={{padding:"12px 15px"}}>
+              <GoClock />
             </span>
             <span>Sürətli İş Prosesi</span>
           </div>
           <div className="box">
-            <span className="iconPerson">
-              <PersonAddAlt1OutlinedIcon />
+            <span className="iconPerson" style={{padding:"12px 15px"}}>
+              <MdOutlineWorkHistory />
             </span>
             <span>Yüksək Keyfiyyətli Xidmətlər</span>
           </div>
         </div>
       </div>
+        {showModal && (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Modal setShowModal={setShowModal} />
+          </Suspense>
+        )}
     </div>
   );
 };
