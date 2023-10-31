@@ -1,70 +1,79 @@
 import "./team.scss";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import img1 from './imgs/Gülnar-Kazımova.jpg'
+import img2 from './imgs/aysun-babayeva.jpg'
+import img3 from './imgs//İlahə-Salmanova.jpg'
+import img4 from './imgs/Jalə-Hüseynova.jpg'
+import img5 from './imgs/Sara-Fərzəliyeva.jpg'
+import img6 from './imgs/telli-mahmudova.jpg'
+import img7 from './imgs/təravət-tağızadə.jpg'
+import img8 from './imgs/Üftadə-Güner.jpg'
+import img9 from './imgs/Ulduz-Səfərli.jpg'
 
 const images = [
     {
       id: 1,
       title:
-        "https://bioxlab-next-js.vercel.app/assets/img/team/team-thumb-04.jpg",
-        h3:"Jhon Meathwu1",
-        h6:"Genetic Specialisf"
+        img1,
+        h3:"Gülnar Kazımova",
+        h6:"Herboloq"
     },
     {
       id: 2,
       title:
-        "https://bioxlab-next-js.vercel.app/assets/img/team/team-thumb-05.jpg",
-        h3:"Jhon Meathwu2",
-        h6:"Genetic Specialisf"
+      img2,
+        h3:"Aysun Babayeva",
+        h6:"N/Q-mütəxəssis"
     },
     {
       id: 3,
       title:
-        "https://bioxlab-next-js.vercel.app/assets/img/team/team-thumb-06.jpg",
-        h3:"Jhon Meathwu3",
-        h6:"Genetic Specialisf"
+      img3,
+        h3:"İlahə Salmanova",
+        h6:"Virusoloq"
     },
     {
       id: 4,
       title:
-        "https://bioxlab-next-js.vercel.app/assets/img/team/team-thumb-01.jpg",
-        h3:"Jhon Meathwu4",
-        h6:"Genetic Specialisf"
+      img4,
+        h3:"Jalə Hüseynova",
+        h6:"Laborant"
     },
     {
       id: 5,
       title:
-        "https://bioxlab-next-js.vercel.app/assets/img/team/team-thumb-06.jpg",
-        h3:"Jhon Meathwu5",
-        h6:"Genetic Specialisf"
+      img5,
+        h3:"Sara Fərzəliyeva",
+        h6:"Fitohelmintor"
     },
     {
       id: 6,
       title:
-        "https://bioxlab-next-js.vercel.app/assets/img/team/team-thumb-01.jpg",
-        h3:"Jhon Meathwu6",
-        h6:"Genetic Specialisf"
+      img6,
+        h3:"Telli Mahmudova",
+        h6:"Bakterioloq"
     },
     {
       id: 7,
       title:
-        "https://bioxlab-next-js.vercel.app/assets/img/team/team-thumb-04.jpg",
-        h3:"Jhon Meathwu7",
-        h6:"Genetic Specialisf"
+      img7,
+        h3:"Təravət Tağızadə",
+        h6:"Entemoloq"
     },
     {
       id: 8,
       title:
-        "https://bioxlab-next-js.vercel.app/assets/img/team/team-thumb-04.jpg",
-        h3:"Jhon Meathwu8",
-        h6:"Genetic Specialisf"
+      img8,
+        h3:"Üftadə Güner",
+        h6:"Laboratoriya müdiri"
     },
     {
       id: 9,
       title:
-        "https://bioxlab-next-js.vercel.app/assets/img/team/team-thumb-04.jpg",
-        h3:"Jhon Meathwu9",
-        h6:"Genetic Specialisf"
+      img9,
+        h3:"Ulduz Səfərli",
+        h6:"Mikoloq"
     },
   ];
 

@@ -38,7 +38,7 @@ const routes = [
         element: <BlogPage />,
       },
       {
-        path: 'about',
+        path: 'haqqımızda',
         element: <AboutPage />,
       },
       {

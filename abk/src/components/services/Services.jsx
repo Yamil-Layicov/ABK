@@ -3,12 +3,18 @@ import "./services.scss";
 import EastOutlinedIcon from "@mui/icons-material/EastOutlined";
 import WestOutlinedIcon from "@mui/icons-material/WestOutlined";
 import BiotechOutlinedIcon from "@mui/icons-material/BiotechOutlined";
-import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom';
+import img1 from './imgs/abk fitosanitar.svg';
+import img2 from './imgs/abk virusoloji.svg';
+import img3 from './imgs/abk gmo.svg';
+import img4 from './imgs/abk torpaq və su.svg';
+import img5 from './imgs/abk monitoring.svg';
+import img6 from './imgs/abk təlim.svg';
 
 const serviceData = [
   {
     id: 1,
-    logo: <BiotechOutlinedIcon fontSize="large" />,
+    logo: img1,
     title: "Fitosanitar laboratoriya ",
     desc: "Laboratoriyada fitosanitar nəzarətində olan ",
     desc1: "materiallarda entomoloji, herboloji, fitohelmintoloji, ",
@@ -16,7 +22,7 @@ const serviceData = [
   },
   {
     id: 2,
-    logo: <BiotechOutlinedIcon fontSize="large" />,
+    logo: img2,
     title: "Virusoloji  laboratoriya",
     desc: " bitki nümunələrində karantin nəzarətində olan virus ",
     desc1: "xəstəliklərinin aşkarlanması, onların molekulyar ",
@@ -25,7 +31,7 @@ const serviceData = [
   },
   {
     id: 3,
-    logo: <BiotechOutlinedIcon fontSize="large" />,
+    logo: img3,
     title: "Qida məhsullarının GMO ",
     title1: "analizi ",
     desc: "Laboratoriamızda qida məhsullarında geni",
@@ -34,7 +40,7 @@ const serviceData = [
   },
   {
     id: 4,
-    logo: <BiotechOutlinedIcon fontSize="large" />,
+    logo: img4,
     title: "Bakterioloji laboratoriya",
     desc: "Fitopatoloji ekspertiza zamanı  bakteriya mənşəli ",
     desc1: "xəstəlik törədicilərinin təbii substratdan ayrılması ",
@@ -44,14 +50,14 @@ const serviceData = [
   },
   {
     id: 5,
-    logo: <BiotechOutlinedIcon fontSize="large" />,
+    logo: img5,
     title: "Monitorinq ",
     desc: "Tarla, bağ, bostan və istixana sahələrində ",
     desc1: "monitorinqlərin aparılması.",
   },
   {
     id: 6,
-    logo: <BiotechOutlinedIcon fontSize="large" />,
+    logo: img6,
     title: "Təlim",
     desc: "Öz sahələrində ixtisaslaşmış əməkdaşlar daha yaxşı ",
     desc1: "nəticə əldə etmək, aqrar sahədə inkişaflar üçün ",
@@ -155,7 +161,9 @@ const Services = () => {
             }`}
           >
             <div className="intoBox">
-              <span className="labIcon">{box.logo}</span>
+              <span className="labIcon">
+                <img src={box.logo} alt="" />
+              </span>
               <div className="labTitle">
                 {box.title} <br /> {box.title1}
               </div>
@@ -168,7 +176,7 @@ const Services = () => {
               </div>
               <div className="readMore">
                 <div className="redMoreBox"></div>
-                <span onClick={navigateReadMore}>READ MORE</span>
+                <span onClick={navigateReadMore}>DAHA ƏTRAFLI</span>
               </div>
             </div>
           </div>

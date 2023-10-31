@@ -1,6 +1,8 @@
 import "./blogPage.scss";
-import bgImg from "../../assets/pageBanner.jpg";
+import bgImg from "../../assets/abk-banner-3.jpg";
 import {AiOutlineUser} from 'react-icons/ai'
+import img1 from './imgs/img1.jpeg'
+import img2 from './imgs/img2.jpeg'
 
 const BlogPage = () => {
   return (
@@ -12,7 +14,7 @@ const BlogPage = () => {
         <h1>BLOQ</h1>
       </div>
       <div className="blogContent">
-        <img src="https://bioxlab-next-js.vercel.app/assets/img/blog/blog-in-01.jpg" alt="" />
+        <img src={img1} alt="" />
         <div className="icons">
           <div className="icon">
             <span><AiOutlineUser/></span>
@@ -32,7 +34,7 @@ const BlogPage = () => {
         {/* <button>Read More</button>   */}
       </div>
       <div className="blogContent">
-        <img src="https://bioxlab-next-js.vercel.app/assets/img/blog/blog-in-01.jpg" alt="" />
+        <img src={img2} alt="" />
         <div className="icons">
           <div className="icon">
             <span><AiOutlineUser/></span>

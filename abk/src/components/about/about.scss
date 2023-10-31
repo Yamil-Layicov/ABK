@@ -15,7 +15,7 @@
         width: 300px;
         height: 300px;
         border-radius: 50%;
-        font-size: 24px;
+        font-size: 26px;
         color: white;
         font-weight: 500;
         display: flex;
@@ -27,7 +27,7 @@
         .spanNum {
           font-size: 125px;
           font-family: "Days One", sans-serif;
-          line-height: 120px;
+          line-height: 100px;
         }
 
         .spanTexts{
@@ -198,6 +198,10 @@
     .imgContainer{
       .experienceBox{
         left: 80px !important;
+
+        .spanNum{
+          line-height: 120px !important;
+        }
       }
       .img{
         img{

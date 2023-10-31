@@ -14,52 +14,46 @@ const Footer = () => {
             alt=""
           />
           <p>
-            Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea
-            commodo claritatem itamconse quat.Exerci tation ullamcorper.
+          Agro Bitki Klinikasi olaraq, bizim missiyamız ölkənin iqtisadiyyatında prioritet sayılan kənd təsərrüfat sahələrinin daimi tərəqqisini təmin etmək, həmçinin, ən son texnoloji avadanlıqların və mütəxəssisilərin köməyi ilə bitki, su və qida məhsullarını analiz etməklə sağlam gələcəyə nail olmaqdır.
+
           </p>
           <div className="socials">
-            <img src={fb} alt="" />
-            <img src={insta} alt="" />
-            <img src={twt} alt="" />
+            <a href="https://www.facebook.com/agrobitkiklinikasil" rel="noreferrer" target="_blank"><img src={fb}  alt="" /></a> 
+            <a href="https://www.instagram.com/agrobitkiklinikasi/" rel="noreferrer" target="_blank" ><img src={insta}  alt="" /></a>
           </div>
         </div>
         <div className="secondBox">
-          <h4>Useful links</h4>
-          <p>Contact us</p>
-          <p>Help & About us</p>
-          <p>Shipping & Returns</p>
-          <p>Refund Policy</p>
-          <p>About us</p>
-          <p>Services</p>
+          <h4>Faydalı bağlantılar</h4>
+          <p>Haqqımızda</p>
+          <p>Xidmətlər</p>
+          <p>Bloq</p>
+          <p>FAQ</p>
+          <p>Əlaqə</p>
         </div>
         <div className="thirdBox">
-          <h4>Contact info</h4>
-          <p>Ta-134/A, Gulshan Badda Link</p>
-          <p>(+880)155 69569 365</p>
-          <p>support@rstheme.com</p>
-          <p>Office Hours: 8AM - 11PM</p>
-          <p>Sunday - Wekend Day</p>
+          <h4>Əlaqə məlumatı</h4>
+          <p>Bakı şəhər, Nərimanov rayonu, <br /> Ələsgər Qayıbov 12 22</p>
+          <p>(+994 12) 514 19 46</p>
+          <p>info@abk-fito.az</p>
+          {/* <p>Office Hours: 8AM - 11PM</p>
+          <p>Sunday - Wekend Day</p> */}
         </div>
         <div className="subcriber">
-          <h4>Subscribe Newslatter</h4>
-          <p>
-            Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea
-            commodo
-          </p>
+          <h4>Yeni xəbərlər üçün Abunə olun </h4>
           <div className="inputMsg">
-            <input type="text" placeholder="Enter Mail" />
+            <input type="text" placeholder="E-Poçt daxil edin " />
             <div className="sendBox"><BiLogoTelegram/></div>
           </div>
         </div>
       </div>
       <div className="copyright">
         <span>
-          © Copyright © 2022 FİTOLAB. Bütün Hüquqlar Qorunur.
+          © Copyright © 2023 Agro bitki klinikası. Bütün Hüquqlar Qorunur.
         </span>
         <div className="right">
-          <span>Terms and conditions</span>
+          {/* <span>Terms and conditions</span>
           <span>Privacy policy</span>
-          <span>Pricing</span>
+          <span>Pricing</span> */}
         </div>
       </div>
     </div>

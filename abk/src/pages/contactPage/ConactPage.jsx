@@ -1,4 +1,4 @@
-import bgImg from "../../assets/pageBanner.jpg";
+import bgImg from "../../assets/abk-banner-3.jpg";
 import "./contactPage.scss";
 import { CiLocationOn } from "react-icons/ci";
 import { BsPhone } from "react-icons/bs";

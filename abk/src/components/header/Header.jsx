@@ -1,8 +1,16 @@
 import "./header.scss";
 import BlurOnOutlinedIcon from "@mui/icons-material/BlurOnOutlined";
 import PersonAddAlt1OutlinedIcon from "@mui/icons-material/PersonAddAlt1Outlined";
+import {useNavigate} from 'react-router-dom';
+import img1 from './img1.jpg' ;
 
 const Header = () => {
+  const navigate = useNavigate()
+
+  const navigateAbout = () => {
+    navigate("haqqımızda")
+  }
+
   return (
     <div className="header">
       <div className="left">
@@ -11,12 +19,12 @@ const Header = () => {
         <p>
         Ən son texnoloji avadanlıqlarla təmin olunmuş tam lisenziyalı və akkreditə olunmuş laboratoriya. 
         </p>
-        <button>Haqqımızda</button>
+        <button onClick={navigateAbout}>Haqqımızda</button>
       </div>
       <div className="right">
         <div className="img">
           <img
-            src="https://bioxlab-next-js.vercel.app/assets/img/banner/banner-01.png"
+            src={img1}
             alt=""
           />
           <div className="video">

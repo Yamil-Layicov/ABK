@@ -1,6 +1,9 @@
 import "./whyChooseUs.scss";
 import BiotechOutlinedIcon from "@mui/icons-material/BiotechOutlined";
 import { ImLab } from "react-icons/im";
+import {GoClock} from 'react-icons/go';
+import {BiObjectsVerticalBottom} from 'react-icons/bi'
+import {BsPeople} from 'react-icons/bs'
 
 const WhyChooseUs = () => {
   return (
@@ -21,7 +24,7 @@ const WhyChooseUs = () => {
         <div className="box">
           <div className="labIcon">
             <span>
-            <ImLab />
+            <GoClock />
             </span>
           </div>
           <h3>Sürətli İş Prosesi</h3>
@@ -30,7 +33,7 @@ const WhyChooseUs = () => {
         <div className="box">
           <div className="labIcon">
             <span>
-            <ImLab />
+            <BiObjectsVerticalBottom/>
             </span>
           </div>
           <h3>24/7 əlçatanlıq</h3>
@@ -39,7 +42,7 @@ const WhyChooseUs = () => {
         <div className="box">
           <div className="labIcon">
             <span>
-            <ImLab />
+            <BsPeople/>
             </span>
           </div>
           <h3>Mütəxəssislərdən ibarət komanda</h3>

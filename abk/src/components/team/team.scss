@@ -27,7 +27,6 @@
         display: flex;
         .item {
           min-width: 440px;
-          height: 470px;
           position: relative;
           background-color: rgb(255, 255, 255);
           border-radius: 5px;
@@ -47,7 +46,7 @@
             height: 100%;
             pointer-events: none;
             object-fit: cover;
-            height: 300px;
+            height: 400px;
             border-radius: 5px;
             transition: all .4s ease-in-out;
           }
@@ -132,7 +131,6 @@
         }
         .item {
           min-width: 100% !important;
-          height: 500px !important;
   
           img {
             object-fit: cover;

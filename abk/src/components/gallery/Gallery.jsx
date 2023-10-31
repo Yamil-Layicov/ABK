@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Suspense, lazy, useEffect, useRef, useState } from "react";
 import AddIcon from '@mui/icons-material/Add';
 
+
 const images = [
     {
       id: 1,
@@ -88,8 +89,8 @@ const Gallery = () => {
   return (
     <div className="gallery">
       <div className="galleryHeader">
-        <h6>___WORK GALLERY___</h6>
-        <h1>Bioxlab Gallery</h1>
+        <h6>___İŞ QALEREYASI___</h6>
+        <h1>Agro Bitki Klinikası Qalereya</h1>
       </div>
       <div className="gallerySlider">
         <motion.div
@@ -126,9 +127,9 @@ const Gallery = () => {
           </motion.div>
         </motion.div>
       </div>
-      <div className="moreBtn">
+      {/* <div className="moreBtn">
       Daha ətraflı
-      </div>
+      </div> */}
       {showModal && (
         <Suspense fallback={<div>Loading...</div>}>
           <Modal

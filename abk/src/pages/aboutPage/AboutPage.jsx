@@ -1,6 +1,9 @@
-import bgImg from "../../assets/pageBanner.jpg";
+import bgImg from "../../assets/abk-banner-3.jpg";
 import "./aboutPage.scss";
 import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
+import img1 from './imgs/img1.jpg';
+import img2 from './imgs/img2.jpg';
+import img3 from './imgs/img3.jpg';
 
 
 const AboutPage = () => {
@@ -15,9 +18,10 @@ const AboutPage = () => {
 
       <div className="aboutContent">
         <div className="imgContainer">
-          <div className="imgOne">
+          <div className="imgOne" >
             <img
-              src="https://bioxlab-next-js.vercel.app/assets/img/about/about-bg-04.jpg"
+            src={img3}
+             
               alt=""
             />
             <div className="experinceBox">
@@ -29,13 +33,13 @@ const AboutPage = () => {
           <div>
             <div className="imgTwo">
               <img
-                src="https://bioxlab-next-js.vercel.app/assets/img/about/about-bg-05.jpg"
+                src={img2}
                 alt=""
               />
             </div>
             <div className="imgThree">
               <img
-                src="https://bioxlab-next-js.vercel.app/assets/img/about/about-bg-06.jpg"
+                 src={img1}
                 alt=""
               />
             </div>

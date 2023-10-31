@@ -1,5 +1,5 @@
 .servicePage {
-    padding-bottom: 160px;
+  padding-bottom: 160px;
   .hedaerSection {
     margin-top: 125px;
     position: relative;
@@ -10,7 +10,7 @@
       height: 500px;
       &::after {
         content: "";
-        background-color: rgba(13, 9, 79, 0.586);
+        background-color: rgba(13, 12, 28, 0.237);
         width: 100%;
         height: 100%;
         position: absolute;
@@ -41,22 +41,22 @@
   .centerSection {
     background-image: url("../../assets/servicesBg.png");
 
-    .textHeader{
-        text-align: center;
-        padding: 100px 0;
+    .textHeader {
+      text-align: center;
+      padding: 100px 0;
 
-        h5 {
-            color: #0e63ff;
-            font-weight: 700;
-            text-transform: uppercase;
-            padding-bottom: 10px;
-          }
-          h1 {
-            color: #171151;
-            font-size: 45px;
-            padding-top: 10px;
-            font-family: "Days One", sans-serif;
-          }
+      h5 {
+        color: #0e63ff;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding-bottom: 10px;
+      }
+      h1 {
+        color: #171151;
+        font-size: 45px;
+        padding-top: 10px;
+        font-family: "Days One", sans-serif;
+      }
     }
 
     .boxes {
@@ -92,6 +92,8 @@
             transition: all 0.3s ease-in-out;
             position: relative;
             padding: 30px;
+            width: 120px;
+            height: 120px;
             clip-path: polygon(
               45% 1.33975%,
               46.5798% 0.60307%,
@@ -273,7 +275,7 @@
           color: #0e63ff;
 
           &::after {
-            background-color: #0e63ff;
+            background-color: #0e62ff5a;
           }
         }
         &:hover {
@@ -302,7 +304,7 @@
           color: #f72a75;
 
           &::after {
-            background-color: #f72a75;
+            background-color: #f72a755c;
           }
         }
         &:hover {
@@ -331,7 +333,7 @@
           color: #10d0a1;
 
           &::after {
-            background-color: #10d0a1;
+            background-color: #10d0a051;
           }
         }
         &:hover {
@@ -353,104 +355,92 @@
   }
 }
 
-@media (max-width:1600px){
-    .servicePage{
-        .centerSection{
-            .boxes{
-                padding: 0 60px;
-            }
-        }
-        
+@media (max-width: 1600px) {
+  .servicePage {
+    .centerSection {
+      .boxes {
+        padding: 0 60px;
+      }
     }
+  }
 }
 
-@media (max-width:1400px){
-    .servicePage{
-        .centerSection{
-            .boxes{
-                grid-template-columns: repeat(2, 1fr);
-                padding: 0 120px;
-                .box{
-                    .intoBox{
-                        .labTitle{
-                            font-size: 18px;
-                        }
-                    }
-                   
-                }
+@media (max-width: 1400px) {
+  .servicePage {
+    .centerSection {
+      .boxes {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 120px;
+        .box {
+          .intoBox {
+            .labTitle {
+              font-size: 18px;
             }
+          }
         }
-        
+      }
     }
+  }
 }
 
-@media (max-width:1200px){
-    .servicePage{
-        .centerSection{
-            .boxes{
-                padding: 0 60px;
-                .box{
-                    .intoBox{
-                        .labTitle{
-                            
-                        }
-                    }
-                   
-                }
+@media (max-width: 1200px) {
+  .servicePage {
+    .centerSection {
+      .boxes {
+        padding: 0 60px;
+        .box {
+          .intoBox {
+            .labTitle {
             }
+          }
         }
-        
+      }
     }
+  }
 }
 
-@media (max-width:1000px){
-    .servicePage{
-        .centerSection{
-            .boxes{
-                padding: 0 20px;
-                gap: 20px;
-                .box{
-                    .intoBox{
-                        padding: 50px 40px;
-                        .labTitle{
-                            
-                        }
-                    }
-                   
-                }
+@media (max-width: 1000px) {
+  .servicePage {
+    .centerSection {
+      .boxes {
+        padding: 0 20px;
+        gap: 20px;
+        .box {
+          .intoBox {
+            padding: 50px 40px;
+            .labTitle {
             }
+          }
         }
-        
+      }
     }
+  }
 }
 
-@media (max-width:800px){
-    .servicePage{
-        .centerSection{
-            .boxes{
-                grid-template-columns: repeat(1, 1fr);
-                padding: 0 15px;
-                gap: 45px;
-                .box{
-                    .intoBox{
-                        padding: 40px 25px;
-                        .labTitle{
-                            
-                        }
-                    }
-                   
-                }
+@media (max-width: 800px) {
+  .servicePage {
+    .centerSection {
+      .boxes {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0 15px;
+        gap: 45px;
+        .box {
+          .intoBox {
+            padding: 40px 25px;
+            .labTitle {
             }
+          }
         }
-        
+      }
     }
+  }
 }
 
-@media (max-width:600px){
-  .servicePage{
-    .hedaerSection{
+@media (max-width: 600px) {
+  .servicePage {
+    .hedaerSection {
       margin-top: 90px;
-      h1{
+      h1 {
         font-size: 45px;
         left: 5%;
       }

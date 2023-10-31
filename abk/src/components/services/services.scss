@@ -36,6 +36,8 @@
           transition: all 0.3s ease-in-out;
           position: relative;
           padding: 30px;
+          width: 120px;
+          height: 120px;
           clip-path: polygon(
             45% 1.33975%,
             46.5798% 0.60307%,
@@ -221,7 +223,7 @@
         color: #0e63ff;
 
         &::after {
-          background-color: #0e63ff;
+          background-color: #0e62ff80;
         }
       }
       &:hover {
@@ -247,10 +249,10 @@
       }
       .labIcon {
         background-color: #feeaf1;
-        color: #f72a75;
+        color: #f72a7575;
 
         &::after {
-          background-color: #f72a75;
+          background-color: #f72a7560;
         }
       }
       &:hover {
@@ -279,7 +281,7 @@
         color: #10d0a1;
 
         &::after {
-          background-color: #10d0a1;
+          background-color: #10d0a050;
         }
       }
       &:hover {

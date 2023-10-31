@@ -1,5 +1,5 @@
 import "./faqPage.scss";
-import bgImg from "../../assets/pageBanner.jpg";
+import bgImg from "../../assets/abk-banner-3.jpg";
 
 const FaqPage = () => {
   return (

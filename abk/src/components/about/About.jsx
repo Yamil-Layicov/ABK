@@ -1,7 +1,18 @@
 import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
 import "./about.scss";
+import {useNavigate} from 'react-router-dom'
 
 const About = () => {
+
+  const navigate = useNavigate()
+
+  const navigateAbout = () => {
+    navigate("haqqımızda")
+    window.scrollTo({
+      top:0,
+    })
+  }
+
   return (
     <div className="about">
       <div className="imgContainer">
@@ -49,7 +60,7 @@ const About = () => {
           </span>
           <span>In aliquet dui nec lectus</span>
         </div> */}
-        <button>Haqqımızda</button>
+        <button onClick={navigateAbout}>Haqqımızda</button>
       </div>
     </div>
   );

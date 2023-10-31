@@ -1,41 +1,46 @@
 import "./servicePage.scss";
-import bgImg from "../../assets/pageBanner.jpg";
-import BiotechOutlinedIcon from "@mui/icons-material/BiotechOutlined";
+import bgImg from "../../assets/abk-banner-3.jpg";
+import img1 from './imgs/abk fitosanitar.svg';
+import img2 from './imgs/abk virusoloji.svg';
+import img3 from './imgs/abk gmo.svg';
+import img4 from './imgs/abk torpaq və su.svg';
+import img5 from './imgs/abk monitoring.svg';
+import img6 from './imgs/abk təlim.svg';  
 
 const serviceData = [
   {
     id: 1,
-    logo: <BiotechOutlinedIcon fontSize="large" />,
+    logo: img1,
     title: "Virusoloji",
     desc: "Virusologiya şöbəsi – bitki nümunələrində karantin nəzarətində olan virus xəstəliklərinin aşkarlanması, onların molekulyar mexanizm vasitəsilə daha dəqiq və qısa zamanda diaqnostikasını həyata keçirir. " ,
   },
   {
     id: 2,
-    logo: <BiotechOutlinedIcon fontSize="large" />,
+    logo:img2,
     title: "Qida məhsullarının GMO analizi",
     desc: "Laboratoriamızda qida məhsullarında geni modifikasiya olunmuş orqanizmlərin Real vaxtda PZR ilə təyini həyata keçirilir. ",
   },
   {
     id: 3,
-    logo: <BiotechOutlinedIcon fontSize="large" />,
+    logo: img3,
     title: "Bakterioloji ",
     desc: "Fitopatoloji ekspertiza zamanı  bakteriya mənşəli xəstəlik törədicilərinin təbii substratdan ayrılması və qida mühitlərinə əkilməsi, SZ810 B2/L stereo mikroskop, EXT 20 biolojik mikroskop kimi müasir optik cihazlardan istifadə olunmaqla morfoloji və morfometrik əlamətlərə əsasən xəstəlik törədicilərinin aşkarlanması aparılır",
   },
   {
     id: 4,
-    logo: <BiotechOutlinedIcon fontSize="large" />,
+    logo: img4,
     title: "Təlim",
     desc: "Öz sahələrində ixtisaslaşmış əməkdaşlar daha yaxşı nəticə əldə etmək, aqrar sahədə inkişaflar üçün xüsusi təlimlər keçirirlər",
   },
   {
     id: 5,
-    logo: <BiotechOutlinedIcon fontSize="large" />,
+    logo: img5,
     title: "Konsultasiya",
     desc: "Konsultasiya təcrübəli personalımız tərəfindən həyata keçirilir. Ərazilərdən nümunəgötürmə xidmətləri və laboratoriya testləri ən müasir metodlar və avadanlıqlarla, beynəlxalq standartlar və metodlara uyğun olaraq həyata keçirilir.",
   },
   {
     id: 6,
-    logo: <BiotechOutlinedIcon fontSize="large" />,
+    logo: img6,
     title: "Monitorinq",
     desc: "Tarla bitkiləri, meyvə bağları və istixanalarda ziyanverici təsirlərinin müəyyən olunması üçün mütəxəssislər tərəfindən sahələrdə monitorinqlər aparılır.",
   },
@@ -66,7 +71,9 @@ const ServicePage = () => {
             }`}
           >
             <div className="intoBox">
-              <span className="labIcon">{box.logo}</span>
+              <span className="labIcon">
+                <img src={box.logo} alt="" />
+              </span>
               <div className="labTitle">{box.title}</div>
               <div className="labDesc">
                 <div>{box.desc}</div>

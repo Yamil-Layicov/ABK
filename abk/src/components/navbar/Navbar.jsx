@@ -33,8 +33,16 @@ const Navbar = () => {
     };
   }, []);
 
+
+
   const openNavbar = () => {
-    setIsOpenNavbar(!isOpenNavbar);
+    if(isOpenNavbar){
+      setIsOpenNavbar(false);
+      document.body.style.overflow = "hidden"
+    }else{
+      setIsOpenNavbar(true);
+      document.body.style.overflow = "auto"
+    }
   };
 
   return (
@@ -51,7 +59,7 @@ const Navbar = () => {
           <NavLink style={({isActive}) => ({color: isActive ? "#171151" : ''})} onClick={() => moveToTop()} to='/' className='link'>Ana səhifə</NavLink>
             <NavLink style={({isActive}) => ({color: isActive ? "#171151" : ''})} onClick={() => moveToTop()} to='/services' className='link'>Xidmətlər</NavLink>
             <NavLink style={({isActive}) => ({color: isActive ? "#171151" : ''})} onClick={() => moveToTop()} to='/blog' className='link'>Bloq</NavLink>
-            <NavLink style={({isActive}) => ({color: isActive ? "#171151" : ''})} onClick={() => moveToTop()} to='/about' className='link'>Haqqımızda</NavLink>
+            <NavLink style={({isActive}) => ({color: isActive ? "#171151" : ''})} onClick={() => moveToTop()} to='/haqqımızda' className='link'>Haqqımızda</NavLink>
             <NavLink style={({isActive}) => ({color: isActive ? "#171151" : ''})} onClick={() => moveToTop()} to='/contact' className='link'>Əlaqə</NavLink>
             <NavLink style={({isActive}) => ({color: isActive ? "#171151" : ''})} onClick={() => moveToTop()} to='/faq' className='link'>faq</NavLink>
           </div>
