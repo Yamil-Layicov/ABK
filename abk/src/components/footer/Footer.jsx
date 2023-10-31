@@ -1,7 +1,6 @@
 import "./footer.scss";
 import fb from "../../assets/socials/facebook_icon.svg";
 import insta from "../../assets/socials/instagram_icon.svg";
-import twt from "../../assets/socials/twitter_icon.svg";
 import {BiLogoTelegram} from 'react-icons/bi'
 
 const Footer = () => {

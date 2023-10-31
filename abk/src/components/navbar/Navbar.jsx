@@ -4,8 +4,11 @@ import { useEffect, useState } from "react";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
-import {BiLogoFacebook} from 'react-icons/bi'
-import { NavLink } from 'react-router-dom'
+import { BiLogoFacebook } from "react-icons/bi";
+import { NavLink, useNavigate } from "react-router-dom";
+import logo from "../../assets/logo/Aqro bitki logo.svg";
+import fb from "../../assets/socials/facebook_icon.svg";
+import insta from "../../assets/socials/instagram_icon.svg";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
@@ -21,9 +24,9 @@ const Navbar = () => {
 
   const moveToTop = () => {
     window.scrollTo({
-      top:0,
-    })
-  }
+      top: 0,
+    });
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", changeBackground);
@@ -33,16 +36,41 @@ const Navbar = () => {
     };
   }, []);
 
-
-
   const openNavbar = () => {
-    if(isOpenNavbar){
+    if (isOpenNavbar) {
       setIsOpenNavbar(false);
-      document.body.style.overflow = "hidden"
-    }else{
+      document.body.style.overflow = "hidden";
+    } else {
       setIsOpenNavbar(true);
-      document.body.style.overflow = "auto"
+      document.body.style.overflow = "auto";
     }
+  };
+
+  const navigate = useNavigate();
+
+  const navigate1 = () => {
+    navigate("/");
+    setIsOpenNavbar(false);
+  };
+  const navigate2 = () => {
+    navigate("services");
+    setIsOpenNavbar(false);
+  };
+  const navigate3 = () => {
+    navigate("blog");
+    setIsOpenNavbar(false);
+  };
+  const navigate4 = () => {
+    navigate("haqqımızda");
+    setIsOpenNavbar(false);
+  };
+  const navigate5 = () => {
+    navigate("contact");
+    setIsOpenNavbar(false);
+  };
+  const navigate6 = () => {
+    navigate("faq");
+    setIsOpenNavbar(false);
   };
 
   return (
@@ -50,18 +78,57 @@ const Navbar = () => {
       <nav className={`${navbar && "navActive"}`}>
         <div className="left">
           <div className="logo">
-            <img
-              src="https://bioxlab-next-js.vercel.app/assets/img/logo/logo.png"
-              alt=""
-            />
+            <img style={{ width: "150px" }} src={logo} alt="" />
           </div>
           <div className="links">
-          <NavLink style={({isActive}) => ({color: isActive ? "#171151" : ''})} onClick={() => moveToTop()} to='/' className='link'>Ana səhifə</NavLink>
-            <NavLink style={({isActive}) => ({color: isActive ? "#171151" : ''})} onClick={() => moveToTop()} to='/services' className='link'>Xidmətlər</NavLink>
-            <NavLink style={({isActive}) => ({color: isActive ? "#171151" : ''})} onClick={() => moveToTop()} to='/blog' className='link'>Bloq</NavLink>
-            <NavLink style={({isActive}) => ({color: isActive ? "#171151" : ''})} onClick={() => moveToTop()} to='/haqqımızda' className='link'>Haqqımızda</NavLink>
-            <NavLink style={({isActive}) => ({color: isActive ? "#171151" : ''})} onClick={() => moveToTop()} to='/contact' className='link'>Əlaqə</NavLink>
-            <NavLink style={({isActive}) => ({color: isActive ? "#171151" : ''})} onClick={() => moveToTop()} to='/faq' className='link'>faq</NavLink>
+            <NavLink
+              style={({ isActive }) => ({ color: isActive ? "#171151" : "" })}
+              onClick={() => moveToTop()}
+              to="/"
+              className="link"
+            >
+              Ana səhifə
+            </NavLink>
+            <NavLink
+              style={({ isActive }) => ({ color: isActive ? "#171151" : "" })}
+              onClick={() => moveToTop()}
+              to="/services"
+              className="link"
+            >
+              Xidmətlər
+            </NavLink>
+            <NavLink
+              style={({ isActive }) => ({ color: isActive ? "#171151" : "" })}
+              onClick={() => moveToTop()}
+              to="/blog"
+              className="link"
+            >
+              Bloq
+            </NavLink>
+            <NavLink
+              style={({ isActive }) => ({ color: isActive ? "#171151" : "" })}
+              onClick={() => moveToTop()}
+              to="/haqqımızda"
+              className="link"
+            >
+              Haqqımızda
+            </NavLink>
+            <NavLink
+              style={({ isActive }) => ({ color: isActive ? "#171151" : "" })}
+              onClick={() => moveToTop()}
+              to="/contact"
+              className="link"
+            >
+              Əlaqə
+            </NavLink>
+            <NavLink
+              style={({ isActive }) => ({ color: isActive ? "#171151" : "" })}
+              onClick={() => moveToTop()}
+              to="/faq"
+              className="link"
+            >
+              faq
+            </NavLink>
           </div>
         </div>
         <div className="mainRight">
@@ -80,29 +147,36 @@ const Navbar = () => {
           </div>
         </div>
 
-
-
         <div className={`${isOpenNavbar ? "activeMobileNav" : "mobileNav"}`}>
           <div className="mobileLeft">
-            <div className="logo">
-              <img
-                src="https://bioxlab-next-js.vercel.app/assets/img/logo/white-logo.png"
-                alt=""
-              />
+            <div className="logo" style={{ height: "40px" }}>
+              <img style={{ paddingRight: "50px" }} src={logo} alt="" />
               <div onClick={() => setIsOpenNavbar(false)} className="iconMenu">
                 <CloseOutlinedIcon />
               </div>
             </div>
             <div className="links">
-              <span>Home</span>
-              <span>Page</span>
-              <span>Page</span>
-              <span>Page</span>
-              <span>Blog</span>
-              <span>Contact</span>
+              <span style={{ cursor: "pointer" }} onClick={navigate1}>
+                Ana səhifə
+              </span>
+              <span style={{ cursor: "pointer" }} onClick={navigate2}>
+                Xidmətlər
+              </span>
+              <span style={{ cursor: "pointer" }} onClick={navigate3}>
+                Bloq
+              </span>
+              <span style={{ cursor: "pointer" }} onClick={navigate4}>
+                Haqqımızda
+              </span>
+              <span style={{ cursor: "pointer" }} onClick={navigate5}>
+                Əlaqə
+              </span>
+              <span style={{ cursor: "pointer" }} onClick={navigate6}>
+                faq
+              </span>
             </div>
             <div className="navContact">
-              <h5>Contact us</h5>
+              <h5>Bizimlə əlaqə saxlayın</h5>
               <p>
                 <span>
                   <StarOutlinedIcon
@@ -110,7 +184,7 @@ const Navbar = () => {
                     fontSize="small"
                   />
                 </span>
-                <span>Lorem ipsum dolor sit.asd</span>
+                <span>Bakı şəhər, Nərimanov rayonu, <br /> Ələsgər Qayıbov 12 22</span>
               </p>
               <p>
                 <span>
@@ -119,7 +193,7 @@ const Navbar = () => {
                     fontSize="small"
                   />
                 </span>
-                <span>+234324324234</span>
+                <span>(+994 12) 514 19 46</span>
               </p>
               <p>
                 <span>
@@ -128,19 +202,33 @@ const Navbar = () => {
                     fontSize="small"
                   />
                 </span>
-                <span>loremasd@mail.ru</span>
+                <span>info@abk-fito.az</span>
               </p>
               <div className="socials">
-                <span><BiLogoFacebook/></span>
-                <span><BiLogoFacebook/></span>
-                <span><BiLogoFacebook/></span>
-                <span><BiLogoFacebook/></span>
+                <span>
+                  <a
+                    href="https://www.facebook.com/agrobitkiklinikasil"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <img style={{display:"inline-block", width:"30px"}} src={fb} alt="" />
+                  </a>
+                </span>
+                <span>
+                  <a
+                    href="https://www.instagram.com/agrobitkiklinikasi/"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <img style={{display:"inline-block", width:"30px"}} src={insta} alt="" />
+                  </a>
+                </span>
+                <span></span>
               </div>
             </div>
           </div>
         </div>
 
-        
         {isOpenNavbar && <div className="backBlack"></div>}
       </nav>
     </>
