@@ -2,14 +2,16 @@ import "./footer.scss";
 import fb from "../../assets/socials/facebook_icon.svg";
 import insta from "../../assets/socials/instagram_icon.svg";
 import {BiLogoTelegram} from 'react-icons/bi'
+import logo from "../../assets/logo/Aqro bitki logo.svg";
 
 const Footer = () => {
   return (
     <div className="footer">
       <div className="boxes">
-        <div className="firstBox">
+        <div className="firstBox" style={{position:"relative"}}>
           <img
-            src="https://bioxlab-next-js.vercel.app/assets/img/logo/white-logo.png"
+          style={{backgroundColor:"", width:"150px", position:"absolute", top:"-70px", left:"0"}}
+            src={logo}
             alt=""
           />
           <p>

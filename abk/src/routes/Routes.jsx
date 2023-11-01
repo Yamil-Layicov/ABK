@@ -1,15 +1,15 @@
 import HomeLayout from '../pages/homeLayout/HomeLayout'
-import Login from '../pages/loginPage/Login'
 import Error404 from '../pages/error404Page/Error404'
-// import PrivateRoute from './PrivateRoute'
-// import AdminLayout from '../admin/adminLayout/AdminLayout'
-// import AdminHome from '../admin/pages/home/AdminHome'
-// import Users from '../admin/pages/users/Users'
-// import AdminAbout from '../admin/pages/about/AdminAbout'
-// import AdminFooter from '../admin/pages/footer/AdminFooter'
-// import AdminGallery from '../admin/pages/gallery/AdminGallery'
-// import AdminReservation from '../admin/pages/reservation/AdminReservation'
-// import AdminMenuPage from '../admin/pages/menu/AdminMenuPage'
+import PrivateRoute from './PrivateRoute'
+import AdminLayout from '../admin/adminLayout/AdminLayout'
+import AdminHome from '../admin/pages/home/AdminHome'
+import Users from '../admin/pages/users/Users'
+import AdminAbout from '../admin/pages/about/AdminAbout'
+import AdminFooter from '../admin/pages/footer/AdminFooter'
+import AdminGallery from '../admin/pages/gallery/AdminGallery'
+import AdminReservation from '../admin/pages/reservation/AdminReservation'
+import AdminMenuPage from '../admin/pages/menu/AdminMenuPage'
+import Login from '../pages/adminLoginPage/Login'
 
 import HomePage from '../pages/homePage/HomePage';
 import ServicePage from '../pages/servicesPage/ServicePage';
@@ -18,7 +18,9 @@ import AboutPage from '../pages/aboutPage/AboutPage';
 import ConactPage from '../pages/contactPage/ConactPage';
 import FaqPage from '../pages/faqPage/FaqPage';
 
-
+import Layout from '../pages/kabinetLoginRegister/loayout/Layout';
+import LoginPage from '../pages/kabinetLoginRegister/login/LoginPage';
+import RegisterPage from '../pages/kabinetLoginRegister/register/RegisterPage';
 
 const routes = [
   {
@@ -61,40 +63,55 @@ const routes = [
     element: <Error404/>,
   },
 
-  // {
-  //   path: '/admin',
-  //   element: <AdminLayout />,
-  //   children: [
-  //     {
-  //       index: true,
-  //       element: <PrivateRoute><AdminHome /></PrivateRoute>,
-  //     },
-  //     {
-  //       path: 'profil',
-  //       element: <PrivateRoute><Users/></PrivateRoute>,
-  //     },
-  //     {
-  //       path: 'about',
-  //       element: <PrivateRoute><AdminAbout /></PrivateRoute>,
-  //     },
-  //     {
-  //       path: 'footer',
-  //       element: <PrivateRoute><AdminFooter /></PrivateRoute>,
-  //     },
-  //     {
-  //       path: 'menu',
-  //       element: <PrivateRoute><AdminMenuPage /></PrivateRoute>,
-  //     },
-  //     {
-  //       path: 'gallery',
-  //       element: <PrivateRoute><AdminGallery/></PrivateRoute>,
-  //     },
-  //     {
-  //       path: 'reservation',
-  //       element: <PrivateRoute><AdminReservation/></PrivateRoute>,
-  //     },
-  //   ],
-  // },
+  {
+    path: '/admin',
+    element: <AdminLayout />,
+    children: [
+      {
+        index: true,
+        element: <PrivateRoute><AdminHome /></PrivateRoute>,
+      },
+      {
+        path: 'profil',
+        element: <PrivateRoute><Users/></PrivateRoute>,
+      },
+      {
+        path: 'about',
+        element: <PrivateRoute><AdminAbout /></PrivateRoute>,
+      },
+      {
+        path: 'footer',
+        element: <PrivateRoute><AdminFooter /></PrivateRoute>,
+      },
+      {
+        path: 'menu',
+        element: <PrivateRoute><AdminMenuPage /></PrivateRoute>,
+      },
+      {
+        path: 'gallery',
+        element: <PrivateRoute><AdminGallery/></PrivateRoute>,
+      },
+      {
+        path: 'reservation',
+        element: <PrivateRoute><AdminReservation/></PrivateRoute>,
+      },
+    ],
+  },
+
+  {
+    path:"/şəksiKabinet",
+    element: <Layout/>,
+    children:[
+      {
+        index: true,
+        element: <LoginPage/>
+      },
+      {
+        path:"/şəksiKabinet/qeydiyyat",
+        element: <RegisterPage/>
+      }
+    ]
+  }
 
 ];
 

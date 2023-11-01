@@ -55,12 +55,12 @@ const menu = [
     id: 3,
     title: "general",
     listItems: [
-      {
-        id: 1,
-        title: "Rezervasiya",
-        url: "/admin/reservation",
-        icon: "/element.svg",
-      },
+      // {
+      //   id: 1,
+      //   title: "Rezervasiya",
+      //   url: "/admin/reservation",
+      //   icon: "/element.svg",
+      // },
       {
         id: 2,
         title: "Notes",

@@ -34,7 +34,7 @@ const AdminReservation = () => {
   return (
     <div className="adminReservation">
       <table className="content-table">
-        <thead>
+        {/* <thead>
           <tr>
             <th>ID</th>
             <th>Ad</th>
@@ -47,7 +47,7 @@ const AdminReservation = () => {
             <th>Qeyd</th>
             <th>Status</th>
           </tr>
-        </thead>
+        </thead> */}
         <tbody >
           {/* {isLoading ? "Loading..." : data.map((data, index) => (
             <>
@@ -72,7 +72,7 @@ const AdminReservation = () => {
               </tr>
             </>
           ))} */}
-          <h1>Tbody</h1>
+          <h1>Rezervasiya</h1>
         </tbody>
       </table>
     </div>

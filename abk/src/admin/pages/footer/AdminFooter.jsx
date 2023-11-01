@@ -27,7 +27,7 @@ const AdminFooter = () => {
   return (
     <>
       <h1 style={{ marginBottom: "40px" }}>Footer</h1>
-      <div className="adminFooter">
+      {/* <div className="adminFooter">
         <div className="footerBox">
               <div>
               <div>
@@ -47,7 +47,7 @@ const AdminFooter = () => {
           </Suspense>
         )}
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

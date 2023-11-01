@@ -20,7 +20,7 @@ const AdminAbout = () => {
   return (
     <div className="adminAboout">
       <h1>Haqqımızda</h1>
-      <div className="mainContent">
+      {/* <div className="mainContent">
         <div key={aboutData.id}>
           {aboutData.content && (
             <div>
@@ -53,7 +53,7 @@ const AdminAbout = () => {
             </Suspense>
           )}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

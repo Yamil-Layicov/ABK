@@ -4,7 +4,7 @@ const Users = () => {
   return (
     <div className='asdminUsers'>
       <h1>İstifadəçilər</h1>
-      <table className="content-table">
+      {/* <table className="content-table">
         <thead>
           <tr>
             <th>ID</th>
@@ -41,7 +41,7 @@ const Users = () => {
             <td>Admin</td>
           </tr>
         </tbody>
-      </table>
+      </table> */}
     </div>
   )
 }

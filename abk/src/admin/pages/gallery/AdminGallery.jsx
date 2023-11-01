@@ -112,7 +112,7 @@ const AdminGallery = () => {
   return (
     <div className="adminGallery">
       <h1>Qalereya</h1>
-      <div className="content">
+      {/* <div className="content">
         <div className="imgContent">
           {badDataImgs &&
             badDataImgs.map((img, index) => (
@@ -142,9 +142,9 @@ const AdminGallery = () => {
             </Suspense>
           )}
         </div>
-      </div>
+      </div> */}
 
-      <div className="amburanForms">
+      {/* <div className="amburanForms">
         <form onSubmit={handleSubmit}>
           <div className="chooseFile">
           <label className="custom-file-input-label">Şəkil seç</label>
@@ -166,7 +166,7 @@ const AdminGallery = () => {
         </form>
 
         <div></div>
-      </div>
+      </div> */}
     </div>
   );
 };

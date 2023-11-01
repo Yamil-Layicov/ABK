@@ -30,7 +30,7 @@ const AdminMenu = () => {
   return (
     <div className="adminAboout">
       <h1>Menu</h1>
-      <div className="contentTable">
+      {/* <div className="contentTable">
         <table>
           <thead>
             <tr>
@@ -75,7 +75,7 @@ const AdminMenu = () => {
             </Suspense>
           )}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
