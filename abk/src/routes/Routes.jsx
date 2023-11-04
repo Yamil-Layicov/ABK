@@ -5,11 +5,11 @@ import AdminLayout from '../admin/adminLayout/AdminLayout'
 import AdminHome from '../admin/pages/home/AdminHome'
 import Users from '../admin/pages/users/Users'
 import AdminAbout from '../admin/pages/about/AdminAbout'
-import AdminFooter from '../admin/pages/footer/AdminFooter'
 import AdminGallery from '../admin/pages/gallery/AdminGallery'
 import AdminReservation from '../admin/pages/reservation/AdminReservation'
 import AdminMenuPage from '../admin/pages/menu/AdminMenuPage'
 import Login from '../pages/adminLoginPage/Login'
+import Settings from '../admin/pages/setting/Settings'
 
 import HomePage from '../pages/homePage/HomePage';
 import ServicePage from '../pages/servicesPage/ServicePage';
@@ -17,6 +17,7 @@ import BlogPage from '../pages/blogPage/BlogPage';
 import AboutPage from '../pages/aboutPage/AboutPage';
 import ConactPage from '../pages/contactPage/ConactPage';
 import FaqPage from '../pages/faqPage/FaqPage';
+
 
 import Layout from '../pages/kabinetLoginRegister/loayout/Layout';
 import LoginPage from '../pages/kabinetLoginRegister/login/LoginPage';
@@ -81,7 +82,7 @@ const routes = [
       },
       {
         path: 'footer',
-        element: <PrivateRoute><AdminFooter /></PrivateRoute>,
+        element: <PrivateRoute><Settings/></PrivateRoute>,
       },
       {
         path: 'menu',

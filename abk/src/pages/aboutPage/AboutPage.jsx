@@ -4,9 +4,21 @@ import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
 import img1 from './imgs/img1.jpg';
 import img2 from './imgs/img2.jpg';
 import img3 from './imgs/img3.jpg';
+import { useEffect, useState } from "react";
 
 
 const AboutPage = () => {
+
+  const [aboutData, setAboutData] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.abk-fito.az/api/about")
+      .then((res) => res.json())
+      .then((res) => {
+        setAboutData(res), console.log(res);
+      });
+  }, []);
+
   return (
     <div className="aboutPage">
       <div className="hedaerSection">
@@ -19,11 +31,7 @@ const AboutPage = () => {
       <div className="aboutContent">
         <div className="imgContainer">
           <div className="imgOne" >
-            <img
-            src={img3}
-             
-              alt=""
-            />
+            {aboutData && <img src={aboutData.image_1}alt=""/>}
             <div className="experinceBox">
               <span>12</span>
               <span style={{paddingLeft:"38%"}}>İllik</span>
@@ -32,16 +40,10 @@ const AboutPage = () => {
           </div>
           <div>
             <div className="imgTwo">
-              <img
-                src={img2}
-                alt=""
-              />
+            {aboutData && <img src={aboutData.image_2}alt=""/>}
             </div>
             <div className="imgThree">
-              <img
-                 src={img1}
-                alt=""
-              />
+            {aboutData && <img src={aboutData.image_3}alt=""/>}
             </div>
           </div>
         </div>

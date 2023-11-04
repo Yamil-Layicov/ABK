@@ -29,7 +29,7 @@ const AdminMenu = () => {
 
   return (
     <div className="adminAboout">
-      <h1>Menu</h1>
+      <h1>Bloq</h1>
       {/* <div className="contentTable">
         <table>
           <thead>

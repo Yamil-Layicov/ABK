@@ -27,25 +27,25 @@ const menu = [
     listItems: [
       {
         id: 1,
-        title: "Haqqimizda",
+        title: "Haqqımızda",
         url: "/admin/about",
         icon: "/user.svg",
       },
       {
         id: 2,
-        title: "Footer",
+        title: "Tənzimləmələr",
         url: "/admin/footer",
         icon: "/product.svg",
       },
       {
         id: 3,
-        title: "Menyu",
+        title: "Bloq",
         url: "/admin/menu",
         icon: "/order.svg",
       },
       {
         id: 4,
-        title: "Qalereya",
+        title: "Xidmətlər",
         url: "/admin/gallery",
         icon: "/post2.svg",
       },

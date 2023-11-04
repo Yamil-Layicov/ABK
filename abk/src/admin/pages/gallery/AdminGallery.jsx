@@ -111,7 +111,7 @@ const AdminGallery = () => {
 
   return (
     <div className="adminGallery">
-      <h1>Qalereya</h1>
+      <h1>Xidmətlər</h1>
       {/* <div className="content">
         <div className="imgContent">
           {badDataImgs &&

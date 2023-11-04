@@ -3,19 +3,19 @@ import "./services.scss";
 import EastOutlinedIcon from "@mui/icons-material/EastOutlined";
 import WestOutlinedIcon from "@mui/icons-material/WestOutlined";
 import BiotechOutlinedIcon from "@mui/icons-material/BiotechOutlined";
-import {useNavigate} from 'react-router-dom';
-import img1 from './imgs/abk fitosanitar.svg';
-import img2 from './imgs/abk virusoloji.svg';
-import img3 from './imgs/abk gmo.svg';
-import img4 from './imgs/abk torpaq və su.svg';
-import img5 from './imgs/abk monitoring.svg';
-import img6 from './imgs/abk təlim.svg';
+import { useNavigate } from "react-router-dom";
+import img1 from "./imgs/abk fitosanitar.svg";
+import img2 from "./imgs/abk virusoloji.svg";
+import img3 from "./imgs/abk gmo.svg";
+import img4 from "./imgs/abk torpaq və su.svg";
+import img5 from "./imgs/abk monitoring.svg";
+import img6 from "./imgs/abk təlim.svg";
 
 const serviceData = [
   {
     id: 1,
     logo: img1,
-    title: "Fitosanitar laboratoriya ",
+    title: "Fitosanitar laboratoriya",
     desc: "Laboratoriyada fitosanitar nəzarətində olan ",
     desc1: "materiallarda entomoloji, herboloji, fitohelmintoloji, ",
     desc2: " mikoloji analizlər həyata keçirir. ",
@@ -23,7 +23,7 @@ const serviceData = [
   {
     id: 2,
     logo: img2,
-    title: "Virusoloji  laboratoriya",
+    title: "Virusoloji laboratoriya",
     desc: " bitki nümunələrində karantin nəzarətində olan virus ",
     desc1: "xəstəliklərinin aşkarlanması, onların molekulyar ",
     desc2: "mexanizm vasitəsilə daha dəqiq və qısa zamanda ",
@@ -32,8 +32,8 @@ const serviceData = [
   {
     id: 3,
     logo: img3,
-    title: "Qida məhsullarının GMO ",
-    title1: "analizi ",
+    title: "Qida məhsullarının GMO",
+    title1: "analizi",
     desc: "Laboratoriamızda qida məhsullarında geni",
     desc1: "modifikasiya olunmuş orqanizmlərin Real vaxtda ",
     desc2: "PZR ilə təyini həyata keçirilir. ",
@@ -42,16 +42,16 @@ const serviceData = [
     id: 4,
     logo: img4,
     title: "Bakterioloji laboratoriya",
-    desc: "Fitopatoloji ekspertiza zamanı  bakteriya mənşəli ",
+    desc: "Fitopatoloji ekspertiza zamanı bakteriya mənşəli ",
     desc1: "xəstəlik törədicilərinin təbii substratdan ayrılması ",
     desc2: "və qida mühitlərinə əkilməsi, morfoloji və ",
     desc3: "morfometrik əlamətlərə əsasən xəstəlik ",
-    desc4: "törədicilərinin aşkarlanması aparılır."
+    desc4: "törədicilərinin aşkarlanması aparılır.",
   },
   {
     id: 5,
     logo: img5,
-    title: "Monitorinq ",
+    title: "Monitorinq",
     desc: "Tarla, bağ, bostan və istixana sahələrində ",
     desc1: "monitorinqlərin aparılması.",
   },
@@ -69,7 +69,7 @@ const Services = () => {
   const [scrollLeft, setScrollLeft] = useState(0);
   const containerRef = useRef(null);
   const boxWidth = 410;
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleSlide = (direction) => {
     const container = containerRef.current;
@@ -84,7 +84,7 @@ const Services = () => {
     } else {
       newScrollLeft = scrollLeft - boxWidth;
       if (newScrollLeft < 0) {
-        newScrollLeft = 0;
+        newScrollLeft = maxScrollLeft;
       }
     }
 
@@ -98,14 +98,12 @@ const Services = () => {
   const [prevPageX, setPrevPageX] = useState(0);
   const [prevScrollLeft, setPrevScrollLeft] = useState(0);
 
-  
-
   const navigateReadMore = () => {
-    navigate("/services")
+    navigate("/services");
     window.scrollTo({
-      top:0,
-    })
-  }
+      top: 0,
+    });
+  };
 
   const dragging = (e) => {
     if (!isDragStart) return;
@@ -187,3 +185,6 @@ const Services = () => {
 };
 
 export default Services;
+
+
+
