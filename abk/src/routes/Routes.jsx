@@ -5,9 +5,6 @@ import AdminLayout from '../admin/adminLayout/AdminLayout'
 import AdminHome from '../admin/pages/home/AdminHome'
 import Users from '../admin/pages/users/Users'
 import AdminAbout from '../admin/pages/about/AdminAbout'
-import AdminGallery from '../admin/pages/gallery/AdminGallery'
-import AdminReservation from '../admin/pages/reservation/AdminReservation'
-import AdminMenuPage from '../admin/pages/menu/AdminMenuPage'
 import Login from '../pages/adminLoginPage/Login'
 import Settings from '../admin/pages/setting/Settings'
 
@@ -83,18 +80,6 @@ const routes = [
       {
         path: 'footer',
         element: <PrivateRoute><Settings/></PrivateRoute>,
-      },
-      {
-        path: 'menu',
-        element: <PrivateRoute><AdminMenuPage /></PrivateRoute>,
-      },
-      {
-        path: 'gallery',
-        element: <PrivateRoute><AdminGallery/></PrivateRoute>,
-      },
-      {
-        path: 'reservation',
-        element: <PrivateRoute><AdminReservation/></PrivateRoute>,
       },
     ],
   },
