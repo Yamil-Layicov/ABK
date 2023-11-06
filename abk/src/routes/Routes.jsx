@@ -98,7 +98,7 @@ const routes = [
             element: <PrivateRoute><BloqCreate/></PrivateRoute>,
           },
           {
-            path:"edit",
+            path:":id",
             element: <PrivateRoute><BloqEdit/></PrivateRoute>,
           },
         ]

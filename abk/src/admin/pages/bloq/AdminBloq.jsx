@@ -6,7 +6,6 @@ import { useNavigate, useParams } from "react-router-dom";
 
 
 const AdminBloq = () => {
-  const {num} = useParams();
   const navigate = useNavigate();
   
 
@@ -23,6 +22,7 @@ const AdminBloq = () => {
       try {
         const response = await api.get("blogs");
         setBloqData(response.data);
+        console.log(response.data);
 
         setContent(response.data.content);
         setTitle(response.data.title);
@@ -37,9 +37,12 @@ const AdminBloq = () => {
   }, []);
 
 
-
   const handleEdit = (id) =>{
-    console.log(id);
+    navigate(`${id}`)
+  }
+
+  const handleCreate = () => {
+    navigate("create")
   }
 
   return (
@@ -89,17 +92,16 @@ const AdminBloq = () => {
 
       <div className="tableContent">
         <div className="createNewBtn">
-          <button>Yenisini yarat +</button>
+          <button onClick={handleCreate}>Yenisini yarat +</button>
         </div>
       <table>
         <tr>
           <th>Şəkil *</th>
           <th>Başlıq *</th>
           <th>Məzmun *</th>
-          <th>Alətlər paneli *</th>
+          <th>Parametrlər *</th>
         </tr>
         {bloqData.map((item) => (
-          <>
             <tr key={item.id}>
               <td><img style={{width:"100px", height:"100px"}} src={item.image} alt="" /></td>
               <td>{item.title}</td>
@@ -108,8 +110,7 @@ const AdminBloq = () => {
                 <button onClick={() => handleEdit(item.id)}>Redaktə et</button>
               </td>
             </tr>
-          </>
-        ))}
+          ))}
       </table>
       </div>
     </div>

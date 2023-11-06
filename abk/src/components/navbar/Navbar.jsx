@@ -138,7 +138,7 @@ const Navbar = () => {
                 <BlurOnOutlinedIcon />
               </span>
               <span className="text">
-                <span>HELPDESK</span> :+554274545
+                <span>HELPDESK</span> :+994 51 225 43 43
               </span>
             </div>
           </div>
