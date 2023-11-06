@@ -27,6 +27,11 @@ import AdminService from '../admin/pages/services/AdminService'
 import AdminServiceLayout from '../admin/pages/services/adminServiceLayout/AdminServiceLayout'
 import ServiceCreate from '../admin/pages/services/serviceCreate/ServiceCreate';
 import ServiceEdit from '../admin/pages/services/serviceEdit/ServiceEdit';
+import AdminFaqLayout from '../admin/pages/faq/adminFaqLayout/AdminBloqLayout'
+import AdminFaq from '../admin/pages/faq/AdminFaq';
+import FaqEdit from '../admin/pages/faq/faqEdit/FaqEdit';
+import FaqCreate from '../admin/pages/faq/faqCreate/FaqCreate'
+
 
 const routes = [
   {
@@ -122,6 +127,24 @@ const routes = [
           {
             path:":id",
             element: <PrivateRoute><ServiceEdit/></PrivateRoute>,
+          },
+        ]
+      },
+      {
+        path: 'faq',
+        element: <PrivateRoute><AdminFaqLayout/></PrivateRoute>,
+        children:[
+          {
+            index:true,
+            element: <PrivateRoute><AdminFaq/></PrivateRoute>,
+          },
+          {
+            path:"create",
+            element: <PrivateRoute><FaqCreate/></PrivateRoute>,
+          },
+          {
+            path:":id",
+            element: <PrivateRoute><FaqEdit/></PrivateRoute>,
           },
         ]
       },

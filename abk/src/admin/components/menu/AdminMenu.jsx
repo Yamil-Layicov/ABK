@@ -63,8 +63,8 @@ const menu = [
       // },
       {
         id: 2,
-        title: "Notes",
-        url: "/admin",
+        title: "Faq",
+        url: "/admin/faq",
         icon: "/note.svg",
       },
       {
