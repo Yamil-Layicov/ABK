@@ -34,7 +34,7 @@ const menu = [
       {
         id: 2,
         title: "Tənzimləmələr",
-        url: "/admin/footer",
+        url: "/admin/settings",
         icon: "/product.svg",
       },
       {
@@ -46,7 +46,7 @@ const menu = [
       {
         id: 4,
         title: "Xidmətlər",
-        url: "/admin/gallery",
+        url: "/admin/services",
         icon: "/post2.svg",
       },
     ],

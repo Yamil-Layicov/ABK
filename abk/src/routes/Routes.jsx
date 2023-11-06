@@ -23,6 +23,10 @@ import AdminBloq from '../admin/pages/bloq/AdminBloq'
 import AdminBloqLayout from '../admin/pages/bloq/adminBloqLayout/AdminBloqLayout'
 import BloqCreate from '../admin/pages/bloq/bloqCreate/BloqCreate'
 import BloqEdit from '../admin/pages/bloq/bloqEdit/BloqEdit'
+import AdminService from '../admin/pages/services/AdminService'
+import AdminServiceLayout from '../admin/pages/services/adminServiceLayout/AdminServiceLayout'
+import ServiceCreate from '../admin/pages/services/serviceCreate/ServiceCreate';
+import ServiceEdit from '../admin/pages/services/serviceEdit/ServiceEdit';
 
 const routes = [
   {
@@ -82,7 +86,7 @@ const routes = [
         element: <PrivateRoute><AdminAbout/></PrivateRoute>,
       },
       {
-        path: 'footer',
+        path: 'settings',
         element: <PrivateRoute><Settings/></PrivateRoute>,
       },
       {
@@ -100,6 +104,24 @@ const routes = [
           {
             path:":id",
             element: <PrivateRoute><BloqEdit/></PrivateRoute>,
+          },
+        ]
+      },
+      {
+        path: 'services',
+        element: <PrivateRoute><AdminServiceLayout/></PrivateRoute>,
+        children:[
+          {
+            index:true,
+            element: <PrivateRoute><AdminService/></PrivateRoute>,
+          },
+          {
+            path:"create",
+            element: <PrivateRoute><ServiceCreate/></PrivateRoute>,
+          },
+          {
+            path:":id",
+            element: <PrivateRoute><ServiceEdit/></PrivateRoute>,
           },
         ]
       },

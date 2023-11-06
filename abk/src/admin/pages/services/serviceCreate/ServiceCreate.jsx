@@ -1,34 +1,19 @@
-import "./bloqEdit.scss";
+
 import { useEffect, useState } from "react";
 import api from "../../../api/posts";
 import { useParams, useNavigate } from "react-router-dom";
 
 
-const BloqEdit = () => {
+
+const ServiceEdit = () => {
   const [title, setTitle] = useState([]);
   const [content, setContent] = useState([]);
 
   const [image, setImage] = useState(null);
   const [previousImage, setPreviousImage] = useState(null);
 
-  const {id} = useParams();
   const navigate = useNavigate()
 
-  useEffect(() => {
-    const fetchSettings = async () => {
-      try {
-        const response = await api.get(`blogs/${id}`);
-
-        setContent(response.data.content);
-        setTitle(response.data.title);
-        setImage(response.data.image);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchSettings();
-  }, []);
 
   const handleImage = (e) => {
     const file = e.target.files[0];
@@ -57,7 +42,7 @@ const BloqEdit = () => {
 
       formData.append("image", image);
 
-      const response = await api.post(`blogs/${id}`, formData);
+      const response = await api.post(`services`, formData);
 
       if(response) return navigate(-1)
 
@@ -69,7 +54,7 @@ const BloqEdit = () => {
 
   return (
     <div className="bloqEdit">
-      <h4>Bloq Redaktə et</h4>
+      <h4>Yeni xidmət yarat</h4>
       <div className="intoSettings">
         <form onSubmit={handleUpload}>
           <div>
@@ -91,17 +76,17 @@ const BloqEdit = () => {
           </div>
           <div className="imageFile">
             <div className="inputBox">
-              <label>Kiçik şəkil</label>
+              <label>şəkil</label>
               <img src={previousImage || image} alt="" />
               <input type="file" accept="image/*"  onChange={handleImage} />
             </div>
           </div>
           <button type="submit">Yadda saxla</button>
-          <button type="submit" onClick={() => navigate("/admin/bloq")}>Geri Qayıt</button>
+          <button type="submit" onClick={() => navigate(-1)}>Geri Qayıt</button>
         </form>
       </div>
     </div>
   );
 };
 
-export default BloqEdit;
+export default ServiceEdit;

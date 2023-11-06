@@ -4,7 +4,7 @@ import api from "../../../api/posts";
 import { useParams, useNavigate } from "react-router-dom";
 
 
-const BloqEdit = () => {
+const ServiceEdit = () => {
   const [title, setTitle] = useState([]);
   const [content, setContent] = useState([]);
 
@@ -17,7 +17,7 @@ const BloqEdit = () => {
   useEffect(() => {
     const fetchSettings = async () => {
       try {
-        const response = await api.get(`blogs/${id}`);
+        const response = await api.get(`services/${id}`);
 
         setContent(response.data.content);
         setTitle(response.data.title);
@@ -57,7 +57,7 @@ const BloqEdit = () => {
 
       formData.append("image", image);
 
-      const response = await api.post(`blogs/${id}`, formData);
+      const response = await api.post(`services/${id}`, formData);
 
       if(response) return navigate(-1)
 
@@ -69,7 +69,7 @@ const BloqEdit = () => {
 
   return (
     <div className="bloqEdit">
-      <h4>Bloq Redaktə et</h4>
+      <h4>Xidmət Redaktə et</h4>
       <div className="intoSettings">
         <form onSubmit={handleUpload}>
           <div>
@@ -97,11 +97,11 @@ const BloqEdit = () => {
             </div>
           </div>
           <button type="submit">Yadda saxla</button>
-          <button type="submit" onClick={() => navigate("/admin/bloq")}>Geri Qayıt</button>
+          <button type="submit" onClick={() => navigate("/admin/services")}>Geri Qayıt</button>
         </form>
       </div>
     </div>
   );
 };
 
-export default BloqEdit;
+export default ServiceEdit;
