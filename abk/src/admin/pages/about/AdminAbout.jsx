@@ -109,21 +109,21 @@ const AdminAbout = () => {
       <div className="intoSettings">
         <form onSubmit={handleUpload}>
           <div>
-            <label>Ünvan *</label>
+            <label>Başlıq *</label>
+            <input
+              type="text"
+              value={title || ""}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </div>
+          <div>
+            <label>Məzmun *</label>
             <textarea
               cols="30"
               rows="7"
               value={content || ""}
               onChange={(e) => setContent(e.target.value)}
             ></textarea>
-          </div>
-          <div>
-            <label>Elektron ünvan *</label>
-            <input
-              type="text"
-              value={title || ""}
-              onChange={(e) => setTitle(e.target.value)}
-            />
           </div>
           <div className="imageFile">
             <div className="inputBox">

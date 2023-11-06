@@ -40,7 +40,7 @@ const menu = [
       {
         id: 3,
         title: "Bloq",
-        url: "/admin/menu",
+        url: "/admin/bloq",
         icon: "/order.svg",
       },
       {

@@ -18,10 +18,6 @@ const BlogPage = () => {
         <div className="icons">
           <div className="icon">
             <span><AiOutlineUser/></span>
-            <span>ALEXTINA</span>
-          </div>
-          <div className="icon">
-            <span><AiOutlineUser/></span>
             <span>Dek 28, 2022</span>
           </div>
           <div className="icon">
@@ -36,10 +32,6 @@ const BlogPage = () => {
       <div className="blogContent">
         <img src={img2} alt="" />
         <div className="icons">
-          <div className="icon">
-            <span><AiOutlineUser/></span>
-            <span>ALEXTINA</span>
-          </div>
           <div className="icon">
             <span><AiOutlineUser/></span>
             <span>Yan 28, 2022</span>

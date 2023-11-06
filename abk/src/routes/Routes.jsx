@@ -19,6 +19,10 @@ import FaqPage from '../pages/faqPage/FaqPage';
 import Layout from '../pages/kabinetLoginRegister/loayout/Layout';
 import LoginPage from '../pages/kabinetLoginRegister/login/LoginPage';
 import RegisterPage from '../pages/kabinetLoginRegister/register/RegisterPage';
+import AdminBloq from '../admin/pages/bloq/AdminBloq'
+import AdminBloqLayout from '../admin/pages/bloq/adminBloqLayout/AdminBloqLayout'
+import BloqCreate from '../admin/pages/bloq/bloqCreate/BloqCreate'
+import BloqEdit from '../admin/pages/bloq/bloqEdit/BloqEdit'
 
 const routes = [
   {
@@ -75,11 +79,29 @@ const routes = [
       },
       {
         path: 'about',
-        element: <PrivateRoute><AdminAbout /></PrivateRoute>,
+        element: <PrivateRoute><AdminAbout/></PrivateRoute>,
       },
       {
         path: 'footer',
         element: <PrivateRoute><Settings/></PrivateRoute>,
+      },
+      {
+        path: 'bloq',
+        element: <PrivateRoute><AdminBloqLayout/></PrivateRoute>,
+        children:[
+          {
+            index:true,
+            element: <PrivateRoute><AdminBloq/></PrivateRoute>,
+          },
+          {
+            path:"create",
+            element: <PrivateRoute><BloqCreate/></PrivateRoute>,
+          },
+          {
+            path:"edit",
+            element: <PrivateRoute><BloqEdit/></PrivateRoute>,
+          },
+        ]
       },
     ],
   },
