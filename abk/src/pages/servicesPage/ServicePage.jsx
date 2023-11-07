@@ -6,6 +6,8 @@ import img3 from './imgs/abk gmo.svg';
 import img4 from './imgs/abk torpaq və su.svg';
 import img5 from './imgs/abk monitoring.svg';
 import img6 from './imgs/abk təlim.svg';  
+import { useEffect, useState } from "react";
+import api from '../../admin/api/posts';
 
 const serviceData = [
   {
@@ -47,6 +49,31 @@ const serviceData = [
 ];
 
 const ServicePage = () => {
+  const [serviceData, setServiceData] = useState([]);
+  const [title, setTitle] = useState([]);
+  const [content, setContent] = useState([]);
+  const [images, setImages] = useState(null);
+
+
+  useEffect(() => {
+    const fetchSettings = async () => {
+      try {
+        const response = await api.get("services");
+        setServiceData(response.data);
+        console.log(serviceData);
+
+        setContent(response.data.content);
+        setTitle(response.data.title);
+
+        setImages(response.data.image);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchSettings();
+  }, []);
+
   return (
     <div className="servicePage">
       <div className="hedaerSection">
@@ -72,18 +99,12 @@ const ServicePage = () => {
           >
             <div className="intoBox">
               <span className="labIcon">
-                <img src={box.logo} alt="" />
+                <img src={box.image} alt="" />
               </span>
               <div className="labTitle">{box.title}</div>
               <div className="labDesc">
-                <div>{box.desc}</div>
-                <div>{box.desc1}</div>
-                <div>{box.desc2}</div>
+                <div>{box.content}</div>
               </div>
-              {/* <div className="readMore">
-                <div className="redMoreBox"></div>
-                <span>READ MORE</span>
-              </div> */}
             </div>
           </div>
         ))}

@@ -10,6 +10,7 @@ const Settings = () => {
   const [content4, setContent4] = useState([]);
   const [content5, setContent5] = useState([]);
   const [content6, setContent6] = useState([]);
+  const [content7, setContent7] = useState([]);
 
   const [image, setImage] = useState(null);
   const [previousImage, setPreviousImage] = useState(null);
@@ -27,6 +28,7 @@ const Settings = () => {
         setContent4(response.data.facebook);
         setContent5(response.data.instagram);
         setContent6(response.data.rights);
+        setContent7(response.data.home_phone);
 
         setImage(response.data.image);
       } catch (error) {
@@ -65,6 +67,7 @@ const Settings = () => {
       formData.append("facebook", content4);
       formData.append("instagram", content5);
       formData.append("rights", content6);
+      formData.append("home_phone", content7);
       formData.append("image", image);
 
       await api.post("settings", formData);
@@ -95,11 +98,19 @@ const Settings = () => {
             />
           </div>
           <div>
-            <label>Telefon *</label>
+            <label>Telefon(mobil) *</label>
             <input
-              type="text"
+              type="number"
               value={content3 || ""}
               onChange={(e) => setContent3(e.target.value)}
+            />
+          </div>
+          <div>
+            <label>Telefon(ofis) *</label>
+            <input
+              type="number"
+              value={content7 || ""}
+              onChange={(e) => setContent7(e.target.value)}
             />
           </div>
           <div>
