@@ -35,6 +35,70 @@
         overflow: hidden;
         background-color: white;
         padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .readMore {
+          margin-top: 20px;
+          display: flex;
+          justify-content: start;
+          gap: 10px;
+          span {
+            font-size: 14px;
+            font-weight: 700;
+
+            &:first-child {
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              clip-path: polygon(
+                45% 1.33975%,
+                46.5798% 0.60307%,
+                48.26352% 0.15192%,
+                50% 0,
+                51.73648% 0.15192%,
+                53.4202% 0.60307%,
+                55% 1.33975%,
+                89.64102% 21.33975%,
+                91.06889% 22.33956%,
+                92.30146% 23.57212%,
+                93.30127% 25%,
+                94.03794% 26.5798%,
+                94.48909% 28.26352%,
+                94.64102% 30%,
+                94.64102% 70%,
+                94.48909% 71.73648%,
+                94.03794% 73.4202%,
+                93.30127% 75%,
+                92.30146% 76.42788%,
+                91.06889% 77.66044%,
+                89.64102% 78.66025%,
+                55% 98.66025%,
+                53.4202% 99.39693%,
+                51.73648% 99.84808%,
+                50% 100%,
+                48.26352% 99.84808%,
+                46.5798% 99.39693%,
+                45% 98.66025%,
+                10.35898% 78.66025%,
+                8.93111% 77.66044%,
+                7.69854% 76.42788%,
+                6.69873% 75%,
+                5.96206% 73.4202%,
+                5.51091% 71.73648%,
+                5.35898% 70%,
+                5.35898% 30%,
+                5.51091% 28.26352%,
+                5.96206% 26.5798%,
+                6.69873% 25%,
+                7.69854% 23.57212%,
+                8.93111% 22.33956%,
+                10.35898% 21.33975%
+              );
+            }
+          }
+        }
 
         &:nth-child(1) {
           margin-right: 18px;
@@ -45,6 +109,11 @@
         }
 
         .img {
+          padding: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
           width: 120px;
           height: 120px;
           clip-path: polygon(
@@ -92,11 +161,23 @@
             10.35898% 21.33975%
           );
           img {
-            width: 120px;
-            height: 120px;
+            width: 90px;
+            height: 90px;
             pointer-events: none;
             object-fit: cover;
             border-radius: 5px;
+            z-index: 1;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            transform: scale(0);
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
+            z-index: -1;
           }
         }
 
@@ -107,34 +188,330 @@
             padding: 25px 0;
             font-size: 25px;
           }
-          p{
+          p {
             font-size: 18px;
           }
         }
       }
-      .item0{
-        .img{
-          background-color: #1165FF;
+
+      .item0 {
+        .img {
+          background-color: #0766fe65;
+          transition: all 0.3s ease-in-out;
+        }
+        .readMore {
+          span {
+            &:first-child {
+              background-color: #0766fe65;
+              transition: all 0.4s ease-in-out;
+            }
+          }
+        }
+        &:hover {
+          .img {
+            &::after {
+              background-color: #0e63ff;
+              transform: scale(1);
+              width: 100%;
+              height: 100%;
+              opacity: 1;
+            }
+          }
+          .readMore {
+            span {
+              &:first-child {
+                background-color: #0e63ff;
+              }
+            }
+          }
         }
       }
-      .item1{
-        .img{
-          background-color: #1BCA9C;
+      .item1 {
+        .img {
+          background-color: #19c99a60;
+          transition: all 0.3s ease-in-out;
+        }
+        .readMore {
+          span {
+            &:first-child {
+              background-color: #19c99a60;
+              transition: all 0.4s ease-in-out;
+            }
+          }
+        }
+        &:hover {
+          .img {
+            &::after {
+              background-color: #19C99B;
+              transform: scale(1);
+              width: 100%;
+              height: 100%;
+              opacity: 1;
+            }
+          }
+          .readMore {
+            span {
+              &:first-child {
+                background-color: #19C99B;
+              }
+            }
+          }
         }
       }
-      .item2{
-        .img{
-          background-color: #3DC2FB;
+      .item2 {
+        .img {
+          background-color: #39bdff5c;
+          transition: all 0.3s ease-in-out;
+        }
+        .readMore {
+          span {
+            &:first-child {
+              background-color: #39bdff5c;
+              transition: all 0.4s ease-in-out;
+            }
+          }
+        }
+        &:hover {
+          .img {
+            &::after {
+              background-color: #39BDFF;
+              transform: scale(1);
+              width: 100%;
+              height: 100%;
+              opacity: 1;
+            }
+          }
+          .readMore {
+            span {
+              &:first-child {
+                background-color: #39BDFF;
+              }
+            }
+          }
         }
       }
-      .item3{
-        .img{
-          background-color: #FA2674;
+      .item3 {
+        .img {
+          background-color: #f8267351;
+          transition: all 0.3s ease-in-out;
+        }
+        .readMore {
+          span {
+            &:first-child {
+              background-color: #f8267351;
+              transition: all 0.4s ease-in-out;
+            }
+          }
+        }
+        &:hover {
+          .img {
+            &::after {
+              background-color: #F82674;
+              transform: scale(1);
+              width: 100%;
+              height: 100%;
+              opacity: 1;
+            }
+          }
+          .readMore {
+            span {
+              &:first-child {
+                background-color: #F82674;
+              }
+            }
+          }
         }
       }
-      .item4{
-        .img{
-          background-color: #05DA9D;
+      .item4 {
+        .img {
+          background-color: #0766fe65;
+          transition: all 0.3s ease-in-out;
+        }
+        .readMore {
+          span {
+            &:first-child {
+              background-color: #0766fe65;
+              transition: all 0.4s ease-in-out;
+            }
+          }
+        }
+        &:hover {
+          .img {
+            &::after {
+              background-color: #0e63ff;
+              transform: scale(1);
+              width: 100%;
+              height: 100%;
+              opacity: 1;
+            }
+          }
+          .readMore {
+            span {
+              &:first-child {
+                background-color: #0e63ff;
+              }
+            }
+          }
+        }
+      }
+      .item5 {
+        .img {
+          background-color: #19c99a60;
+          transition: all 0.3s ease-in-out;
+        }
+        .readMore {
+          span {
+            &:first-child {
+              background-color: #19c99a60;
+              transition: all 0.4s ease-in-out;
+            }
+          }
+        }
+        &:hover {
+          .img {
+            &::after {
+              background-color: #19C99B;
+              transform: scale(1);
+              width: 100%;
+              height: 100%;
+              opacity: 1;
+            }
+          }
+          .readMore {
+            span {
+              &:first-child {
+                background-color: #19C99B;
+              }
+            }
+          }
+        }
+      }
+      .item6 {
+        .img {
+          background-color: #39bdff5c;
+          transition: all 0.3s ease-in-out;
+        }
+        .readMore {
+          span {
+            &:first-child {
+              background-color: #39bdff5c;
+              transition: all 0.4s ease-in-out;
+            }
+          }
+        }
+        &:hover {
+          .img {
+            &::after {
+              background-color: #39BDFF;
+              transform: scale(1);
+              width: 100%;
+              height: 100%;
+              opacity: 1;
+            }
+          }
+          .readMore {
+            span {
+              &:first-child {
+                background-color: #39BDFF;
+              }
+            }
+          }
+        }
+      }
+      .item7 {
+        .img {
+          background-color: #f8267351;
+          transition: all 0.3s ease-in-out;
+        }
+        .readMore {
+          span {
+            &:first-child {
+              background-color: #f8267351;
+              transition: all 0.4s ease-in-out;
+            }
+          }
+        }
+        &:hover {
+          .img {
+            &::after {
+              background-color: #F82674;
+              transform: scale(1);
+              width: 100%;
+              height: 100%;
+              opacity: 1;
+            }
+          }
+          .readMore {
+            span {
+              &:first-child {
+                background-color: #F82674;
+              }
+            }
+          }
+        }
+      }
+      .item8 {
+        .img {
+          background-color: #39bdff5c;
+          transition: all 0.3s ease-in-out;
+        }
+        .readMore {
+          span {
+            &:first-child {
+              background-color: #39bdff5c;
+              transition: all 0.4s ease-in-out;
+            }
+          }
+        }
+        &:hover {
+          .img {
+            &::after {
+              background-color: #39BDFF;
+              transform: scale(1);
+              width: 100%;
+              height: 100%;
+              opacity: 1;
+            }
+          }
+          .readMore {
+            span {
+              &:first-child {
+                background-color: #39BDFF;
+              }
+            }
+          }
+        }
+      }
+      .item9 {
+        .img {
+          background-color: #f8267351;
+          transition: all 0.3s ease-in-out;
+        }
+        .readMore {
+          span {
+            &:first-child {
+              background-color: #f8267351;
+              transition: all 0.4s ease-in-out;
+            }
+          }
+        }
+        &:hover {
+          .img {
+            &::after {
+              background-color: #F82674;
+              transform: scale(1);
+              width: 100%;
+              height: 100%;
+              opacity: 1;
+            }
+          }
+          .readMore {
+            span {
+              &:first-child {
+                background-color: #F82674;
+              }
+            }
+          }
         }
       }
     }

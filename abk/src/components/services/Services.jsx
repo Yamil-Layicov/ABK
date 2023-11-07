@@ -45,13 +45,42 @@ const Team = () => {
             className="inner-carousel"
           >
             {serviceData.map((item, index) => (
-              <motion.div key={item.id} className={`item ${index === 0 ? "item0" : index === 1 ? "item1" : index === 2 ? "item2" : index === 3 ? "item3" : index === 4 ? "item4" : index === 5 ? "item5" : index === 6 ? "item6" : index === 7 ? "item7" : index === 8 ? "item8" : index === 9 ? "item9" : "item10"}`}>
+              <motion.div
+                key={item.id}
+                className={`item ${
+                  index === 0
+                    ? "item0"
+                    : index === 1
+                    ? "item1"
+                    : index === 2
+                    ? "item2"
+                    : index === 3
+                    ? "item3"
+                    : index === 4
+                    ? "item4"
+                    : index === 5
+                    ? "item5"
+                    : index === 6
+                    ? "item6"
+                    : index === 7
+                    ? "item7"
+                    : index === 8
+                    ? "item8"
+                    : index === 9
+                    ? "item9"
+                    : "item10"
+                }`}
+              >
                 <div className="img">
                   <img src={item.image} alt="" />
                 </div>
                 <div className="deatilSpecialist">
                   <h3>{item.title}</h3>
                   <p>{item.content}</p>
+                </div>
+                <div className="readMore">
+                  <span></span>
+                  <span>DAHA ƏTRAFLI</span>
                 </div>
               </motion.div>
             ))}

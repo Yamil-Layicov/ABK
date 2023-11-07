@@ -3,8 +3,29 @@ import "./contactPage.scss";
 import { CiLocationOn } from "react-icons/ci";
 import { BsPhone } from "react-icons/bs";
 import { AiOutlineClockCircle } from "react-icons/ai";
+import { useEffect, useState } from "react";
+import api from '../../admin/api/posts';
 
 const ConactPage = () => {
+
+  const [contactData, setContactData] = useState([]);
+  const [newSpliceData, setNewSpliceData] = useState("")
+
+  useEffect(() => {
+    const fetchSettings = async () => {
+      try {
+        const response = await api.get("settings");
+        setContactData(response.data);
+        let spliceData = response.data.address.split(" ").slice(0, 4).join(" ");
+        setNewSpliceData(spliceData + <br/>)
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchSettings();
+  }, []);
+
   return (
     <div className="contactPage">
       <div className="hedaerSection">
@@ -21,7 +42,7 @@ const ConactPage = () => {
             </span>
             <h3>Məkan</h3>
             <p>
-              Bakı şəhər, Nərimanov rayonu, <br /> Ələsgər Qayıbov 12 22
+              {newSpliceData}
             </p>
           </div>
           <div className="box">
@@ -29,14 +50,14 @@ const ConactPage = () => {
               <BsPhone />
             </span>
             <h3>Zəng Üçün</h3>
-            <p>(+994 12) 514 19 46</p>
+            <p>{contactData.home_phone}</p>
           </div>
           <div className="box">
             <span className="icon">
               <AiOutlineClockCircle />
             </span>
             <h3>24/7 Dəstək</h3>
-            <p>info@abk-fito.az</p>
+            <p>{contactData.email}</p>
           </div>
         </div>
         <div className="right">

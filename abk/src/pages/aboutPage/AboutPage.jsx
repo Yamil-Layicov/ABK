@@ -1,10 +1,8 @@
 import bgImg from "../../assets/abk-banner-3.jpg";
 import "./aboutPage.scss";
 import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
-import img1 from './imgs/img1.jpg';
-import img2 from './imgs/img2.jpg';
-import img3 from './imgs/img3.jpg';
 import { useEffect, useState } from "react";
+import api from '../../admin/api/posts';
 
 
 const AboutPage = () => {
@@ -12,11 +10,17 @@ const AboutPage = () => {
   const [aboutData, setAboutData] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.abk-fito.az/api/about")
-      .then((res) => res.json())
-      .then((res) => {
-        setAboutData(res), console.log(res);
-      });
+    const fetchSettings = async () => {
+      try {
+        const response = await api.get("about");
+        setAboutData(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchSettings();
   }, []);
 
   return (
@@ -31,7 +35,7 @@ const AboutPage = () => {
       <div className="aboutContent">
         <div className="imgContainer">
           <div className="imgOne" >
-            {aboutData && <img src={aboutData.image_1}alt=""/>}
+            <img src={aboutData.image_1}alt=""/>
             <div className="experinceBox">
               <span>12</span>
               <span style={{paddingLeft:"38%"}}>İllik</span>
@@ -40,20 +44,20 @@ const AboutPage = () => {
           </div>
           <div>
             <div className="imgTwo">
-            {aboutData && <img src={aboutData.image_2}alt=""/>}
+            <img src={aboutData.image_2}alt=""/>
             </div>
             <div className="imgThree">
-            {aboutData && <img src={aboutData.image_3}alt=""/>}
+            <img src={aboutData.image_3}alt=""/>
             </div>
           </div>
         </div>
         <div className="textContainer">
-          <h1>AQRAR SAHƏDƏ İXTİSASLAŞMIŞ LABORATORİYA.</h1>
+          <h1>{aboutData.title}</h1>
           <p className="first">
           Nə üçün biz?   
           </p>
           <p className="second">
-          2019-cu ildə yaradılan laboratoriya Azərbaycanda aqrar sahənin inkişafında böyük rol oynanıyır. Laboratoriyada öz sahələrində ixtisaslaşmış əməkdaşlar tərəfindən ən son texnoloji avadanlıqlardan istifadə edilərək analizlər edilir və nəticələrin dəqiq və düzgün təhlili aparılır. Hazırda laboratoriyada fitosanitar, virusoloji, qida məhsullarının analizi, toxum, su, torpaq analizləri, monitorinq, təlim və konsultasya xidmətləri göstərilməkdədir.   Ən son texnoloji avadanlıqlardan istifadə edərək müştərilərə yüksək keyfiyyətli nəticələri təqdim edirik. Daima müştəri məmnuniyyətinə önəm verir, işimizin sürətli və dəqiq olmasına çalışırıq, bu proses zamanı ətrafı mühitin mühafizəsini əsas götürüb ekoloji təmizliyi təbliğ edir, sağlam gələcək üçün irəliləyik.
+          {aboutData.content}
           </p>
           <div className="doneBox">
             <span className="spanIcon">
