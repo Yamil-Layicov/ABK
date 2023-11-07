@@ -2,7 +2,9 @@ import "./adminBloq.scss";
 import { useEffect, useState } from "react";
 import api from "../../api/posts";
 import { IoMdCloudUpload } from "react-icons/io";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import {BiEditAlt} from 'react-icons/bi'
+import {RiDeleteBin5Line} from 'react-icons/ri'
 
 
 const AdminBloq = () => {
@@ -43,6 +45,17 @@ const AdminBloq = () => {
 
   const handleCreate = () => {
     navigate("create")
+  }
+
+  const handleDelete = async (id) => {
+    try {
+      const response = await api.delete(`blogs/${id}`);
+
+      if(response) return alert("silindi")
+
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -107,7 +120,8 @@ const AdminBloq = () => {
               <td>{item.title}</td>
               <td>{item.content}</td>
               <td>
-                <button onClick={() => handleEdit(item.id)}>Redaktə et</button>
+              <button onClick={() => handleEdit(item.id)}><BiEditAlt/></button>
+                <button onClick={() => handleDelete(item.id)}><RiDeleteBin5Line/></button>
               </td>
             </tr>
           ))}

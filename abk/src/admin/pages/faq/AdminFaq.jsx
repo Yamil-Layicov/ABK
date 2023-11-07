@@ -2,6 +2,8 @@ import "./adminFaq.scss";
 import { useEffect, useState } from "react";
 import api from "../../api/posts";
 import { useNavigate } from "react-router-dom";
+import {BiEditAlt} from 'react-icons/bi'
+import {RiDeleteBin5Line} from 'react-icons/ri'
 
 const AdminFaq = () => {
   const navigate = useNavigate();
@@ -11,7 +13,7 @@ const AdminFaq = () => {
   useEffect(() => {
     const fetchSettings = async () => {
       try {
-        const response = await api.get("faqs");
+        const response = await api.get("faq");
         setFaqData(response.data);
         console.log(response.data);
       } catch (error) {
@@ -30,6 +32,17 @@ const AdminFaq = () => {
     navigate("create");
   };
 
+  const handleDelete = async (id) => {
+    try {
+      const response = await api.delete(`faq/${id}`);
+
+      if(response) return alert("silindi")
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div className="adminFaq">
       <h4>FAQ</h4>
@@ -37,17 +50,24 @@ const AdminFaq = () => {
         <div className="createNewBtn">
           <button onClick={handleCreate}>Yenisini yarat +</button>
         </div>
+      <table>
+        <tr>
+          <th>Başlıq *</th>
+          <th>Məzmun *</th>
+          <th>Parametrlər</th>
+        </tr>
+        {faqData.map((item) => (
+            <tr key={item.id}>
+              <td>{item.title}</td>
+              <td>{item.content}</td>
+              <td>
+                <button onClick={() => handleEdit(item.id)}><BiEditAlt/></button>
+                <button onClick={() => handleDelete(item.id)}><RiDeleteBin5Line/></button>
+              </td>
+            </tr>
+          ))}
+      </table>
       </div>
-      <form>
-          <div className="inputBox">
-            <label>Başlıq *</label>
-            <input type="text" />
-          </div>
-          <div className="inputBox">
-            <label>Məzmun * *</label>
-            <input type="text" />
-          </div>
-        </form>
     </div>
   );
 };

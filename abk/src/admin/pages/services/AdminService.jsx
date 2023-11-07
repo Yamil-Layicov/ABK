@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import api from "../../api/posts";
 import { IoMdCloudUpload } from "react-icons/io";
 import { useNavigate, useParams } from "react-router-dom";
+import {BiEditAlt} from 'react-icons/bi'
+import {RiDeleteBin5Line} from 'react-icons/ri'
 
 
 const AdminService = () => {
@@ -45,6 +47,17 @@ const AdminService = () => {
     navigate("create")
   }
 
+  const handleDelete = async (id) => {
+    try {
+      const response = await api.delete(`services/${id}`);
+
+      if(response) return alert("silindi")
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div className="adminBloq">
       <h4>Xidmətlər</h4>
@@ -65,7 +78,8 @@ const AdminService = () => {
               <td>{item.title}</td>
               <td>{item.content}</td>
               <td>
-                <button onClick={() => handleEdit(item.id)}>Redaktə et</button>
+              <button onClick={() => handleEdit(item.id)}><BiEditAlt/></button>
+                <button onClick={() => handleDelete(item.id)}><RiDeleteBin5Line/></button>
               </td>
             </tr>
           ))}

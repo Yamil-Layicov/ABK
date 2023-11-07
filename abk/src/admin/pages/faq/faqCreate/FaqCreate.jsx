@@ -1,7 +1,7 @@
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import api from "../../../api/posts";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -9,40 +9,16 @@ const FaqCreate = () => {
   const [title, setTitle] = useState([]);
   const [content, setContent] = useState([]);
 
-  const [image, setImage] = useState(null);
-  const [previousImage, setPreviousImage] = useState(null);
-
   const navigate = useNavigate()
 
 
-  const handleImage = (e) => {
-    const file = e.target.files[0];
-    setImage(file);
-
-    if (file) {
-      const reader = new FileReader();
-
-      reader.onload = (e) => {
-        setPreviousImage(e.target.result);
-      };
-
-      reader.readAsDataURL(file);
-    } else {
-      setPreviousImage(null);
-    }
-  };
 
   const handleUpload = async (e) => {
     e.preventDefault();
 
     try {
-      const formData = new FormData();
-      formData.append("content", content);
-      formData.append("title", title);
 
-      formData.append("image", image);
-
-      const response = await api.post(`blogs`, formData);
+      const response = await api.post(`faq`, {title, content});
 
       if(response) return navigate(-1)
 
@@ -54,7 +30,7 @@ const FaqCreate = () => {
 
   return (
     <div className="bloqEdit">
-      <h4>Yeni bloq yarat</h4>
+      <h4>Yeni Faq yarat</h4>
       <div className="intoSettings">
         <form onSubmit={handleUpload}>
           <div>
@@ -73,13 +49,6 @@ const FaqCreate = () => {
               value={content || ""}
               onChange={(e) => setContent(e.target.value)}
             ></textarea>
-          </div>
-          <div className="imageFile">
-            <div className="inputBox">
-              <label>Kiçik şəkil</label>
-              <img src={previousImage || image} alt="" />
-              <input type="file" accept="image/*"  onChange={handleImage} />
-            </div>
           </div>
           <button type="submit">Yadda saxla</button>
           <button type="submit" onClick={() => navigate(-1)}>Geri Qayıt</button>
