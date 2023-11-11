@@ -41,10 +41,12 @@
     .blogContent{
       padding: 130px 130px 0 130px;
 
-      img{
-        border-radius: 12px;
-        width: 75%;
+      .imgBox{
+        img{
+          width: 70%;
+        }
       }
+      
       .icons{
         display: flex;
         gap: 60px;
@@ -114,8 +116,10 @@
 @media (max-width:1000px) {
   .blogPage{
     .blogContent{
-      img{
-        width: 100%;
+      .imgBox{
+        img{
+          width: 100%;
+        }
       }
       h1,p{
         width: 90%;
@@ -144,6 +148,10 @@
   .blogPage{
     padding-bottom: 50px;
     .blogContent{
+        img{
+          width: 300px;
+          object-fit: cover;
+        }
       .icons{
         display: flex;
         flex-wrap: wrap;
