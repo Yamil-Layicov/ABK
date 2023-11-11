@@ -108,7 +108,7 @@ const Settings = () => {
           <div>
             <label>Telefon(ofis) *</label>
             <input
-              type="number"
+              type="text"
               value={content7 || ""}
               onChange={(e) => setContent7(e.target.value)}
             />
