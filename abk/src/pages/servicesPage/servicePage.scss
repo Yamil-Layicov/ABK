@@ -55,7 +55,8 @@
         color: #171151;
         font-size: 45px;
         padding-top: 10px;
-        font-family: "Days One", sans-serif;
+        font-family: "Archivo", sans-serif;
+        font-weight: 700;
       }
     }
 
@@ -176,178 +177,77 @@
           }
         }
       }
-
       .box1 {
-        .readMore {
-          .redMoreBox {
-            background-color: #feeaf1;
-          }
-        }
         .labIcon {
-          background-color: #feeaf1;
+          background-color: #0e62ff35;
           color: #f72a75;
-
-          &::after {
-            background-color: #f72a75;
-          }
         }
         &:hover {
           .labIcon {
-            color: white;
-            &::after {
-              scale: 1;
-              opacity: 1;
-            }
-          }
-          .readMore {
-            .redMoreBox {
-              background-color: #f72a75;
-            }
+            background-color: #0e62ff77;
           }
         }
       }
       .box2 {
-        .readMore {
-          .redMoreBox {
-            background-color: #e7faf6;
-          }
-        }
         .labIcon {
-          background-color: #e7faf6;
-          color: #10d0a1;
-
-          &::after {
-            background-color: #10d0a1;
-          }
+          background-color: #57bcff33;
+          color: #f72a75;
         }
         &:hover {
           .labIcon {
-            color: white;
-            &::after {
-              scale: 1;
-              opacity: 1;
-            }
-          }
-          .readMore {
-            .redMoreBox {
-              background-color: #10d0a1;
-            }
+            background-color: #57bcff73;
           }
         }
       }
       .box3 {
-        .readMore {
-          .redMoreBox {
-            background-color: #ecf9ff;
-          }
-        }
         .labIcon {
-          background-color: #ecf9ff;
-          color: #42bfff;
-
-          &::after {
-            background-color: #42bfff;
-          }
+          background-color: #f72a7533;
         }
         &:hover {
           .labIcon {
-            color: white;
-            &::after {
-              scale: 1;
-              opacity: 1;
-            }
-          }
-          .readMore {
-            .redMoreBox {
-              background-color: #42bfff;
-            }
+            background-color: #f72a756c;
           }
         }
       }
       .box4 {
-        .readMore {
-          .redMoreBox {
-            background-color: #e7efff;
-          }
-        }
         .labIcon {
-          background-color: #e7efff;
-          color: #0e63ff;
-
-          &::after {
-            background-color: #0e62ff5a;
-          }
+          background-color: #70e5c635;
+          color: #f72a75;
         }
         &:hover {
           .labIcon {
-            color: white;
-            &::after {
-              scale: 1;
-              opacity: 1;
-            }
-          }
-          .readMore {
-            .redMoreBox {
-              background-color: #0e63ff;
-            }
+            background-color: #70e5c6b8;
           }
         }
       }
       .box5 {
-        .readMore {
-          .redMoreBox {
-            background-color: #feeaf1;
-          }
-        }
         .labIcon {
-          background-color: #feeaf1;
+          background-color: #70e5c635;
           color: #f72a75;
-
-          &::after {
-            background-color: #f72a755c;
-          }
         }
         &:hover {
           .labIcon {
-            color: white;
-            &::after {
-              scale: 1;
-              opacity: 1;
-            }
-          }
-          .readMore {
-            .redMoreBox {
-              background-color: #f72a75;
-            }
+            background-color: #70e5c6b8;
           }
         }
       }
       .box6 {
-        .readMore {
-          .redMoreBox {
-            background-color: #e7faf6;
-          }
-        }
         .labIcon {
-          background-color: #e7faf6;
-          color: #10d0a1;
-
-          &::after {
-            background-color: #10d0a051;
-          }
+          background-color: #0e62ff35;
         }
         &:hover {
           .labIcon {
-            color: white;
-            &::after {
-              scale: 1;
-              opacity: 1;
-            }
+            background-color: #0e62ff77;
           }
-          .readMore {
-            .redMoreBox {
-              background-color: #10d0a1;
-            }
+        }
+      }
+      .box7 {
+        .labIcon {
+          background-color: #f72a751d;
+        }
+        &:hover {
+          .labIcon {
+            background-color: #f72a756a;
           }
         }
       }
@@ -440,7 +340,7 @@
   .servicePage {
     .hedaerSection {
       margin-top: 90px;
-      img{
+      img {
         object-fit: none !important;
       }
       h1 {

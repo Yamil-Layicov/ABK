@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import api from "../../admin/api/posts";
-import "./services.scss"; // Ensure that your SCSS file is correctly imported.
+import "./services.scss";
+import {useNavigate} from 'react-router-dom'
 
 const Team = () => {
   const [serviceData, setServiceData] = useState([]);
@@ -26,6 +27,15 @@ const Team = () => {
       setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
     }
   }, [serviceData]);
+
+  const navigate = useNavigate()
+
+  const handleNav = () => {
+    navigate("services")
+    window.scrollTo({
+      top: 0,
+    });
+  }
 
   return (
     <div className="services">
@@ -74,14 +84,15 @@ const Team = () => {
                 <div className="img">
                   <img src={item.image} alt="" />
                 </div>
-                <div className="deatilSpecialist">
-                  <h3>{item.title}</h3>
-                  <p>{item.content}</p>
-                </div>
-                <div className="readMore">
-                  <span></span>
-                  <span>DAHA ƏTRAFLI</span>
-                </div>
+
+                  <div className="deatilSpecialist">
+                    <h3>{item.title}</h3>
+                    <p>{item.content}</p>
+                  </div>
+                  <div className="readMore">
+                    <span></span>
+                    <span onClick={handleNav}>DAHA ƏTRAFLI</span>
+                  </div>
               </motion.div>
             ))}
           </motion.div>

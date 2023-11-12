@@ -56,9 +56,10 @@
             font-size: 24px;
            
             h3{
-                font-family: "Days One",sans-serif;
+              font-family: "Archivo", sans-serif;
                 color:rgb(23, 17, 81) ;
                 position: relative;
+                font-weight: 700;
 
                 &::after{
                     content: "";
