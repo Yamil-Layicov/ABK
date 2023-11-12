@@ -3,14 +3,16 @@ import BlurOnOutlinedIcon from "@mui/icons-material/BlurOnOutlined";
 import PersonAddAlt1OutlinedIcon from "@mui/icons-material/PersonAddAlt1Outlined";
 import { useNavigate } from "react-router-dom";
 import img1 from "./img1.jpg";
-import { Suspense, lazy, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import {MdOutlineWorkHistory} from 'react-icons/md'
 import {GoClock} from 'react-icons/go'
-
+import api from '../../admin/api/posts';
 const Modal = lazy(() => import("./modal/Modal"));
+
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
+  const [navData, setNavData] = useState([])
 
   const navigate = useNavigate();
 
@@ -21,6 +23,20 @@ const Header = () => {
   const showVideo = () => {
     setShowModal(true);
   };
+
+  useEffect(() => {
+    const fetchSettings = async () => {
+      try {
+        const response = await api.get("settings");
+        console.log(response.data);
+        setNavData(response.data)
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchSettings();
+  }, []);
 
   return (
     <div className="header">
@@ -44,7 +60,7 @@ const Header = () => {
               <BlurOnOutlinedIcon />
             </span>
             <span className="text">
-              <span>HELPDESK</span> :+994 51 225 43 43
+              <span>HELPDESK</span> :{navData?.home_phone}
             </span>
           </div>
         </div>

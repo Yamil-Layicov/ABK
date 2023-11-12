@@ -106,9 +106,6 @@ const Gallery = () => {
           </motion.div>
         </motion.div>
       </div>
-      {/* <div className="moreBtn">
-      Daha ətraflı
-      </div> */}
       {showModal && (
         <Suspense fallback={<div>Loading...</div>}>
           <Modal

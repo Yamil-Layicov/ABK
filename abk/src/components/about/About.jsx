@@ -1,8 +1,26 @@
 import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
 import "./about.scss";
 import {useNavigate} from 'react-router-dom'
+import { useEffect, useState } from "react";
+import api from '../../admin/api/posts';
 
 const About = () => {
+
+  const [aboutData, setAboutData] = useState([]);
+
+  useEffect(() => {
+    const fetchSettings = async () => {
+      try {
+        const response = await api.get("about");
+        setAboutData(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchSettings();
+  }, []);
 
   const navigate = useNavigate()
 
@@ -22,7 +40,7 @@ const About = () => {
             alt=""
           />
           <div className="experienceBox">
-            <div className="spanNum">12</div>
+            <div className="spanNum">2</div>
             <div className="spanTexts">
             <div className="spanText spanText1">İllik</div>
             <div className="spanText spanText2">Təcrübə</div>
@@ -32,34 +50,10 @@ const About = () => {
       </div>
       <div className="textContainer">
         <h6 >___HAQQIMIZDA</h6>
-        <h1>AQRAR SAHƏDƏ İXTİSASLAŞMIŞ LABORATORİYA</h1>
+        <h1>{aboutData?.title}</h1>
         <p className="second">
-        2019-cu ildə yaradılan laboratoriya Azərbaycanda aqrar sahənin inkişafında böyük rol oynanıyır. Laboratoriyada öz sahələrində ixtisaslaşmış əməkdaşlar tərəfindən ən son texnoloji avadanlıqlardan istifadə edilərək analizlər edilir və nəticələrin dəqiq və düzgün təhlili aparılır. Hazırda laboratoriyada fitosanitar, virusoloji, qida məhsullarının analizi, toxum, su, torpaq analizləri, monitorinq, təlim və konsultasya xidmətləri göstərilməkdədir.   Ən son texnoloji avadanlıqlardan istifadə edərək müştərilərə yüksək keyfiyyətli nəticələri təqdim edirik. Daima müştəri məmnuniyyətinə önəm verir, işimizin sürətli və dəqiq olmasına çalışırıq, bu proses zamanı ətrafı mühitin mühafizəsini əsas götürüb ekoloji təmizliyi təbliğ edir, sağlam gələcək üçün irəliləyik.
+        {aboutData.content}
         </p>
-        {/* <div className="doneBox">
-          <span className="spanIcon">
-            <DoneOutlinedIcon />
-          </span>
-          <span>Extramural Funding</span>
-        </div>
-        <div className="doneBox">
-          <span className="spanIcon">
-            <DoneOutlinedIcon />
-          </span>
-          <span>Bacteria Markers</span>
-        </div>
-        <div className="doneBox">
-          <span className="spanIcon">
-            <DoneOutlinedIcon />
-          </span>
-          <span>Nam nec mi euismod euismod</span>
-        </div>
-        <div className="doneBox">
-          <span className="spanIcon">
-            <DoneOutlinedIcon />
-          </span>
-          <span>In aliquet dui nec lectus</span>
-        </div> */}
         <button onClick={navigateAbout}>Haqqımızda</button>
       </div>
     </div>

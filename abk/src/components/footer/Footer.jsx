@@ -3,15 +3,34 @@ import fb from "../../assets/socials/facebook_icon.svg";
 import insta from "../../assets/socials/instagram_icon.svg";
 import {BiLogoTelegram} from 'react-icons/bi'
 import logo from "../../assets/logo/Aqro bitki logo.svg";
+import { useEffect, useState } from "react";
+import api from '../../admin/api/posts';
 
 const Footer = () => {
+
+  const [navData, setNavData] = useState([])
+
+  useEffect(() => {
+    const fetchSettings = async () => {
+      try {
+        const response = await api.get("settings");
+        console.log(response.data);
+        setNavData(response.data)
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchSettings();
+  }, []);
+
   return (
     <div className="footer">
       <div className="boxes">
         <div className="firstBox" style={{position:"relative"}}>
           <img
           style={{backgroundColor:"", width:"150px", position:"absolute", top:"-70px", left:"0"}}
-            src={logo}
+            src={navData?.image}
             alt=""
           />
           <p>
@@ -19,8 +38,8 @@ const Footer = () => {
 
           </p>
           <div className="socials">
-            <a href="https://www.facebook.com/agrobitkiklinikasil" rel="noreferrer" target="_blank"><img src={fb}  alt="" /></a> 
-            <a href="https://www.instagram.com/agrobitkiklinikasi/" rel="noreferrer" target="_blank" ><img src={insta}  alt="" /></a>
+            <a href={navData.facebook} rel="noreferrer" target="_blank"><img src={fb}  alt="" /></a> 
+            <a href={navData?.instagram} rel="noreferrer" target="_blank" ><img src={insta}  alt="" /></a>
           </div>
         </div>
         <div className="secondBox">
@@ -34,8 +53,8 @@ const Footer = () => {
         <div className="thirdBox">
           <h4>Əlaqə məlumatı</h4>
           <p>Bakı şəhər, Nərimanov rayonu, <br /> Ələsgər Qayıbov 12 22</p>
-          <p>(+994 12) 514 19 46</p>
-          <p>info@abk-fito.az</p>
+          <p>{navData?.home_phone}</p>
+          <p>{navData?.email}</p>
           {/* <p>Office Hours: 8AM - 11PM</p>
           <p>Sunday - Wekend Day</p> */}
         </div>

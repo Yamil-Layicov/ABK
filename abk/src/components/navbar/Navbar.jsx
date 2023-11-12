@@ -4,15 +4,16 @@ import { useEffect, useState } from "react";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
-import { BiLogoFacebook } from "react-icons/bi";
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo/Aqro bitki logo.svg";
 import fb from "../../assets/socials/facebook_icon.svg";
 import insta from "../../assets/socials/instagram_icon.svg";
+import api from '../../admin/api/posts';
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const [isOpenNavbar, setIsOpenNavbar] = useState(false);
+  const [navData, setNavData] = useState([])
 
   const changeBackground = () => {
     if (window.scrollY >= 80) {
@@ -73,16 +74,30 @@ const Navbar = () => {
     setIsOpenNavbar(false);
   };
 
+  useEffect(() => {
+    const fetchSettings = async () => {
+      try {
+        const response = await api.get("settings");
+        console.log(response.data);
+        setNavData(response.data)
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchSettings();
+  }, []);
+
   return (
     <>
       <nav className={`${navbar && "navActive"}`}>
         <div className="left">
           <div className="logo">
-            <img style={{ width: "150px" }} src={logo} alt="" />
+            <img style={{ width: "150px" }} src={navData?.image} alt="" />
           </div>
           <div className="links">
             <NavLink
-              style={({ isActive }) => ({ color: isActive ? "#171151" : "" })}
+              style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
               onClick={() => moveToTop()}
               to="/"
               className="link"
@@ -90,7 +105,7 @@ const Navbar = () => {
               Ana səhifə
             </NavLink>
             <NavLink
-              style={({ isActive }) => ({ color: isActive ? "#171151" : "" })}
+              style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
               onClick={() => moveToTop()}
               to="/services"
               className="link"
@@ -98,7 +113,7 @@ const Navbar = () => {
               Xidmətlər
             </NavLink>
             <NavLink
-              style={({ isActive }) => ({ color: isActive ? "#171151" : "" })}
+              style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
               onClick={() => moveToTop()}
               to="/blog"
               className="link"
@@ -106,7 +121,7 @@ const Navbar = () => {
               Bloq
             </NavLink>
             <NavLink
-              style={({ isActive }) => ({ color: isActive ? "#171151" : "" })}
+              style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
               onClick={() => moveToTop()}
               to="/haqqımızda"
               className="link"
@@ -114,7 +129,7 @@ const Navbar = () => {
               Haqqımızda
             </NavLink>
             <NavLink
-              style={({ isActive }) => ({ color: isActive ? "#171151" : "" })}
+              style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
               onClick={() => moveToTop()}
               to="/contact"
               className="link"
@@ -122,7 +137,7 @@ const Navbar = () => {
               Əlaqə
             </NavLink>
             <NavLink
-              style={({ isActive }) => ({ color: isActive ? "#171151" : "" })}
+              style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
               onClick={() => moveToTop()}
               to="/faq"
               className="link"
@@ -138,7 +153,7 @@ const Navbar = () => {
                 <BlurOnOutlinedIcon />
               </span>
               <span className="text">
-                <span>HELPDESK</span> :+994 51 225 43 43
+                <span>HELPDESK</span> :{navData?.home_phone}
               </span>
             </div>
           </div>
@@ -150,7 +165,7 @@ const Navbar = () => {
         <div className={`${isOpenNavbar ? "activeMobileNav" : "mobileNav"}`}>
           <div className="mobileLeft">
             <div className="logo" style={{ height: "40px" }}>
-              <img style={{ paddingRight: "50px" }} src={logo} alt="" />
+              <img style={{ paddingRight: "50px" }} src={navData?.image} alt="" />
               <div onClick={() => setIsOpenNavbar(false)} className="iconMenu">
                 <CloseOutlinedIcon />
               </div>
@@ -193,7 +208,7 @@ const Navbar = () => {
                     fontSize="small"
                   />
                 </span>
-                <span>(+994 12) 514 19 46</span>
+                <span>{navData?.home_phone}</span>
               </p>
               <p>
                 <span>
@@ -202,12 +217,12 @@ const Navbar = () => {
                     fontSize="small"
                   />
                 </span>
-                <span>info@abk-fito.az</span>
+                <span>{navData?.email}</span>
               </p>
               <div className="socials">
                 <span>
                   <a
-                    href="https://www.facebook.com/agrobitkiklinikasil"
+                    href={navData?.facebook}
                     rel="noreferrer"
                     target="_blank"
                   >
@@ -216,7 +231,7 @@ const Navbar = () => {
                 </span>
                 <span>
                   <a
-                    href="https://www.instagram.com/agrobitkiklinikasi/"
+                    href={navData?.instagram}
                     rel="noreferrer"
                     target="_blank"
                   >
