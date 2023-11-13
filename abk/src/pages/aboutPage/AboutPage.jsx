@@ -37,7 +37,7 @@ const AboutPage = () => {
           <div className="imgOne" >
             <img src={aboutData.image_1}alt=""/>
             <div className="experinceBox">
-              <span>2</span>
+              <span>3</span>
               <span style={{paddingLeft:"12%"}}>İllik</span>
               <span style={{paddingLeft:"10%"}}>Təcrübə</span>
             </div>

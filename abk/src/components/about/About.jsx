@@ -40,7 +40,7 @@ const About = () => {
             alt=""
           />
           <div className="experienceBox">
-            <div className="spanNum">2</div>
+            <div className="spanNum">3</div>
             <div className="spanTexts">
             <div className="spanText spanText1">İllik</div>
             <div className="spanText spanText2">Təcrübə</div>

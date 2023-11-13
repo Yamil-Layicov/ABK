@@ -58,7 +58,7 @@ const ConactPage = () => {
           </div>
         </div>
         <div className="right">
-          <h2>Bizə masaj göndərin :</h2>
+          <h2>Bizə mesaj göndərin :</h2>
           <form>
             <div className="upInputs">
               <input type="text" placeholder="adınızı daxil edin" />
