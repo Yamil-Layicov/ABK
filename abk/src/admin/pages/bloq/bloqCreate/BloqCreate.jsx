@@ -77,7 +77,7 @@ const BloqEdit = () => {
           <div className="imageFile">
             <div className="inputBox">
               <label>Kiçik şəkil</label>
-              <img src={previousImage || image} alt="" />
+              <img style={{objectFit:"cover"}} src={previousImage || image} alt="" />
               <input type="file" accept="image/*"  onChange={handleImage} />
             </div>
           </div>

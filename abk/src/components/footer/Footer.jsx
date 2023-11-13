@@ -55,8 +55,6 @@ const Footer = () => {
           <p>Bakı şəhər, Nərimanov rayonu, <br /> Ələsgər Qayıbov 12 22</p>
           <p>{navData?.home_phone}</p>
           <p>{navData?.email}</p>
-          {/* <p>Office Hours: 8AM - 11PM</p>
-          <p>Sunday - Wekend Day</p> */}
         </div>
         <div className="subcriber">
           <h4>Yeni xəbərlər üçün Abunə olun </h4>
@@ -68,7 +66,7 @@ const Footer = () => {
       </div>
       <div className="copyright">
         <span>
-          © Copyright © 2023 Agro bitki klinikası. Bütün Hüquqlar Qorunur.
+          © Copyright {navData?.rights}
         </span>
         <div className="right">
           {/* <span>Terms and conditions</span>

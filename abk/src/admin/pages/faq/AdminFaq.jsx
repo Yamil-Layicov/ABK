@@ -36,7 +36,9 @@ const AdminFaq = () => {
     try {
       const response = await api.delete(`faq/${id}`);
 
-      if(response) return alert("silindi")
+      if(response) return setTimeout(() => {
+        window.location.reload()
+      }, 1000);
 
     } catch (error) {
       console.log(error);

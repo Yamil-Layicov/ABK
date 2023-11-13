@@ -96,7 +96,11 @@ const AdminAbout = () => {
       formData.append("image_2", image_2);
       formData.append("image_3", image_3);
 
-      await api.post("about", formData);
+      const response = await api.post("about", formData);
+
+      if(response) return setTimeout(() => {
+        window.location.reload()
+      }, 1000);
     } catch (error) {
       console.log(error);
     }

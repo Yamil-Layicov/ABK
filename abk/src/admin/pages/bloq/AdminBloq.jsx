@@ -47,11 +47,13 @@ const AdminBloq = () => {
     navigate("create")
   }
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (id) => {  
     try {
       const response = await api.delete(`blogs/${id}`);
 
-      if(response) return alert("silindi")
+      if(response) return setTimeout(() => {
+        window.location.reload()
+      }, 1000);
 
     } catch (error) {
       console.log(error);
@@ -61,48 +63,6 @@ const AdminBloq = () => {
   return (
     <div className="adminBloq">
       <h4>Bloq</h4>
-      {/* <div className="intoSettings">
-        <form onSubmit={handleUpload}>
-          <div className="imageFile">
-            <div className="inputBox">
-              <label htmlFor="image">
-                <span>
-                  <IoMdCloudUpload
-                    style={{ fontSize: "22px", marginRight: "10px" }}
-                  />
-                  Şəkil *
-                </span>
-                <img src={previousImage || image} alt="" />
-              </label>
-              <input
-                id="image"
-                type="file"
-                accept="image/*"
-                onChange={handleImage}
-              />
-            </div>
-          </div>
-          <div>
-            <label>Başlıq *</label>
-            <input
-              type="text"
-              value={title || ""}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-          </div>
-          <div>
-            <label>Məzmun *</label>
-            <textarea
-              cols="30"
-              rows="7"
-              value={content || ""}
-              onChange={(e) => setContent(e.target.value)}
-            ></textarea>
-          </div>
-          <button type="submit">Yadda saxla</button>
-        </form>
-      </div> */}
-
       <div className="tableContent">
         <div className="createNewBtn">
           <button onClick={handleCreate}>Yenisini yarat +</button>
@@ -116,7 +76,7 @@ const AdminBloq = () => {
         </tr>
         {bloqData.map((item) => (
             <tr key={item.id}>
-              <td><img style={{width:"100px", height:"100px"}} src={item.image} alt="" /></td>
+              <td><img style={{width:"100px", height:"100px", objectFit:"cover"}} src={item.image} alt="" /></td>
               <td>{item.title}</td>
               <td>{item.content}</td>
               <td>

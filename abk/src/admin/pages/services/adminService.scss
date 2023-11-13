@@ -72,6 +72,13 @@
     display: flex;
     flex-direction: column;
     align-items: end;
+
+    .createNewBtn{
+      padding-bottom: 7px;
+      button{
+        padding: 4px 6px;
+      }
+    }
     table {
       font-family: arial, sans-serif;
       border-collapse: collapse;

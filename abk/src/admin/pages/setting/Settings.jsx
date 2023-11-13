@@ -70,7 +70,11 @@ const Settings = () => {
       formData.append("home_phone", content7);
       formData.append("image", image);
 
-      await api.post("settings", formData);
+      const response = await api.post("settings", formData);
+
+      if(response) return setTimeout(() => {
+        window.location.reload()
+      }, 1000);
     } catch (error) {
       console.log(error);
     }
@@ -97,14 +101,14 @@ const Settings = () => {
               onChange={(e) => setContent2(e.target.value)}
             />
           </div>
-          <div>
+          {/* <div>
             <label>Telefon(mobil) *</label>
             <input
               type="number"
               value={content3 || ""}
               onChange={(e) => setContent3(e.target.value)}
             />
-          </div>
+          </div> */}
           <div>
             <label>Telefon(ofis) *</label>
             <input
