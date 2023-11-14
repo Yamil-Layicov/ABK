@@ -7,6 +7,7 @@ import { useParams, useNavigate } from "react-router-dom";
 const ServiceEdit = () => {
   const [title, setTitle] = useState([]);
   const [content, setContent] = useState([]);
+  const [color, setColor] = useState([]);
 
   const [image, setImage] = useState(null);
   const [previousImage, setPreviousImage] = useState(null);
@@ -22,6 +23,7 @@ const ServiceEdit = () => {
         setContent(response.data.content);
         setTitle(response.data.title);
         setImage(response.data.image);
+        setColor(response.data.color);
       } catch (error) {
         console.error(error);
       }
@@ -54,6 +56,7 @@ const ServiceEdit = () => {
       const formData = new FormData();
       formData.append("content", content);
       formData.append("title", title);
+      formData.append("color", color);
 
       formData.append("image", image);
 
@@ -72,6 +75,15 @@ const ServiceEdit = () => {
       <h4>Xidmət Redaktə et</h4>
       <div className="intoSettings">
         <form onSubmit={handleUpload}>
+        <div>
+            <label>Şəkil rəngi *</label>
+            <input
+              type="color"
+              value={color || ""}
+              onChange={(e) => setColor(e.target.value)}
+              style={{ width: "100%", height: "50px", cursor: "pointer" }}
+            />
+          </div>
           <div>
             <label>Başlıq *</label>
             <input

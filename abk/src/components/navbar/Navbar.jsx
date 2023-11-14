@@ -107,6 +107,14 @@ const Navbar = () => {
             <NavLink
               style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
               onClick={() => moveToTop()}
+              to="/haqqımızda"
+              className="link"
+            >
+              Haqqımızda
+            </NavLink>
+            <NavLink
+              style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
+              onClick={() => moveToTop()}
               to="/services"
               className="link"
             >
@@ -119,14 +127,6 @@ const Navbar = () => {
               className="link"
             >
               Bloq
-            </NavLink>
-            <NavLink
-              style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
-              onClick={() => moveToTop()}
-              to="/haqqımızda"
-              className="link"
-            >
-              Haqqımızda
             </NavLink>
             <NavLink
               style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}

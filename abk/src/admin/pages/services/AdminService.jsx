@@ -24,7 +24,7 @@ const AdminService = () => {
       try {
         const response = await api.get("services");
         setBloqData(response.data);
-        console.log(bloqData);
+        console.log(response.data);
 
         setContent(response.data.content);
         setTitle(response.data.title);
@@ -70,6 +70,7 @@ const AdminService = () => {
       <table>
         <tr>
           <th>Şəkil *</th>
+          <th>Şəkil rəngi</th>
           <th>Başlıq *</th>
           <th>Məzmun *</th>
           <th>Parametrlər</th>
@@ -77,7 +78,10 @@ const AdminService = () => {
         {bloqData.map((item) => (
             <tr key={item.id}>
               <td><img style={{width:"100px", height:"100px"}} src={item.image} alt="" /></td>
-              <td>{item.title}</td>
+              <td >
+                <div style={{width:"60px", height:"60px", backgroundColor:item?.color}}></div>
+              </td>
+              <td>{item.title}</td> 
               <td>{item.content}</td>
               <td>
               <button onClick={() => handleEdit(item.id)}><BiEditAlt/></button>
