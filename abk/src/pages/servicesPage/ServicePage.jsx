@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./servicePage.scss";
 import bgImg from "../../assets/abk-banner-3.jpg";
 import api from "../../admin/api/posts";
+import { useNavigate } from "react-router-dom";
 
 const ServicePage = () => {
-  const [title, setTitle] = useState([]);
-  const [content, setContent] = useState([]);
-  const [images, setImages] = useState(null);
   const [serviceData, setServiceData] = useState([]);
   const [color, setColor] = useState(false);
 
@@ -15,9 +13,6 @@ const ServicePage = () => {
       try {
         const response = await api.get("services");
         setServiceData(response.data);
-        setContent(response.data.content);
-        setTitle(response.data.title);
-        setImages(response.data.image);
       } catch (error) {
         console.error(error);
       }
@@ -45,7 +40,14 @@ const ServicePage = () => {
     }
   };
 
-  const handleNav = () => {};
+  const navigate = useNavigate();
+
+  const handleDetail = (id) => {
+    navigate(`${id}`);
+    window.scrollTo({
+      top: 0,
+    });
+  };
 
   return (
     <div className="servicePageMain">
@@ -62,12 +64,14 @@ const ServicePage = () => {
         </div>
         <div className="boxes">
           {serviceData.map((box, index) => (
-            <div key={index} className="box">
-              <div
-                className="intoBox"
-                onMouseOver={() => handleColor(box.id)}
-                onMouseOut={() => setColor(null)}
-              >
+            <div
+              key={index}
+              className="box"
+              onMouseOver={() => handleColor(box.id)}
+              onMouseOut={() => setColor(null)}
+              onClick={() => handleDetail(box?.id)}
+            >
+              <div className="intoBox">
                 <span
                   className={`labIcon`}
                   style={{ position: "relative", transition: "all .3s" }}
@@ -84,21 +88,26 @@ const ServicePage = () => {
                       opacity: ".5",
                     }}
                   ></span>
-                  <img src={box.image} alt="" style={{
+                  <img
+                    src={box.image}
+                    alt=""
+                    style={{
                       width: "100%",
                       height: "100%",
-                    }} />
+                    }}
+                  />
                 </span>
                 <div className="labTitle">{box.title}</div>
                 <div className="labDesc">
                   <div>{truncateText(box?.content, 250)}</div>
                 </div>
-                
               </div>
-              <div className="readMore" >
-                  <span style={{backgroundColor: color === box.id && box.color,}}></span>
-                  <span onClick={handleNav}>DAHA ƏTRAFLI</span>
-                </div>
+              <div className="readMore">
+                <span
+                  style={{ backgroundColor: color === box.id && box.color }}
+                ></span>
+                <span>DAHA ƏTRAFLI</span>
+              </div>
             </div>
           ))}
         </div>

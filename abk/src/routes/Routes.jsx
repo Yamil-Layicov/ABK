@@ -8,6 +8,7 @@ import AdminAbout from '../admin/pages/about/AdminAbout'
 import Login from '../pages/adminLoginPage/Login'
 import Settings from '../admin/pages/setting/Settings'
 
+import ServiceLayout from '../pages/servicesPage/serviceLayout/ServiceLayout';
 import HomePage from '../pages/homePage/HomePage';
 import ServicePage from '../pages/servicesPage/ServicePage';
 import BlogPage from '../pages/blogPage/BlogPage';
@@ -31,6 +32,8 @@ import AdminFaqLayout from '../admin/pages/faq/adminFaqLayout/AdminBloqLayout'
 import AdminFaq from '../admin/pages/faq/AdminFaq';
 import FaqEdit from '../admin/pages/faq/faqEdit/FaqEdit';
 import FaqCreate from '../admin/pages/faq/faqCreate/FaqCreate'
+import ServiceDetail from '../pages/servicesPage/serviceDetail/ServiceDetail'
+
 
 
 const routes = [
@@ -44,7 +47,17 @@ const routes = [
       },
       {
         path: 'services',
-        element: <ServicePage />,
+        element: <ServiceLayout />,
+        children: [
+          {
+            index: true,
+            element: <ServicePage />,
+          },
+          {
+            path: ":id",
+            element: <ServiceDetail/>,
+          },
+        ],
       },
       {
         path: 'blog',

@@ -2,9 +2,9 @@ import "./footer.scss";
 import fb from "../../assets/socials/facebook_icon.svg";
 import insta from "../../assets/socials/instagram_icon.svg";
 import {BiLogoTelegram} from 'react-icons/bi'
-import logo from "../../assets/logo/Aqro bitki logo.svg";
 import { useEffect, useState } from "react";
 import api from '../../admin/api/posts';
+import {useNavigate} from 'react-router-dom';
 
 const Footer = () => {
 
@@ -24,11 +24,46 @@ const Footer = () => {
     fetchSettings();
   }, []);
 
+  const moveToTop = () => {
+    window.scrollTo({
+      top: 0,
+    });
+  };
+
+
+  const navigate = useNavigate();
+
+  const navigate1 = () => {
+    navigate("/");
+    moveToTop();
+  };
+  const navigate2 = () => {
+    navigate("services");
+    moveToTop();
+  };
+  const navigate3 = () => {
+    navigate("blog");
+    moveToTop();
+  };
+  const navigate4 = () => {
+    navigate("haqqımızda");
+    moveToTop();
+  };
+  const navigate5 = () => {
+    navigate("contact");
+    moveToTop();
+  };
+  const navigate6 = () => {
+    navigate("faq");
+    moveToTop();
+  };
+
   return (
     <div className="footer">
       <div className="boxes">
         <div className="firstBox" style={{position:"relative"}}>
           <img
+          onClick={navigate1}
           style={{backgroundColor:"", width:"150px", position:"absolute", top:"-70px", left:"0"}}
             src={navData?.image}
             alt=""
@@ -43,12 +78,12 @@ const Footer = () => {
           </div>
         </div>
         <div className="secondBox">
-          <h4>Faydalı bağlantılar</h4>
-          <p>Haqqımızda</p>
-          <p>Xidmətlər</p>
-          <p>Bloq</p>
-          <p>FAQ</p>
-          <p>Əlaqə</p>
+          <h4 >Faydalı bağlantılar</h4>
+          <p onClick={navigate4}>Haqqımızda</p>
+          <p onClick={navigate2}>Xidmətlər</p>
+          <p onClick={navigate3}>Bloq</p>
+          <p onClick={navigate6}>FAQ</p>
+          <p onClick={navigate5}>Əlaqə</p> 
         </div>
         <div className="thirdBox">
           <h4>Əlaqə məlumatı</h4>
