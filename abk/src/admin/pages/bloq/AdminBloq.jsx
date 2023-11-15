@@ -72,7 +72,7 @@ const AdminBloq = () => {
           <th>Şəkil *</th>
           <th>Başlıq *</th>
           <th>Məzmun *</th>
-          <th>Parametrlər *</th>
+          <th>Parametrlər</th>
         </tr>
         {bloqData.map((item) => (
             <tr key={item.id}>

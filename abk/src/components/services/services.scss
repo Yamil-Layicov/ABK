@@ -33,7 +33,7 @@
           margin: 0 18px;
           overflow: hidden;
           background-color: white;
-          padding: 40px 40px 60px 40px;
+          padding: 40px 40px 80px 40px;
           display: flex;
           flex-direction: column;
   
@@ -42,13 +42,15 @@
             justify-content: start;
             gap: 10px;
             position: absolute;
-            bottom: 20px;
+            bottom: 30px;
             left: 30px;
             span {
               font-size: 14px;
               font-weight: 700;
   
               &:first-child {
+                background-color: rgb(245, 245, 245);
+                transition: all .5s;
                 display: inline-block;
                 width: 20px;
                 height: 20px;
@@ -108,14 +110,13 @@
             margin-left: 18px;
           }
   
-          .img {
+          .labIcon {
+            background-color: rgb(245, 245, 245);
+            transition: all 0.3s ease-in-out;
             padding: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
             width: 120px;
             height: 120px;
+            position: relative;
             clip-path: polygon(
               45% 1.33975%,
               46.5798% 0.60307%,
@@ -160,25 +161,6 @@
               8.93111% 22.33956%,
               10.35898% 21.33975%
             );
-            img {
-              width: 90px;
-              height: 90px;
-              pointer-events: none;
-              object-fit: cover;
-              border-radius: 5px;
-              z-index: 1;
-            }
-  
-            // &::after {
-            //   content: "";
-            //   position: absolute;
-            //   width: 0;
-            //   height: 0;
-            //   transform: scale(0);
-            //   opacity: 0;
-            //   transition: all 0.4s ease-in-out;
-            //   z-index: -1;
-            // }
           }
   
           .deatilSpecialist {
@@ -190,188 +172,6 @@
             }
             p {
               font-size: 18px;
-            }
-          }
-        }
-        .item0 {
-          .img {
-            background-color: #0766fe1f;
-            transition: all 0.3s ease-in-out;
-          }
-          .readMore {
-            span {
-              &:first-child {
-                background-color: #0766fe65;
-                transition: all 0.4s ease-in-out;
-              }
-            }
-          }
-          &:hover {
-            .img {
-              background-color: #0766fe65;
-            }
-            .readMore {
-              span {
-                &:first-child {
-                  background-color: #0e63ff;
-                }
-              }
-            }
-          }
-        }
-        .item1 {
-          .img {
-            background-color: #42c0ff38;
-            transition: all 0.3s ease-in-out;
-          }
-          .readMore {
-            span {
-              &:first-child {
-                background-color: #19c99a60;
-                transition: all 0.4s ease-in-out;
-              }
-            }
-          }
-          &:hover {
-            .img {
-              background-color: #42c0ff79;
-            }
-            .readMore {
-              span {
-                &:first-child {
-                  background-color: #42BFFF;
-                }
-              }
-            }
-          }
-        }
-        .item2 {
-          .img {
-            background-color: #f72a7528;
-            transition: all 0.3s ease-in-out;
-          }
-          .readMore {
-            span {
-              &:first-child {
-                background-color: rgba(255, 0, 0, 0.258);
-                transition: all 0.4s ease-in-out;
-              }
-            }
-          }
-          &:hover {
-            .img {
-              background-color: #f72a7568;
-            }
-            .readMore {
-              span {
-                &:first-child {
-                  background-color: #F72A75;
-                }
-              }
-            }
-          }
-        }
-        .item3 {
-          .img {
-            background-color: #70e5c652;
-            transition: all 0.3s ease-in-out;
-          }
-          .readMore {
-            span {
-              &:first-child {
-                background-color: #70e5c651;
-                transition: all 0.4s ease-in-out;
-              }
-            }
-          }
-          &:hover {
-            .img {
-              background-color: rgba(112, 229, 198, 0.636);
-            }
-            .readMore {
-              span {
-                &:first-child {
-                  background-color: #55ecc4;
-                }
-              }
-            }
-          }
-        }
-        .item4 {  
-          .img {
-            background-color: #70e5c652;
-            transition: all 0.3s ease-in-out;
-          }
-          .readMore {
-            span {
-              &:first-child {
-                background-color: #70e5c64c;
-                transition: all 0.4s ease-in-out;
-              }
-            }
-          }
-          &:hover {
-            .img {
-              background-color: rgba(112, 229, 198, 0.636);
-            }
-            .readMore {
-              span {
-                &:first-child {
-                  background-color: #70E5C6;
-                }
-              }
-            }
-          }
-        }
-        .item5 {
-          .img {
-            background-color: #0766fe1f;
-            transition: all 0.3s ease-in-out;
-          }
-          .readMore {
-            span {
-              &:first-child {
-                background-color: #0766fe65;
-                transition: all 0.4s ease-in-out;
-              }
-            }
-          }
-          &:hover {
-            .img {
-              background-color: #0766fe65;
-            }
-            .readMore {
-              span {
-                &:first-child {
-                  background-color: #0e63ff;
-                }
-              }
-            }
-          }
-        }
-        .item6 {
-          .img {
-            background-color: #f72a7528;
-            transition: all 0.3s ease-in-out;
-          }
-          .readMore {
-            span {
-              &:first-child {
-                background-color: #f72a754d;
-                transition: all 0.4s ease-in-out;
-              }
-            }
-          }
-          &:hover {
-            .img {
-              background-color: #f72a7568;
-            }
-            .readMore {
-              span {
-                &:first-child {
-                  background-color: #F72A75;
-                }
-              }
             }
           }
         }

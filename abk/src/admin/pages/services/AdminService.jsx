@@ -9,12 +9,11 @@ import {RiDeleteBin5Line} from 'react-icons/ri'
 
 const AdminService = () => {
   const navigate = useNavigate();
-  
 
   const [title, setTitle] = useState([]);
   const [content, setContent] = useState([]);
   const [bloqData, setBloqData] = useState([]);
-
+  
   const [images, setImages] = useState(null);
   const [file, setFile] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);

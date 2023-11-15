@@ -8,6 +8,7 @@ const Team = () => {
   const [serviceData, setServiceData] = useState([]);
   const [width, setWidth] = useState(0);
   const carousel = useRef();
+  const [color, setColor] = useState(false);
 
   useEffect(() => {
     const fetchSettings = async () => {
@@ -31,11 +32,30 @@ const Team = () => {
   const navigate = useNavigate()
 
   const handleNav = () => {
-    navigate("services")
+    navigate("/services")
     window.scrollTo({
       top: 0,
     });
   }
+
+  const truncateText = (text, maxLength) => {
+    if (text.length <= maxLength) {
+      return text;
+    } else {
+      const truncatedText = text.slice(0, maxLength);
+      const lastSpaceIndex = truncatedText.lastIndexOf(" ");
+
+      if (lastSpaceIndex !== -1 && lastSpaceIndex < maxLength - 1) {
+        return truncatedText.slice(0, lastSpaceIndex) + "...";
+      } else {
+        return truncatedText + "...";
+      }
+    }
+  };
+
+  const handleColor = (id) => {
+    setColor(id);
+  };
 
   return (
     <div className="services">
@@ -54,45 +74,36 @@ const Team = () => {
             dragConstraints={{ right: 0, left: -width }}
             className="inner-carousel"
           >
-            {serviceData.map((item, index) => (
+            {serviceData.map((item) => (
               <motion.div
                 key={item.id}
-                className={`item ${
-                  index === 0
-                    ? "item0"
-                    : index === 1
-                    ? "item1"
-                    : index === 2
-                    ? "item2"
-                    : index === 3
-                    ? "item3"
-                    : index === 4
-                    ? "item4"
-                    : index === 5
-                    ? "item5"
-                    : index === 6
-                    ? "item6"
-                    : index === 7
-                    ? "item7"
-                    : index === 8
-                    ? "item8"
-                    : index === 9
-                    ? "item9"
-                    : "item10"
-                }`}
+                className="item"
+                onMouseOver={() => handleColor(item.id)}
+                onMouseOut={() => setColor(null)}
               >
-                <div className="img">
+                <div className="labIcon" >
                   <img src={item.image} alt="" />
+                  <span
+                    style={{
+                      backgroundColor: color === item?.id && item?.color,
+                      width: "100%",
+                      height: "100%",
+                      position: "absolute",
+                      top: "0",
+                      left: "0",
+                      transition: "all .5s",
+                      opacity: ".5",
+                    }}
+                  ></span>
                 </div>
-
                   <div className="deatilSpecialist">
                     <h3>{item.title}</h3>
-                    <p>{item.content}</p>
+                    <p>{truncateText(item?.content, 250)}</p>
                   </div>
-                  <div className="readMore">
-                    <span></span>
-                    <span onClick={handleNav}>DAHA ƏTRAFLI</span>
-                  </div>
+                  <div className="readMore" onClick={handleNav}>
+                  <span style={{backgroundColor: color === item?.id && item?.color,}}></span>
+                  <span>DAHA ƏTRAFLI</span>
+                </div>
               </motion.div>
             ))}
           </motion.div>
