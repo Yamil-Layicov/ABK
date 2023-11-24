@@ -7,7 +7,7 @@ const PieChartBox = lazy(() => import('../../components/charts/pieChartBox/PieCh
 const BigChartBox = lazy(() => import('../../components/charts/bigChartBox/BigChartBox'));
 const BarChartBox = lazy(() => import('../../components/charts/barChartBox/BarChartBox'));
 
-import {
+import {  
   barChartBoxRevenue,
   barChartBoxVisit,
   chartBoxConversion,

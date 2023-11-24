@@ -148,10 +148,7 @@
   .blogPage{
     padding-bottom: 50px;
     .blogContent{
-        img{
-          width: 300px;
-          object-fit: cover;
-        }
+      padding-top: 60px;
       .icons{
         display: flex;
         flex-wrap: wrap;
@@ -165,6 +162,7 @@
       margin-top: 90px;
       img{
         object-fit: none !important;
+        height: 80vh !important;
       }
       h1{
         font-size: 45px;

@@ -290,12 +290,15 @@
 @media (max-width: 600px) {
   .aboutPage {
     .hedaerSection {
+      margin-top: 90px;
       h1 {
         font-size: 45px;
+        left: 5%;
       }
 
       img{
         object-fit: none !important;
+        height: 80vh !important;
       }
     }
     .aboutContent {
@@ -364,3 +367,4 @@
     }
   }
 }
+
