@@ -1,12 +1,14 @@
-import { useEffect, useState } from 'react';
-import './serviceDetail.scss';
+import { useEffect, useState } from "react";
+import "./serviceDetail.scss";
 import api from "../../../admin/api/posts";
-import { useParams, useNavigate } from "react-router-dom";
-
+import { useParams } from "react-router-dom";
+import bgImg from "../../../assets/abk-banner-3.jpg";
+import TruncatedText from "../../../helpers/TruncatedText";
 
 const ServiceDetail = () => {
   const [serviceData, setServiceData] = useState([]);
-  const {id} = useParams();
+  const [serviceLength, setServiceLength] = useState(1400);
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchSettings = async () => {
@@ -22,13 +24,29 @@ const ServiceDetail = () => {
   }, []);
 
   return (
-    <div className='servicePageDetail'>
-        <>
-          <h1>{serviceData?.title}</h1>
-          <p>{serviceData?.content}</p>
-        </>
+    <div className="servicePageDetail">
+      <div className="hedaerSection">
+        <div className="img">
+          <img src={bgImg} alt="" />
+        </div>
+        <h1> XIDMƏTLƏR </h1>
+      </div>
+      <div className="detailContent">
+        <h1>{serviceData?.title}</h1>
+        <p>
+          {serviceData?.content && (
+            <TruncatedText
+              text={serviceData?.content}
+              maxLength={serviceLength}
+            />
+          )}
+        </p>
+        {serviceData?.content?.length > serviceLength && (
+          <p className="moreBtn" onClick={() => setServiceLength((prev) => 2 * prev)}>Daha çox...</p>
+        )}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default ServiceDetail
+export default ServiceDetail;

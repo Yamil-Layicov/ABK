@@ -5,10 +5,9 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
 import { NavLink, useNavigate } from "react-router-dom";
-import logo from "../../assets/logo/Aqro bitki logo.svg";
-import fb from "../../assets/socials/facebook_icon.svg";
-import insta from "../../assets/socials/instagram_icon.svg";
 import api from '../../admin/api/posts';
+import fb from '../../assets/socials/fb.svg';
+import insta from '../../assets/socials/insta.svg';
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
@@ -92,7 +91,7 @@ const Navbar = () => {
     <>
       <nav className={`${navbar && "navActive"}`}>
         <div className="left">
-          <div className="logo">
+          <div onClick={() => navigate1()} className="logo">
             <img style={{ width: "150px" }} src={navData?.image} alt="" />
           </div>
           <div className="links">
@@ -102,7 +101,7 @@ const Navbar = () => {
               to="/"
               className="link"
             >
-              Ana səhifə
+              ANA SƏHİFƏ
             </NavLink>
             <NavLink
               style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
@@ -118,7 +117,7 @@ const Navbar = () => {
               to="/services"
               className="link"
             >
-              Xidmətlər
+              XİDMƏTLƏR
             </NavLink>
             <NavLink
               style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
@@ -153,7 +152,7 @@ const Navbar = () => {
                 <BlurOnOutlinedIcon />
               </span>
               <span className="text">
-                <span>HELPDESK</span> :{navData?.home_phone}
+                <span>ƏLAQƏ</span> :{navData?.home_phone}
               </span>
             </div>
           </div>

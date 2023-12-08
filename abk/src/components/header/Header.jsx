@@ -60,7 +60,7 @@ const Header = () => {
               <BlurOnOutlinedIcon />
             </span>
             <span className="text">
-              <span>HELPDESK</span> :{navData?.home_phone}
+              <span>ƏLAQƏ</span> :{navData?.home_phone}
             </span>
           </div>
         </div>

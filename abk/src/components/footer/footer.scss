@@ -1,12 +1,11 @@
 .footer {
   background-color: #171151;
   color: white;
-  padding: 120px 120px 60px 120px;
+  padding: 80px 120px 60px 120px;
 
   .boxes {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    
 
     h4 {
       font-family: "Archivo", sans-serif;
@@ -19,11 +18,6 @@
     }
 
     .firstBox {
-      padding-top: 70px;
-      img {
-        width: 250px;
-      }
-
       p {
         padding: 40px 0;
         line-height: 30px;

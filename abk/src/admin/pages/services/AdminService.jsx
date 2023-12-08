@@ -59,6 +59,21 @@ const AdminService = () => {
     }
   }
 
+  const truncateText = (text, maxLength) => {
+    if (text.length <= maxLength) {
+      return text;
+    } else {
+      const truncatedText = text.slice(0, maxLength);
+      const lastSpaceIndex = truncatedText.lastIndexOf(" ");
+      
+      if (lastSpaceIndex !== -1 && lastSpaceIndex < maxLength - 1) {
+        return truncatedText.slice(0, lastSpaceIndex) + "...";
+      } else {
+        return truncatedText + "...";
+      }
+    }
+  };
+
   return (
     <div className="adminBloq">
       <h4>Xidmətlər</h4>
@@ -81,7 +96,7 @@ const AdminService = () => {
                 <div style={{width:"60px", height:"60px", backgroundColor:item?.color}}></div>
               </td>
               <td>{item.title}</td> 
-              <td>{item.content}</td>
+              <td>{truncateText(item?.content, 250)}</td>
               <td>
               <button onClick={() => handleEdit(item.id)}><BiEditAlt/></button>
                 <button onClick={() => handleDelete(item.id)}><RiDeleteBin5Line/></button>

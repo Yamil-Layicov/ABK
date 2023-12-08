@@ -8,7 +8,7 @@ import WhyChooseUs from "../../components/whyChooseUs/WhyChooseUs";
 
 const HomePage = () => {
   return (
-    <>
+    <main style={{maxWidth:"2100px", margin:"auto"}}>
       <Header />
       <Services/>
       <About/>
@@ -16,7 +16,7 @@ const HomePage = () => {
       <WhyChooseUs/>
       <Team/>
       <Feedback/>
-    </>
+    </main>
   );
 };
 

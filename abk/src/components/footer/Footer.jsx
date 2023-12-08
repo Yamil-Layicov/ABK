@@ -1,10 +1,10 @@
 import "./footer.scss";
-import fb from "../../assets/socials/facebook_icon.svg";
-import insta from "../../assets/socials/instagram_icon.svg";
 import {BiLogoTelegram} from 'react-icons/bi'
 import { useEffect, useState } from "react";
 import api from '../../admin/api/posts';
 import {useNavigate} from 'react-router-dom';
+import fb from '../../assets/socials/fb.svg';
+import insta from '../../assets/socials/insta.svg';
 
 const Footer = () => {
 
@@ -62,12 +62,12 @@ const Footer = () => {
     <div className="footer">
       <div className="boxes">
         <div className="firstBox" style={{position:"relative"}}>
-          <img
+          {/* <img
           onClick={navigate1}
           style={{backgroundColor:"", width:"150px", position:"absolute", top:"-70px", left:"0"}}
             src={navData?.image}
             alt=""
-          />
+          /> */}
           <p>
           Agro Bitki Klinikasi olaraq, bizim missiyamız ölkənin iqtisadiyyatında prioritet sayılan kənd təsərrüfat sahələrinin daimi tərəqqisini təmin etmək, həmçinin, ən son texnoloji avadanlıqların və mütəxəssisilərin köməyi ilə bitki, su və qida məhsullarını analiz etməklə sağlam gələcəyə nail olmaqdır.
 
