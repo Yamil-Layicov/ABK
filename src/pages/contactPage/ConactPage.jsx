@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { BsPhone } from "react-icons/bs";
 import { AiOutlineClockCircle } from "react-icons/ai";
@@ -8,9 +8,12 @@ import api from "../../admin/api/posts";
 import bgImg from "../../assets/abk-banner-3.jpg";
 import "./contactPage.scss";
 import { basicSchema } from "./shemas";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const ContactPage = () => {
   const [contactData, setContactData] = useState([]);
+  const form = useRef();
 
   useEffect(() => {
     const fetchSettings = async () => {
@@ -36,6 +39,7 @@ const ContactPage = () => {
     try {
       const response = await api.post("contacts", values);
       if (response) {
+        emailjs.send( "service_ywb5h4s","template_87bq4fi",values,"8BbajweS08RNaIiB_")
         toast.success("Mesaj göndərildi");
         actions.resetForm({ values: initialValues });
       }
@@ -97,7 +101,7 @@ const ContactPage = () => {
         </div>
         <div className="right">
           <h2>Bizə mesaj göndərin :</h2>
-          <form onSubmit={handleSubmit}>
+          <form ref={form} onSubmit={handleSubmit}>
             <div className="upInputs">
               <div className="inputBox">
                 <input
