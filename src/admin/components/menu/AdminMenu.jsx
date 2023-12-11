@@ -15,8 +15,8 @@ const menu = [
       },
       {
         id: 2,
-        title: "İstifadəçilər",
-        url: "/admin/profil",
+        title: "Müraciətlər",
+        url: "/admin/mesajlar",
         icon: "/user.svg",
       },
     ],

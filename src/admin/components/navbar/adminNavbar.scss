@@ -47,25 +47,29 @@
       }
     }
 
-    .logOutAdmin {
-      position: relative;
-
-      .logOutBtn {
-        position: absolute;
-        top: 25px;
-        left: -20px;
-        border: 1px solid rgba(120, 120, 120, 0.514);
-        border-radius: 5px;
-        padding: 4px 8px;
-        transition: background-color .4s ease-in-out;
-
-        &:hover{
-          cursor: pointer;
-          color: #2A3447;
-          background-color: aliceblue;
-        }
-
-      }
+    .icon{
+      cursor: pointer;
     }
+
+    // .logOutAdmin {
+    //   position: relative;
+
+    //   .logOutBtn {
+    //     position: absolute;
+    //     top: 25px;
+    //     left: -20px;
+    //     border: 1px solid rgba(120, 120, 120, 0.514);
+    //     border-radius: 5px;
+    //     padding: 4px 8px;
+    //     transition: background-color .4s ease-in-out;
+
+    //     &:hover{
+    //       cursor: pointer;
+    //       color: #2A3447;
+    //       background-color: aliceblue;
+    //     }
+
+    //   }
+    // }
   }
 }

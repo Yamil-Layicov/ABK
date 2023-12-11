@@ -3,7 +3,6 @@ import Error404 from '../pages/error404Page/Error404'
 import PrivateRoute from './PrivateRoute'
 import AdminLayout from '../admin/adminLayout/AdminLayout'
 import AdminHome from '../admin/pages/home/AdminHome'
-import Users from '../admin/pages/users/Users'
 import AdminAbout from '../admin/pages/about/AdminAbout'
 import Login from '../pages/adminLoginPage/Login'
 import Settings from '../admin/pages/setting/Settings'
@@ -35,6 +34,7 @@ import ServiceDetail from '../pages/servicesPage/serviceDetail/ServiceDetail'
 import NewsLayout from '../pages/news/newsLayout/NewsLayout'
 import NewsPage from '../pages/news/NewsPage'
 import NewsDetail from '../pages/news/newsDetail/NewsDetail'
+import Messages from '../admin/pages/messages/Messages'
 
 
 
@@ -108,8 +108,8 @@ const routes = [
         element: <PrivateRoute><AdminHome /></PrivateRoute>,
       },
       {
-        path: 'profil',
-        element: <PrivateRoute><Users/></PrivateRoute>,
+        path: 'mesajlar',
+        element: <PrivateRoute><Messages/></PrivateRoute>,
       },
       {
         path: 'about',

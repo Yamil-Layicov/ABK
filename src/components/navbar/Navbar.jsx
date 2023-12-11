@@ -8,11 +8,14 @@ import { NavLink, useNavigate } from "react-router-dom";
 import api from '../../admin/api/posts';
 import fb from '../../assets/socials/fb.svg';
 import insta from '../../assets/socials/insta.svg';
+import { useAuth } from "../../context/AuthContext";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const [isOpenNavbar, setIsOpenNavbar] = useState(false);
   const [navData, setNavData] = useState([])
+
+ 
 
   const changeBackground = () => {
     if (window.scrollY >= 80) {

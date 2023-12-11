@@ -1,12 +1,15 @@
-import bgImg from "../../assets/abk-banner-3.jpg";
-import "./contactPage.scss";
+import React, { useEffect, useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { BsPhone } from "react-icons/bs";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import { useEffect, useState } from "react";
+import { useFormik } from "formik";
+import { toast } from "react-toastify";
 import api from "../../admin/api/posts";
+import bgImg from "../../assets/abk-banner-3.jpg";
+import "./contactPage.scss";
+import { basicSchema } from "./shemas";
 
-const ConactPage = () => {
+const ContactPage = () => {
   const [contactData, setContactData] = useState([]);
 
   useEffect(() => {
@@ -21,6 +24,41 @@ const ConactPage = () => {
 
     fetchSettings();
   }, []);
+
+  const initialValues = {
+    full_name: "",
+    email: "",
+    number: "",
+    note: "",
+  };
+
+  const onSubmit = async (values, actions) => {
+    try {
+      const response = await api.post("contacts", values);
+      if (response) {
+        toast.success("Mesaj göndərildi");
+        actions.resetForm({ values: initialValues });
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const formik = useFormik({
+    initialValues,
+    validationSchema: basicSchema,
+    onSubmit,
+  });
+
+  const {
+    handleSubmit,
+    errors,
+    handleChange,
+    isSubmitting,
+    touched,
+    handleBlur,
+    values,
+  } = formik;
 
   return (
     <div className="contactPage">
@@ -59,26 +97,65 @@ const ConactPage = () => {
         </div>
         <div className="right">
           <h2>Bizə mesaj göndərin :</h2>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="upInputs">
-              <input type="text" placeholder="adınızı daxil edin" />
-              <input type="email" placeholder="e-poçt daxil edin " />
-              <input type="text" placeholder="nömrənizi yazın" />
+              <div className="inputBox">
+                <input
+                  value={values.full_name}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  id="full_name"
+                  type="text"
+                  placeholder="ad və soyadınızı daxil edin"
+                  className={
+                    errors.full_name && touched.full_name ? "inputError" : ""
+                  }
+                />
+                {errors.full_name && touched.full_name && (
+                  <small>{errors.full_name}</small>
+                )}
+              </div>
+              <div className="inputBox">
+                <input
+                  value={values.email}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  id="email"
+                  type="email"
+                  placeholder="e-poçt daxil edin "
+                  className={errors.email && touched.email ? "inputError" : ""}
+                />
+                {errors.email && touched.email && <small>{errors.email}</small>}
+              </div>
+              <div className="inputBox">
+                <input
+                  value={values.number}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  id="number"
+                  type="tel"
+                  placeholder="nömrənizi daxil edin"
+                  className={
+                    errors.number && touched.number ? "inputError" : ""
+                  }
+                />
+                {errors.number && touched.number && (
+                  <small>{errors.number}</small>
+                )}
+              </div>
             </div>
             <textarea
-              style={{
-                padding: "20px",
-                outline: "none",
-                border: "1px solid gray",
-                borderRadius: "4px",
-              }}
-              placeholder="mesajınızı yazın"
+              value={values.note}
+              onChange={handleChange}
+              id="note"
+              placeholder="mesajınızı qeyd edin"
               name=""
-              id=""
               cols="30"
               rows="10"
             ></textarea>
-            <button>Mesaj göndər</button>
+            <button disabled={isSubmitting} type="submit">
+              Mesaj göndər
+            </button>
           </form>
           <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12149.849936129462!2d49.8786396!3d40.420757!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x403089a3b0fde691%3A0x38ac3991190cca0!2sAgro%20Bitki%20Klinikas%C4%B1%20-%20Fitolab!5e0!3m2!1str!2saz!4v1698134293423!5m2!1str!2saz"></iframe>
         </div>
@@ -87,4 +164,4 @@ const ConactPage = () => {
   );
 };
 
-export default ConactPage;
+export default ContactPage;
