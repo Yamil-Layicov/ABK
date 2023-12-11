@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Days+One&family=Poppins:wght@100;200;300;400;500;600;700;900&family=Raleway:wght@500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Days+One&family=Poppins:wght@100;200;300;400;500;600;700;900&family=Raleway:wght@500;600;700;800&display=swap");
 
 .newsPageMainSection {
   z-index: 1;
-    font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 
   .hedaerSection {
     margin-top: 125px;
@@ -25,7 +25,7 @@
       img {
         width: 100%;
         height: 100%;
-        object-fit: cover; 
+        object-fit: cover;
       }
     }
 
@@ -43,31 +43,15 @@
   }
 
   .newsBoxes {
-    z-index: 1;
     padding: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    button{
-      border: none;
-      background-color: #664CF0;
-      font-size: 22px;
-      color: white;
-      padding: 18px 22px 14px 22px;
-      margin-top: 20px;
-      transition: all .3s ease-in-out;
-
-      &:hover{
-          background-color: #29f0b4;
-          cursor: pointer;
-          color: white;
-      }
-    }
+   
     .boxes {
-      z-index: 1;
       width: 1300px;
       display: grid;
-      grid-template-columns: repeat(3, 3fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 40px;
 
       .box {
@@ -76,8 +60,8 @@
         position: relative;
         .imgBox {
           img {
-            width: 100%;
             height: 300px;
+            width: 100%;
             object-fit: cover;
             border-radius: 5px;
           }
@@ -85,36 +69,36 @@
         .textBox {
           padding: 40px 40px 0px 40px;
           .date {
-            background-color:#29f0b4;
+            background-color: #29f0b4;
             width: 130px;
             text-align: center;
             padding: 8px 0;
             color: white;
             font-size: 13px;
-            font-family: 'Poppins', sans-serif;
+            font-family: "Poppins", sans-serif;
           }
-          .title{
+          .title {
             font-size: 20px;
             font-weight: 500;
-            font-family: 'Poppins', sans-serif;
+            font-family: "Poppins", sans-serif;
             padding-top: 20px;
           }
-          button{
+          button {
             border: none;
             background-color: white;
             font-size: 25px;
             color: gray;
             padding: 18px 22px 14px 22px;
             margin-top: 20px;
-            transition: all .3s ease-in-out;
+            transition: all 0.3s ease-in-out;
             position: absolute;
             bottom: 0;
             left: 40px;
 
-            &:hover{
-                background-color: #29f0b4;
-                cursor: pointer;
-                color: white;
+            &:hover {
+              background-color: #29f0b4;
+              cursor: pointer;
+              color: white;
             }
           }
         }
@@ -125,31 +109,31 @@
 
 @media (max-width: "1300px") {
   .newsPageMainSection {
-    .newsBoxes{
-      .boxes{
+    .newsBoxes {
+      .boxes {
         grid-template-columns: repeat(2, 2fr);
       }
     }
   }
 }
 
-@media (max-width: "1050px") {
+@media (max-width: 1050px) {
   .newsPageMainSection {
     padding-top: 90px;
   }
 }
 
-@media (max-width: "900px") {
+@media (max-width: 900px) {
   .newsPageMainSection {
-    .newsBoxes{
+    .newsBoxes {
       padding: 100px 15px;
-      .boxes{
+      .boxes {
         grid-template-columns: repeat(1, 1fr);
         gap: 80px;
-        .box{
-          .textBox{
+        .box {
+          .textBox {
             padding: 20px 20px 0px 20px;
-            .title{
+            .title {
               font-size: 25px;
             }
           }
@@ -159,29 +143,31 @@
   }
 }
 
-@media (max-width: "600px") {
+@media (max-width: 600px) {
   .newsPageMainSection {
-    padding-top: 80px;
-    .imgBanner{
-      padding-left: 50px;
+    .hedaerSection {
+      margin-top: 0px;
+      h1 {
+        font-size: 45px;
+        left: 5%;
+      }
 
-      &::after{
-        left: 50px;
+      img {
+        object-fit: none !important;
+        height: 80vh !important;
       }
     }
-    .newsBoxes{
-      .boxes{
-        .box{
-          
+    .newsBoxes {
+      .boxes {
+        .box {
           .textBox {
             padding: 40px 20px 0px 20px;
             .date {
-              
             }
-            .title{
+            .title {
               font-size: 18px;
             }
-            button{
+            button {
               left: 20px !important;
             }
           }

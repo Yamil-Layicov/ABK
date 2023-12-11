@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import './serviceDetail.scss';
 import api from "../../../admin/api/posts";
-import {  Link, useNavigate, useParams } from "react-router-dom";
+import {  Link, useParams } from "react-router-dom";
 import bgImg from "../../../assets/abk-banner-3.jpg";
 import TruncatedText from "../../../helpers/TruncatedText";
 
@@ -40,14 +40,12 @@ const ServiceDetail = () => {
 
  
 
-  const handleDetail = (id) => {
-    navigate(`${id}`);
+  const handleDetail = () => {
     window.scrollTo({
       top: 0,
     });
   };
 
-  const navigate = useNavigate();
 
   return (
     <div className="servicePageDetail">
@@ -81,7 +79,7 @@ const ServiceDetail = () => {
           <h2 style={{textAlign:"center"}}>Kateqoriyalar</h2>
         <div className="boxes">
           {serviceDataAll?.map((box, index) => (
-            <Link style={{textDecoration:"none", color:"black"}} to="/services" key={index} className="box" >
+            <Link style={{textDecoration:"none", color:"black"}} to="/services"onClick={handleDetail} key={index} className="box" >
               <div className="intoBox">
                   <p ><img
                     src={box.image}

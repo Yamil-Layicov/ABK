@@ -41,14 +41,14 @@ const CategoryEdit = ({ setShowModalEdit, categoryId }) => {
 
   return (
     <div className="modal">
-      <div className="modalInto">
+      <div className="modalInto" style={{position:"relative"}}>
         <form onSubmit={handleSubmit}>
           <h2 style={{ color: "black" }}>Redaktə et</h2>
           <label>Kategoriya adı</label>
           <input type="text" onChange={(e) => setName(e.target.value)} value={name || ""} />
           <button type="submit">Yadda saxla</button>
         </form>
-        <span onClick={() => setShowModalEdit(false)} style={{ color: "black" }}>X</span>
+        <span onClick={() => setShowModalEdit(false)} style={{ color: "black", position:"absolute", top:"10px", right:"10px", cursor:"pointer" }}>X</span>
       </div>
     </div>
   );

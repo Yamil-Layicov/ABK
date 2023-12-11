@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import "./newsDetail.scss";
 import api from "../../../admin/api/posts";
 import { Link, useParams } from "react-router-dom";
-import { motion } from "framer-motion";
 import { convertDate } from "../../../helpers/DateFns"; 
 import TruncatedText from "../../../helpers/TruncatedText";
 import { useQuery } from "@tanstack/react-query";
 import Loader from "../../../components/loader/Loader";
+import bgImg from '../../../assets/abk-banner-3.jpg';
 
 const NewsDetail = () => {
   const [newsData, setNewsData] = useState([]);
@@ -53,6 +53,12 @@ const NewsDetail = () => {
   return (
     <>
       <div className="newsPageDetail">
+      <div className="hedaerSection">
+        <div className="img">
+          <img src={bgImg} alt="" />
+        </div>
+        <h1>BLOQ</h1>
+      </div>
           {
             loadings ? <Loader color={"white"}/> : <div className="newsDetailBox">
             <div className="newsDetailBoxInto">

@@ -76,7 +76,7 @@ const NewsPage = () => {
         <div className="img">
           <img src={bgImg} alt="" />
         </div>
-        <h1>HAQQIMIZDA</h1>
+        <h1>BLOQ</h1>
       </div>
           <div className="newsBoxes">
             {loading ? (
