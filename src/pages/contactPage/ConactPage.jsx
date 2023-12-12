@@ -10,6 +10,7 @@ import "./contactPage.scss";
 import { basicSchema } from "./shemas";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import HelmetMeta from "../../components/helmet/HelmetMeta";
 
 const ContactPage = () => {
   const [contactData, setContactData] = useState([]);
@@ -66,6 +67,8 @@ const ContactPage = () => {
 
   return (
     <div className="contactPage">
+      <HelmetMeta title="Eleqe" content="Bakı şəhər, Nərimanov rayonu,
+Ələsgər Qayıbov 12 22"/>
       <div className="hedaerSection">
         <div className="img">
           <img src={bgImg} alt="" />

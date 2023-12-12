@@ -2,6 +2,7 @@ import "./faqPage.scss";
 import bgImg from "../../assets/abk-banner-3.jpg";
 import api from "../../admin/api/posts";
 import { useEffect, useState } from "react";
+import HelmetMeta from "../../components/helmet/HelmetMeta";
 
 const FaqPage = () => {
   const [faqData, setFaqData] = useState([]);
@@ -22,6 +23,7 @@ const FaqPage = () => {
 
   return (
     <div className="faqPage">
+       <HelmetMeta title="FAQ" content="Bitki Xəstəliklərinin Diaqnostikası Nədir?"/>
       <div className="hedaerSection">
         <div className="img">
           <img src={bgImg} alt="" />

@@ -2,11 +2,10 @@ import bgImg from "../../assets/abk-banner-3.jpg";
 import "./aboutPage.scss";
 import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
 import { useEffect, useState } from "react";
-import api from '../../admin/api/posts';
-
+import api from "../../admin/api/posts";
+import HelmetMeta from "../../components/helmet/HelmetMeta";
 
 const AboutPage = () => {
-
   const [aboutData, setAboutData] = useState([]);
 
   useEffect(() => {
@@ -25,6 +24,8 @@ const AboutPage = () => {
 
   return (
     <div className="aboutPage">
+      <HelmetMeta title="Haqqimizda" content="AQRAR SAHƏDƏ İXTİSASLAŞMIŞ LABORATORİYA"/>
+
       <div className="hedaerSection">
         <div className="img">
           <img src={bgImg} alt="" />
@@ -34,31 +35,27 @@ const AboutPage = () => {
 
       <div className="aboutContent">
         <div className="imgContainer">
-          <div className="imgOne" >
-            <img src={aboutData.image_1}alt=""/>
+          <div className="imgOne">
+            <img src={aboutData.image_1} alt="" />
             <div className="experinceBox">
               <span>3</span>
-              <span style={{paddingLeft:"12%"}}>İllik</span>
-              <span style={{paddingLeft:"10%"}}>Təcrübə</span>
+              <span style={{ paddingLeft: "12%" }}>İllik</span>
+              <span style={{ paddingLeft: "10%" }}>Təcrübə</span>
             </div>
           </div>
           <div>
             <div className="imgTwo">
-            <img src={aboutData.image_2}alt=""/>
+              <img src={aboutData.image_2} alt="" />
             </div>
             <div className="imgThree">
-            <img src={aboutData.image_3}alt=""/>
+              <img src={aboutData.image_3} alt="" />
             </div>
           </div>
         </div>
         <div className="textContainer">
           <h1>{aboutData.title}</h1>
-          <p className="first">
-          Nə üçün biz?   
-          </p>
-          <p className="second">
-          {aboutData.content}
-          </p>
+          <p className="first">Nə üçün biz?</p>
+          <p className="second">{aboutData.content}</p>
           <div className="doneBox">
             <span className="spanIcon">
               <DoneOutlinedIcon />

@@ -48,7 +48,7 @@ const routes = [
         element: <HomePage />,
       },
       {
-        path: 'services',
+        path: 'xidmetler',
         element: <ServiceLayout />,
         children: [
           {
@@ -62,7 +62,7 @@ const routes = [
         ],
       },
       {
-        path: 'blog',
+        path: 'bloq',
         element: <NewsLayout />,
         children:[
           {
@@ -76,11 +76,11 @@ const routes = [
         ]
       },
       {
-        path: 'haqqımızda',
+        path: 'haqqimizda',
         element: <AboutPage />,
       },
       {
-        path: 'contact',
+        path: 'elaqe',
         element: <ConactPage />,
       },
       {

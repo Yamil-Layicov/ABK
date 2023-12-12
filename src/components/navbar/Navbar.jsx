@@ -8,7 +8,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import api from '../../admin/api/posts';
 import fb from '../../assets/socials/fb.svg';
 import insta from '../../assets/socials/insta.svg';
-import { useAuth } from "../../context/AuthContext";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
@@ -56,19 +55,19 @@ const Navbar = () => {
     setIsOpenNavbar(false);
   };
   const navigate2 = () => {
-    navigate("services");
+    navigate("xidmetler");
     setIsOpenNavbar(false);
   };
   const navigate3 = () => {
-    navigate("blog");
+    navigate("bloq");
     setIsOpenNavbar(false);
   };
   const navigate4 = () => {
-    navigate("haqqımızda");
+    navigate("haqqimizda");
     setIsOpenNavbar(false);
   };
   const navigate5 = () => {
-    navigate("contact");
+    navigate("elaqe");
     setIsOpenNavbar(false);
   };
   const navigate6 = () => {
@@ -109,7 +108,7 @@ const Navbar = () => {
             <NavLink
               style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
               onClick={() => moveToTop()}
-              to="/haqqımızda"
+              to="/haqqimizda"
               className="link"
             >
               Haqqımızda
@@ -117,7 +116,7 @@ const Navbar = () => {
             <NavLink
               style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
               onClick={() => moveToTop()}
-              to="/services"
+              to="/xidmetler"
               className="link"
             >
               XİDMƏTLƏR
@@ -125,7 +124,7 @@ const Navbar = () => {
             <NavLink
               style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
               onClick={() => moveToTop()}
-              to="/blog"
+              to="/bloq"
               className="link"
             >
               Bloq
@@ -133,7 +132,7 @@ const Navbar = () => {
             <NavLink
               style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
               onClick={() => moveToTop()}
-              to="/contact"
+              to="/elaqe"
               className="link"
             >
               Əlaqə

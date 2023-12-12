@@ -1,5 +1,4 @@
 import "./newsPage.scss";
-import { motion } from "framer-motion";
 import { GoArrowRight } from "react-icons/go";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import api from "../../admin/api/posts";
@@ -8,6 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import Loader from "../../components/loader/Loader";
 import { convertDate } from "../../helpers/DateFns";
 import bgImg from '../../assets/abk-banner-3.jpg';
+import HelmetMeta from "../../components/helmet/HelmetMeta";
 
 const NewsPage = () => {
   const [newsData, setNewsData] = useState([]);
@@ -72,6 +72,7 @@ const NewsPage = () => {
   return (
     <>
       <div className="newsPageMainSection">
+        <HelmetMeta title="Bloq" content="Letgen firmasının rəhbəri Fahrettin Özcan Aqro bitki klinikasının mütəxəssislərinə təlim keçmişdir."/>
       <div className="hedaerSection">
         <div className="img">
           <img src={bgImg} alt="" />

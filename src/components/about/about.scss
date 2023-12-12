@@ -77,15 +77,22 @@
     }
 
     button {
-      padding: 17px;
-      background-color: #10d0a1;
-      border: none;
-      color: white;
-      font-weight: bold;
       width: 200px;
-      font-size: 20px;
-      border-radius: 7px;
-      margin-top: 20px;
+      background-color: #10d0a1;
+      color: white;
+      font-weight: 700;
+      border: none;
+      border-radius: 3px;
+      padding: 18px 40px;
+      font-size: 21px;
+      border: 2px solid transparent;
+      transition: all .3s ease-in-out;
+
+      &:hover{
+        background-color: transparent;
+        border: 2px solid #10d0a1;
+        color: #10d0a1;
+      }
     }
   }
 }

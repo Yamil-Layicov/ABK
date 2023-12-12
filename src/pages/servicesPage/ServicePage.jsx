@@ -3,6 +3,7 @@ import "./servicePage.scss";
 import bgImg from "../../assets/abk-banner-3.jpg";
 import api from "../../admin/api/posts";
 import { useNavigate } from "react-router-dom";
+import HelmetMeta from "../../components/helmet/HelmetMeta";
 
 const ServicePage = () => {
   const [serviceData, setServiceData] = useState([]);
@@ -51,6 +52,7 @@ const ServicePage = () => {
 
   return (
     <div className="servicePageMain">
+      <HelmetMeta title="Xidmetler" content="Qida məhsullarının GMO analizi"/>
       <div className="hedaerSection">
         <div className="img">
           <img src={bgImg} alt="" />
