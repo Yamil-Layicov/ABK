@@ -31,11 +31,8 @@ const Team = () => {
 
   const navigate = useNavigate()
 
-  const handleNav = () => {
-    navigate("/services")
-    window.scrollTo({
-      top: 0,
-    });
+  const handleNav = (id) => {
+    navigate(`/xidmetler/${id}`)
   }
 
   const truncateText = (text, maxLength) => {
@@ -100,7 +97,7 @@ const Team = () => {
                     <h3>{item.title}</h3>
                     <p>{truncateText(item?.content, 250)}</p>
                   </div>
-                  <div className="readMore" onClick={handleNav}>
+                  <div className="readMore" onClick={() => handleNav(item.id)}>
                   <span style={{backgroundColor: color === item?.id && item?.color,}}></span>
                   <span>DAHA ƏTRAFLI</span>
                 </div>

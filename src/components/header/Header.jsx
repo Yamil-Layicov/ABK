@@ -17,7 +17,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   const navigateAbout = () => {
-    navigate("haqqımızda");
+    navigate("haqqimizda");
   };
 
   const showVideo = () => {
@@ -60,7 +60,7 @@ const Header = () => {
               <BlurOnOutlinedIcon />
             </span>
             <span className="text">
-              <span>ƏLAQƏ</span> :{navData?.home_phone}
+            <span onClick={() => navigate("/account")}>ŞƏXSİ KABİNET</span>
             </span>
           </div>
         </div>

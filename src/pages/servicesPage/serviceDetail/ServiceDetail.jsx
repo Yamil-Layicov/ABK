@@ -79,7 +79,7 @@ const ServiceDetail = () => {
           <h2 style={{textAlign:"center"}}>Kateqoriyalar</h2>
         <div className="boxes">
           {serviceDataAll?.map((box, index) => (
-            <Link style={{textDecoration:"none", color:"black"}} to="/services"onClick={handleDetail} key={index} className="box" >
+            <Link style={{textDecoration:"none", color:"black"}} to="/xidmetler"onClick={handleDetail} key={index} className="box" >
               <div className="intoBox">
                   <p ><img
                     src={box.image}

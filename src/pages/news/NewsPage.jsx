@@ -19,9 +19,6 @@ const NewsPage = () => {
   const handleId = (id) => {
     console.log(id);
     navigate(`${id}`);
-    window.scrollTo({
-      top: 0,
-    });
   };
 
   useEffect(() => {

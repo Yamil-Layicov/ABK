@@ -26,10 +26,7 @@ const About = () => {
   const navigate = useNavigate()
 
   const navigateAbout = () => {
-    navigate("haqqımızda")
-    window.scrollTo({
-      top:0,
-    })
+    navigate("haqqimizda")
   }
 
   return (

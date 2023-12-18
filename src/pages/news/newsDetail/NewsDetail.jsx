@@ -76,7 +76,7 @@ const NewsDetail = () => {
             <div className="categories">
               <h2>Kateqoriyalar</h2>
               {categories?.map((box) => (
-                <Link className="category-link" to={`/blog?category=${box.id}`} key={box.id}>
+                <Link className="category-link" to={`/bloq?category=${box.id}`} key={box.id}>
                   {box.name}
                 </Link>
               ))}

@@ -45,9 +45,6 @@ const ServicePage = () => {
 
   const handleDetail = (id) => {
     navigate(`${id}`);
-    window.scrollTo({
-      top: 0,
-    });
   };
 
   return (

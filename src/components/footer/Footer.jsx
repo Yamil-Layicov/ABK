@@ -24,38 +24,27 @@ const Footer = () => {
     fetchSettings();
   }, []);
 
-  const moveToTop = () => {
-    window.scrollTo({
-      top: 0,
-    });
-  };
 
 
   const navigate = useNavigate();
 
   const navigate1 = () => {
     navigate("/");
-    moveToTop();
   };
   const navigate2 = () => {
-    navigate("services");
-    moveToTop();
+    navigate("xidmetler");
   };
   const navigate3 = () => {
-    navigate("blog");
-    moveToTop();
+    navigate("bloq");
   };
   const navigate4 = () => {
-    navigate("haqqımızda");
-    moveToTop();
+    navigate("haqqimizda");
   };
   const navigate5 = () => {
-    navigate("contact");
-    moveToTop();
+    navigate("elaqe");
   };
   const navigate6 = () => {
     navigate("faq");
-    moveToTop();
   };
 
   return (

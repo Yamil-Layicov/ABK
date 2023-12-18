@@ -15,9 +15,6 @@ import ConactPage from '../pages/contactPage/ConactPage';
 import FaqPage from '../pages/faqPage/FaqPage';
 
 
-import Layout from '../pages/kabinetLoginRegister/loayout/Layout';
-import LoginPage from '../pages/kabinetLoginRegister/login/LoginPage';
-import RegisterPage from '../pages/kabinetLoginRegister/register/RegisterPage';
 import AdminBloq from '../admin/pages/bloq/AdminBloq'
 import AdminBloqLayout from '../admin/pages/bloq/adminBloqLayout/AdminBloqLayout'
 import BloqCreate from '../admin/pages/bloq/bloqCreate/BloqCreate'
@@ -35,6 +32,10 @@ import NewsLayout from '../pages/news/newsLayout/NewsLayout'
 import NewsPage from '../pages/news/NewsPage'
 import NewsDetail from '../pages/news/newsDetail/NewsDetail'
 import Messages from '../admin/pages/messages/Messages'
+
+import Layout from '../pages/kabinetLoginRegister/layout/Layout'
+import UserLogin from '../pages/kabinetLoginRegister/userLogin/UserLogin'
+import UserRegister from '../pages/kabinetLoginRegister/userRegister/UserRegister'
 
 
 
@@ -177,16 +178,16 @@ const routes = [
   },
 
   {
-    path:"/şəksiKabinet",
+    path:"/account",
     element: <Layout/>,
     children:[
       {
         index: true,
-        element: <LoginPage/>
+        element: <UserLogin/>
       },
       {
-        path:"/şəksiKabinet/qeydiyyat",
-        element: <RegisterPage/>
+        path:"/account/register",
+        element: <UserRegister/>
       }
     ]
   }

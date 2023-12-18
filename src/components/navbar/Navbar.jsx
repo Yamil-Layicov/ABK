@@ -24,11 +24,6 @@ const Navbar = () => {
     }
   };
 
-  const moveToTop = () => {
-    window.scrollTo({
-      top: 0,
-    });
-  };
 
   useEffect(() => {
     window.addEventListener("scroll", changeBackground);
@@ -99,7 +94,6 @@ const Navbar = () => {
           <div className="links">
             <NavLink
               style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
-              onClick={() => moveToTop()}
               to="/"
               className="link"
             >
@@ -107,7 +101,6 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
-              onClick={() => moveToTop()}
               to="/haqqimizda"
               className="link"
             >
@@ -115,7 +108,6 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
-              onClick={() => moveToTop()}
               to="/xidmetler"
               className="link"
             >
@@ -123,7 +115,6 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
-              onClick={() => moveToTop()}
               to="/bloq"
               className="link"
             >
@@ -131,7 +122,6 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
-              onClick={() => moveToTop()}
               to="/elaqe"
               className="link"
             >
@@ -139,7 +129,6 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
-              onClick={() => moveToTop()}
               to="/faq"
               className="link"
             >
@@ -154,7 +143,7 @@ const Navbar = () => {
                 <BlurOnOutlinedIcon />
               </span>
               <span className="text">
-                <span>ƏLAQƏ</span> :{navData?.home_phone}
+                <span onClick={() => navigate("/account")}>ŞƏXSİ KABİNET</span>
               </span>
             </div>
           </div>
