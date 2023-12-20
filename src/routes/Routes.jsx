@@ -36,6 +36,9 @@ import Messages from '../admin/pages/messages/Messages'
 import Layout from '../pages/kabinetLoginRegister/layout/Layout'
 import UserLogin from '../pages/kabinetLoginRegister/userLogin/UserLogin'
 import UserRegister from '../pages/kabinetLoginRegister/userRegister/UserRegister'
+import NewPassword from '../pages/kabinetLoginRegister/newPassword/NewPassword'
+import UpdatePassword from '../pages/kabinetLoginRegister/updatePassword/UpdatePassword'
+import VerificationCode from '../pages/kabinetLoginRegister/verificationCode/VerificationCode'
 
 
 
@@ -184,6 +187,18 @@ const routes = [
       {
         index: true,
         element: <UserLogin/>
+      },
+      {
+        path: "/account/updatePassword",
+        element: <UpdatePassword/>
+      },
+      {
+        path: "/account/verificationCode",
+        element: <VerificationCode/>
+      },
+      {
+        path: "/account/newPassword",
+        element: <NewPassword/>
       },
       {
         path:"/account/register",
