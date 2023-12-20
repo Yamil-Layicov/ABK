@@ -1,20 +1,10 @@
 import "./style.scss";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import { DevTool } from "@hookform/devtools";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 
-const schema = yup.object().shape({
-  email: yup.string().email().required(),
-  password: yup
-    .string()
-    .required()
-    .min(8, "Password must be at least 8 characters"),
-});
+
 
 const FormValues = {
   email: "",
@@ -23,6 +13,7 @@ const FormValues = {
 
 const UserLogin = () => {
   const [isChecked, setChecked] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleButtonClick = () => {
     setChecked(!isChecked);
@@ -30,20 +21,17 @@ const UserLogin = () => {
 
   const navigate = useNavigate();
 
-  const { register, control, handleSubmit, formState } = useForm({
-    defaultValues: FormValues,
-    resolver: yupResolver(schema),
-  });
-  const { errors } = formState;
-  const [showPassword, setShowPassword] = useState(false);
-
   const handleTogglePassword = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
+  
+
+ 
   const onSubmit = (data) => {
     console.log(data);
   };
+
 
   return (
     <div className="mainRegister">
@@ -51,22 +39,20 @@ const UserLogin = () => {
       <div className="register">
         <div className="intoRegister">
           <h3>Şəxsi kabinetə giriş</h3>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={onSubmit}>
             <input
               type="email"
               placeholder="E-mail ünvan"
-              {...register("email")}
               style={{
-                border: `1px solid ${errors.email ? "red" : "#9A9696"}`,
+                // border: `1px solid ${errors.email ? "red" : "#9A9696"}`,
               }}
             />
             <div style={{ position: "relative", width: "100%" }}>
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Şifrə"
-                {...register("password")}
                 style={{
-                  border: `1px solid ${errors.password ? "red" : "#9A9696"}`,
+                  // border: `1px solid ${errors.password ? "red" : "#9A9696"}`,
                   width: "100%",
                 }}
               />
@@ -110,7 +96,6 @@ const UserLogin = () => {
 
             <button type="submit">Daxil ol</button>
           </form>
-          <DevTool control={control} />
           <p className="accaountText">
             Hesabınız yoxdur?{" "}
             <span onClick={() => navigate("/account/register")}>
