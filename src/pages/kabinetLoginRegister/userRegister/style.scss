@@ -3,7 +3,7 @@
   background-color: white;
 
   .headerBox {
-    height: 50px;
+    height: 30px;
   }
 
   .register {
@@ -13,17 +13,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 30px);
     .intoRegister {
-      width: calc(970px / 2);
+      width: calc(430px);
       background-color: white;
       border-radius: 16px;
-      padding: 40px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       gap: 10px;
-      
-      p{
+
+      p {
         font-family: "Inter", sans-serif;
       }
       form {
@@ -31,26 +31,36 @@
         flex-direction: column;
         gap: 25px;
 
-        .inputBox{
+        .inputBox {
           position: relative;
           input {
-            padding: calc(26px / 2);
+            padding: 10px;
             outline: none;
-            border-radius: 12px;
+            border-radius: 10px;
             font-weight: 500;
-            border: 1px solid #9A9696;
+            border: 1px solid #9a9696;
             width: 100%;
-            font-size: 15px;
+            font-size: 16px;
           }
-          small{
+          small {
             color: red;
             position: absolute;
             bottom: -18px;
-            left: 10px;
+            left: 5px;
             font-size: 12px;
           }
+          .inputError {
+            border: 1px solid red !important;
+          }
+          .inputEyes {
+            position: absolute;
+            top: 8px;
+            right: 20px;
+            color: #9a9696;
+            font-size: 22px;
+            cursor: pointer;
+          }
         }
-       
 
         button {
           border-radius: 16px;
@@ -67,7 +77,7 @@
         .forgotBox {
           display: flex;
           justify-content: space-between;
-          span{
+          span {
             cursor: pointer;
           }
           .saveBox {
@@ -75,39 +85,39 @@
             justify-content: start;
             gap: 10px;
 
-            .textSave{
+            .textSave {
               font-size: 14px;
-              color: #9A9696;
+              color: #9a9696;
               font-weight: 600;
               font-family: "Inter", sans-serif;
             }
-           
-              .checkMark {
-                width: 20px;
-                height: 20px;
-                border-radius: 5px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border: 1px solid #9a9696;
-              }
+
+            .checkMark {
+              width: 20px;
+              height: 20px;
+              border-radius: 5px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border: 1px solid #9a9696;
+            }
           }
-          .text{
+          .text {
             font-size: 14px;
-            color: #356FC6;
+            color: #356fc6;
             font-weight: 500;
             font-family: "Inter", sans-serif;
           }
         }
-        .verificBtns{
+        .verificBtns {
           display: flex;
           justify-content: space-between;
           align-items: center;
 
-          .box{
+          .box {
             width: 60px;
             height: 70px;
-            border: 1px solid #9A9696;
+            border: 1px solid #9a9696;
             border-radius: 7px;
           }
         }
@@ -129,6 +139,88 @@
           padding-left: 5px;
           transition: all 0.3s ease-in-out;
           cursor: pointer;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .headerBox {
+      height: 0px;
+    }
+    .register {
+      background-color: transparent;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: normal;
+      width: 100%;
+      .intoRegister {
+        border-radius: 0;
+        padding: 16px;
+        width: 100%;
+        h3 {
+          text-align: left;
+          padding-top: 40px;
+          font-size: 22px;
+        }
+        form {
+          .inputBox {
+            input {
+              padding: 16px;
+              border-radius: 10px;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .headerBox {
+      height: 70px;
+    }
+    .register {
+      .intoRegister {
+        border-radius: 0;
+        padding: 0 140px;
+        width: 970px;
+        border-radius: 16px;
+        h3 {
+          font-size: 32px;
+          font-weight: 500;
+          line-height: normal;
+          padding: 50px 0;
+        }
+        form {
+          gap: 40px;
+          .inputBox {
+            input {
+              padding: 22px;
+              border-radius: 16px;
+              font-size: 32px;
+            }
+            small {
+              bottom: -30px;
+              left: 5px;
+              font-size: 22px;
+            }
+          }
+          button{
+            font-size: 32px;
+            padding: 22px 0;
+          }
+        }
+        .accaountText {
+          font-size: 32px;
+          padding: 50px 0;
+          span {
+            color: #356fc6;
+            padding-left: 5px;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+          }
         }
       }
     }

@@ -25,7 +25,7 @@ const UserLogin = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
-  
+ 
 
  
   const onSubmit = (data) => {
@@ -47,12 +47,12 @@ const UserLogin = () => {
                 // border: `1px solid ${errors.email ? "red" : "#9A9696"}`,
               }}
             />
+
             <div style={{ position: "relative", width: "100%" }}>
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Şifrə"
                 style={{
-                  // border: `1px solid ${errors.password ? "red" : "#9A9696"}`,
                   width: "100%",
                 }}
               />

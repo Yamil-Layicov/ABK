@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./style.scss";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useFormik } from "formik";
-import { basicSchema } from "../../contactPage/shemas";
+import { basicSchema } from "../shemas/index";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 
 const initialValues = {
   fullName: "",
@@ -16,16 +18,22 @@ const initialValues = {
 const UserRegister = () => {
   const navigate = useNavigate();
   const [isChecked, setChecked] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const form = useRef();
 
   const handleButtonClick = () => {
     setChecked(!isChecked);
+  };
+
+  const handleTogglePassword = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
   const onSubmit = async (values, actions) => {
     try {
       // const response = await api.post("contacts", values);
       console.log(values);
-      toast.success("Mesaj göndərildi");
+      toast.success("Uğurlu qeydiyyat");
       actions.resetForm({ values: initialValues });
     } catch (error) {
       console.error(error);
@@ -54,10 +62,11 @@ const UserRegister = () => {
       <div className="register">
         <div className="intoRegister">
           <h3>Qeydiyyat</h3>
-          <form onSubmit={handleSubmit}>
+          <form ref={form} onSubmit={handleSubmit}>
             <div className="inputBox">
               <input
                 type="text"
+                id="fullName"
                 placeholder="Ad və soyad"
                 value={values.fullName}
                 onChange={handleChange}
@@ -73,6 +82,7 @@ const UserRegister = () => {
             <div className="inputBox">
               <input
                 type="email"
+                id="email"
                 placeholder="E-mail ünvan"
                 value={values.email}
                 onChange={handleChange}
@@ -88,6 +98,7 @@ const UserRegister = () => {
             <div className="inputBox">
               <input
                 type="text"
+                id="company"
                 placeholder="Qurum adı"
                 value={values.company}
                 onChange={handleChange}
@@ -100,24 +111,31 @@ const UserRegister = () => {
                   <small>{errors.company}</small>
                 )}
             </div>
-            <div className="inputBox">
+            <div className="inputBox" >
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 placeholder="Şifrə"
+                id="password"
                 value={values.password}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 className={
                   errors.password && touched.password ? "inputError" : ""
                 }
-              />
-              {errors.password && touched.password && (
+                />
+                {errors.password && touched.password && (
                   <small>{errors.password}</small>
                 )}
+              <div
+              className="inputEyes"
+                onClick={handleTogglePassword} >
+                {showPassword ? <FaEye /> : <FaEyeSlash />}
+              </div>
             </div>
-            <div className="inputBox">
+            <div className="inputBox" >
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
+                id="confirmPassword"
                 placeholder="Şifrəni təkrar daxil edin"
                 value={values.confirmPassword}
                 onChange={handleChange}
@@ -125,11 +143,17 @@ const UserRegister = () => {
                 className={
                   errors.confirmPassword && touched.confirmPassword ? "inputError" : ""
                 }
-              />
-              {errors.confirmPassword && touched.confirmPassword && (
+                />
+               {errors.confirmPassword && touched.confirmPassword && (
                   <small>{errors.confirmPassword}</small>
                 )}
+              <div
+              className="inputEyes"
+                onClick={handleTogglePassword} >
+                {showPassword ? <FaEye /> : <FaEyeSlash />}
+              </div>
             </div>
+            
             <div className="forgotBox">
               <div className="saveBox" onClick={() => handleButtonClick()}>
                 <span className="checkMark">
@@ -160,7 +184,7 @@ const UserRegister = () => {
             <button type="submit">Qeydiyyatdan keç</button>
           </form>
           <p className="accaountText">
-            Hesabınız var?{" "}
+            Hesabınız var?
             <span onClick={() => navigate("/account")}>Daxil ol</span>
           </p>
         </div>

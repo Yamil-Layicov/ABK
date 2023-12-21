@@ -10,17 +10,15 @@ export const basicSchema = yup.object().shape({
     .email("etibarlı e-poçt ünvanını daxil edin")
     .required("e-poçt qeyd olunmalıdır"),
     company: yup
-    .string(" ").typeError(" ").matches(/^\+994\d{9}$/, "nümunə formatı: +994XXXXXXXXX")
-    .required("mobil nömrə qeyd olunmalıdır"),
-    // surName: yup.string().required("Soyad qeyd olunmalıdır"),
+    .string(" ")
+    .required("qurum adı qeyd olunmalıdır"),
     password: yup
     .string()
-    .min(5)
-    .matches(passwordRules, { message: "Please create a stronger password" })
-    .required("Required bos qoyma"),
+    .min(5, "şifrə ən azı 5 simvoldan ibarət olmalıdır")
+    .required("şifrə qeyd olunmalıdır"),
     confirmPassword: yup
     .string()
-    .oneOf([yup.ref("password"), null], "Passwords must match")
+    .oneOf([yup.ref("password"), null], "şifrələr üst-üstə düşməlidir")
     .required(""),
 });
 
