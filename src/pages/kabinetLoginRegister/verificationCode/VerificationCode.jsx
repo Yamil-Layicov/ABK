@@ -51,7 +51,6 @@ const VerificationCode = () => {
         <div className="intoRegister">
           <h3>Təsdiqləmə kodu</h3>
           <p style={{ color: "#C2C2C2", fontSize: "16px" }}>
-            {" "}
             Zəhmət olmasa e-mail adresinizi yoxlayın,təsdiqləmə kodunu qeyd edin
           </p>
           <form onSubmit={handleSubmit(onSubmit)}>

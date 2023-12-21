@@ -1,48 +1,74 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { DevTool } from "@hookform/devtools";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import { useFormik } from "formik";
+import { toast } from "react-toastify";
 
-const schema = yup.object().shape({
-  email: yup.string().email().required(),
-  password: yup
+
+const basicSchema = yup.object().shape({
+    password: yup
     .string()
-    .required()
-    .min(8, "Password must be at least 8 characters"),
+    .min(5, "şifrə ən azı 5 simvoldan ibarət olmalıdır")
+    .required("şifrə qeyd olunmalıdır"),
+    confirmPassword: yup
+    .string()
+    .oneOf([yup.ref("password"), null], "şifrələr üst-üstə düşməlidir")
+    .required(" "),
 });
 
-const FormValues = {
-  email: "",
+const initialValues = {
   password: "",
+  confirmPassword: "",
 };
 
+
 const NewPassword = () => {
+  const navigate = useNavigate();
   const [isChecked, setChecked] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const form = useRef();
 
   const handleButtonClick = () => {
     setChecked(!isChecked);
   };
 
-  const navigate = useNavigate();
-
-  const { register, control, handleSubmit, formState } = useForm({
-    defaultValues: FormValues,
-    resolver: yupResolver(schema),
-  });
-  const { errors } = formState;
-  const [showPassword, setShowPassword] = useState(false);
-
   const handleTogglePassword = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (values, actions) => {
+    try {
+      // const response = await api.post("contacts", values);
+      console.log(values);
+      toast.success("Şifrə dəyişdirildi");
+      actions.resetForm({ values: initialValues });
+    } catch (error) {
+      console.error(error);
+    }
   };
+
+  const formik = useFormik({
+    initialValues,
+    validationSchema: basicSchema,
+    onSubmit,
+  });
+
+  const {
+    handleSubmit,
+    errors,
+    handleChange,
+    isSubmitting,
+    touched,
+    handleBlur,
+    values,
+  } = formik;
+
+
+ 
 
   return (
     <div className="mainRegister">
@@ -53,24 +79,49 @@ const NewPassword = () => {
           <p style={{ color: "#C2C2C2", fontSize: "16px" }}>
             Yeni şifrənizi təyin edin
           </p>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <input
-              type="email"
-              placeholder="Yeni şifrə"
-              {...register("email")}
-              style={{
-                border: `1px solid ${errors.email ? "red" : "#9A9696"}`,
-              }}
-            />
-
-            <input
-              type="email"
-              placeholder="Şifrəni təkrarlayın"
-              {...register("email")}
-              style={{
-                border: `1px solid ${errors.email ? "red" : "#9A9696"}`,
-              }}
-            />
+          <form onSubmit={handleSubmit}>
+          <div className="inputBox" >
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Şifrə"
+                id="password"
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={
+                  errors.password && touched.password ? "inputError" : ""
+                }
+                />
+                {errors.password && touched.password && (
+                  <small>{errors.password}</small>
+                )}
+              <div
+              className="inputEyes"
+                onClick={handleTogglePassword} >
+                {showPassword ? <FaEye /> : <FaEyeSlash />}
+              </div>
+            </div>
+            <div className="inputBox" >
+              <input
+                type={showPassword ? "text" : "password"}
+                id="confirmPassword"
+                placeholder="Şifrəni təkrar daxil edin"
+                value={values.confirmPassword}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={
+                  errors.confirmPassword && touched.confirmPassword ? "inputError" : ""
+                }
+                />
+               {errors.confirmPassword && touched.confirmPassword && (
+                  <small>{errors.confirmPassword}</small>
+                )}
+              <div
+              className="inputEyes"
+                onClick={handleTogglePassword} >
+                {showPassword ? <FaEye /> : <FaEyeSlash />}
+              </div>
+            </div>
 
             <button
               type="submit"

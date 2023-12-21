@@ -45,7 +45,7 @@
           small {
             color: red;
             position: absolute;
-            bottom: -18px;
+            bottom: -20px;
             left: 5px;
             font-size: 12px;
           }
@@ -77,13 +77,15 @@
         .forgotBox {
           display: flex;
           justify-content: space-between;
+          align-items: center;
           span {
             cursor: pointer;
           }
           .saveBox {
             display: flex;
             justify-content: start;
-            gap: 10px;
+            align-items: center;
+            gap: 15px;
 
             .textSave {
               font-size: 14px;
@@ -99,7 +101,12 @@
               display: flex;
               justify-content: center;
               align-items: center;
-              border: 1px solid #9a9696;
+              box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+              svg {
+                width: 14px;
+                height: 14px;
+              }
             }
           }
           .text {
@@ -116,7 +123,7 @@
 
           .box {
             width: 60px;
-            height: 70px;
+            height: 60px;
             border: 1px solid #9a9696;
             border-radius: 7px;
           }
@@ -171,6 +178,10 @@
               border-radius: 10px;
               font-size: 20px;
             }
+            .inputEyes {
+              top: 15px;
+              right: 20px;
+            }
           }
         }
       }
@@ -206,10 +217,38 @@
               left: 5px;
               font-size: 22px;
             }
+            .inputEyes {
+              top: 20px;
+              right: 35px;
+              font-size: 35px;
+            }
           }
-          button{
+          button {
             font-size: 32px;
             padding: 22px 0;
+          }
+          .forgotBox {
+            .saveBox {
+              gap: 25px;
+              .checkMark {
+                width: 32px;
+                height: 32px;
+                border-radius: 10px;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+                svg {
+                  width: 22px;
+                  height: 22px;
+                }
+              }
+              .textSave{
+                font-size: 30px;
+              }
+             
+            }
+            .text{
+              font-size: 24px;
+            }
           }
         }
         .accaountText {
@@ -217,7 +256,7 @@
           padding: 50px 0;
           span {
             color: #356fc6;
-            padding-left: 5px;
+            padding-left: 10px;
             transition: all 0.3s ease-in-out;
             cursor: pointer;
           }

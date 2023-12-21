@@ -3,9 +3,28 @@ import "./style.scss";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useFormik } from "formik";
-import { basicSchema } from "../shemas/index";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import * as yup from "yup";
+
+const basicSchema = yup.object().shape({
+  fullName: yup.string().required("ad və soyad qeyd olunmalıdır"),
+  email: yup
+    .string()
+    .email("etibarlı e-poçt ünvanını daxil edin")
+    .required("e-poçt qeyd olunmalıdır"),
+    company: yup
+    .string(" ")
+    .required("qurum adı qeyd olunmalıdır"),
+    password: yup
+    .string()
+    .min(5, "şifrə ən azı 5 simvoldan ibarət olmalıdır")
+    .required("şifrə qeyd olunmalıdır"),
+    confirmPassword: yup
+    .string()
+    .oneOf([yup.ref("password"), null], "şifrələr üst-üstə düşməlidir")
+    .required(" "),
+});
 
 const initialValues = {
   fullName: "",
@@ -62,7 +81,7 @@ const UserRegister = () => {
       <div className="register">
         <div className="intoRegister">
           <h3>Qeydiyyat</h3>
-          <form ref={form} onSubmit={handleSubmit}>
+          <form noValidate ref={form} onSubmit={handleSubmit}>
             <div className="inputBox">
               <input
                 type="text"
@@ -160,8 +179,6 @@ const UserRegister = () => {
                   {isChecked ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="14"
-                      height="14"
                       viewBox="0 0 18 14"
                       fill="none"
                     >

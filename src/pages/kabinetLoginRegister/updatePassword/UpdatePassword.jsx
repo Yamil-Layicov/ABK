@@ -52,6 +52,7 @@ const UpdatePassword = () => {
           <h3>Şifrəni yenilə</h3>
           <p style={{color:"#C2C2C2", fontSize:"16px"}}> E-mail adresi qeyd edin,təsdiqləmə kodu göndəriləcək</p>
           <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="inputBox">
             <input
               type="email"
               placeholder="E-mail ünvan"
@@ -60,6 +61,7 @@ const UpdatePassword = () => {
                 border: `1px solid ${errors.email ? "red" : "#9A9696"}`,
               }}
             />
+            </div>
 
             <button type="submit" onClick={() => navigate("/account/verificationCode")}>Dəvam et</button>
           </form>

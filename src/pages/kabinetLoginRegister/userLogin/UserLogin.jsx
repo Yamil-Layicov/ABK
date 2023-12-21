@@ -1,12 +1,25 @@
 import "./style.scss";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import "./style.scss";
+import { toast } from "react-toastify";
+import { useFormik } from "formik";
+import * as yup from "yup";
+
+const basicSchema = yup.object().shape({
+  email: yup
+    .string()
+    .email("etibarlı e-poçt ünvanını daxil edin")
+    .required("e-poçt qeyd olunmalıdır"),
+    password: yup
+    .string()
+    .required("şifrə qeyd olunmalıdır"),
+});
 
 
-
-const FormValues = {
+const initialValues = {
   email: "",
   password: "",
 };
@@ -14,6 +27,8 @@ const FormValues = {
 const UserLogin = () => {
   const [isChecked, setChecked] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+
+  const form = useRef();
 
   const handleButtonClick = () => {
     setChecked(!isChecked);
@@ -25,13 +40,31 @@ const UserLogin = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
- 
-
- 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = (values, actions) => {
+    try {
+      console.log(values);
+      toast.success("Uğurlu giriş");
+      actions.resetForm({ values: initialValues });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
+  const formik = useFormik({
+    initialValues,
+    validationSchema: basicSchema,
+    onSubmit,
+  });
+
+  const {
+    handleSubmit,
+    errors,
+    handleChange,
+    isSubmitting,
+    touched,
+    handleBlur,
+    values,
+  } = formik;
 
   return (
     <div className="mainRegister">
@@ -39,38 +72,44 @@ const UserLogin = () => {
       <div className="register">
         <div className="intoRegister">
           <h3>Şəxsi kabinetə giriş</h3>
-          <form onSubmit={onSubmit}>
-            <input
-              type="email"
-              placeholder="E-mail ünvan"
-              style={{
-                // border: `1px solid ${errors.email ? "red" : "#9A9696"}`,
-              }}
-            />
-
-            <div style={{ position: "relative", width: "100%" }}>
+          <form noValidate ref={form} onSubmit={handleSubmit}>
+          <div className="inputBox">
+              <input
+                type="email"
+                id="email"
+                placeholder="E-mail ünvan"
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={
+                  errors.email && touched.email ? "inputError" : ""
+                }
+              />
+              {errors.email && touched.email && (
+                  <small>{errors.email}</small>
+                )}
+            </div>
+            <div className="inputBox" >
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Şifrə"
-                style={{
-                  width: "100%",
-                }}
-              />
+                id="password"
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={
+                  errors.password && touched.password ? "inputError" : ""
+                }
+                />
+                {errors.password && touched.password && (
+                  <small>{errors.password}</small>
+                )}
               <div
-                onClick={handleTogglePassword}
-                style={{
-                  position: "absolute",
-                  top: "12px",
-                  right: "20px",
-                  color: "#9A9696",
-                  fontSize: "22px",
-                  cursor: "pointer",
-                }}
-              >
+              className="inputEyes"
+                onClick={handleTogglePassword} >
                 {showPassword ? <FaEye /> : <FaEyeSlash />}
               </div>
             </div>
-
             <div className="forgotBox">
               <div className="saveBox" onClick={() => handleButtonClick()}>
                 <span className="checkMark" >
@@ -93,11 +132,10 @@ const UserLogin = () => {
               </div>
               <span className="text" onClick={() => navigate("/account/updatePassword")}>Şifrəni unutdun?</span>
             </div>
-
             <button type="submit">Daxil ol</button>
           </form>
           <p className="accaountText">
-            Hesabınız yoxdur?{" "}
+            Hesabınız yoxdur? 
             <span onClick={() => navigate("/account/register")}>
               Qeydiyyatdan keç
             </span>
