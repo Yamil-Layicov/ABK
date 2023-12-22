@@ -50,7 +50,7 @@ const VerificationCode = () => {
       <div className="register">
         <div className="intoRegister">
           <h3>Təsdiqləmə kodu</h3>
-          <p style={{ color: "#C2C2C2", fontSize: "16px" }}>
+          <p className="updatedText">
             Zəhmət olmasa e-mail adresinizi yoxlayın,təsdiqləmə kodunu qeyd edin
           </p>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -65,7 +65,7 @@ const VerificationCode = () => {
               <p style={{color:"#356FC6", fontWeight:"500", cursor:"pointer"}}>Kodu yenidən göndər</p>
             </div>
 
-            <button type="submit" onClick={() => navigate("/account/newPassword")}>Göndər</button>
+            <button className="otherBtns" type="submit" onClick={() => navigate("/account/newPassword")}>Göndər</button>
           </form>
         </div>
       </div>

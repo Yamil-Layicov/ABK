@@ -76,7 +76,7 @@ const NewPassword = () => {
       <div className="register">
         <div className="intoRegister">
           <h3>Yeni şifrə təyin et</h3>
-          <p style={{ color: "#C2C2C2", fontSize: "16px" }}>
+          <p className="updatedText">
             Yeni şifrənizi təyin edin
           </p>
           <form onSubmit={handleSubmit}>
@@ -125,6 +125,7 @@ const NewPassword = () => {
 
             <button
               type="submit"
+              className="otherBtns"
             >
               Yenilə
             </button>
