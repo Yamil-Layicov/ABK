@@ -44,6 +44,7 @@ const UserLogin = () => {
     try {
       console.log(values);
       toast.success("Uğurlu giriş");
+      navigate("/userAccount")
       actions.resetForm({ values: initialValues });
     } catch (error) {
       console.error(error);

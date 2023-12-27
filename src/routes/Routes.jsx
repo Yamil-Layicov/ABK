@@ -39,6 +39,7 @@ import UserRegister from '../pages/kabinetLoginRegister/userRegister/UserRegiste
 import NewPassword from '../pages/kabinetLoginRegister/newPassword/NewPassword'
 import UpdatePassword from '../pages/kabinetLoginRegister/updatePassword/UpdatePassword'
 import VerificationCode from '../pages/kabinetLoginRegister/verificationCode/VerificationCode'
+import UserAccount from '../pages/kabinetLoginRegister/userAccount/UserAccount'
 
 
 
@@ -205,7 +206,12 @@ const routes = [
         element: <UserRegister/>
       }
     ]
-  }
+  },
+
+  {
+    path: '/userAccount',
+    element: <UserAccount />,
+  },
 
 ];
 

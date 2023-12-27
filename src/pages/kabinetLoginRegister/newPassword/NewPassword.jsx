@@ -1,5 +1,3 @@
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +10,7 @@ import { toast } from "react-toastify";
 const basicSchema = yup.object().shape({
     password: yup
     .string()
-    .min(5, "şifrə ən azı 5 simvoldan ibarət olmalıdır")
+    .min(6, "şifrə ən azı 6 simvoldan ibarət olmalıdır")
     .required("şifrə qeyd olunmalıdır"),
     confirmPassword: yup
     .string()
