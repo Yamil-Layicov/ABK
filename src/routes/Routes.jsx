@@ -39,7 +39,9 @@ import UserRegister from '../pages/kabinetLoginRegister/userRegister/UserRegiste
 import NewPassword from '../pages/kabinetLoginRegister/newPassword/NewPassword'
 import UpdatePassword from '../pages/kabinetLoginRegister/updatePassword/UpdatePassword'
 import VerificationCode from '../pages/kabinetLoginRegister/verificationCode/VerificationCode'
-import UserAccount from '../pages/kabinetLoginRegister/userAccount/UserAccount'
+import UserAccountLayout from '../pages/kabinetLoginRegister/userAccount/UserAccountLayout'
+import MainRightSide from '../pages/kabinetLoginRegister/userAccount/mainRightSide/MainRightSide'
+import AddAnalysis from '../pages/kabinetLoginRegister/userAccount/addAnalysis/AddAnalysis'
 
 
 
@@ -210,7 +212,17 @@ const routes = [
 
   {
     path: '/userAccount',
-    element: <UserAccount />,
+    element: <UserAccountLayout />,
+    children: [
+      {
+        index: true,
+        element: <MainRightSide />,
+      },
+      {
+        path: 'addAnalysis',
+        element: <AddAnalysis />,
+      },
+    ],
   },
 
 ];

@@ -1,12 +1,42 @@
-import { useState } from "react";
-import "./userAccount.scss";
+import { useState, useEffect } from "react";
+import "./userAccountLayout.scss";
+import axios from "axios";
+import Data from "./data/Data";
+import Pagination from "./pagination/Pagination";
+import { Link, Outlet, useLocation } from "react-router-dom";
+import MainRightSide from "./mainRightSide/MainRightSide";
+import AddAnalysis from "./addAnalysis/AddAnalysis";
 
-const UserAccount = () => {
+const UserAccountLayout = () => {
   const [isChecked, setChecked] = useState(false);
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(10);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setLoading(true);
+      const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+      // console.log(res.data);
+      setPosts(res.data);
+      setLoading(false);
+    };
+
+    fetchPosts();
+  }, []);
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const handleButtonClick = () => {
     setChecked(!isChecked);
   };
+
+  const location = useLocation();
 
   return (
     <div className="userAccount">
@@ -70,56 +100,47 @@ const UserAccount = () => {
             </div>
           </div>
           <div className="exitBox">
-              <svg
-                className="svg"
-                viewBox="0 0 36 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g id="door_arrow_left_outline_24">
-                  <g id="&#226;&#134;&#179; Icon Color">
-                    <path
-                      d="M28.9119 31.3963C27.737 32.0247 26.5812 32.22 24.1614 32.22H20.0708C20.0611 32.2202 20.0514 32.2203 20.0416 32.2203C19.2753 32.2203 18.6541 31.5991 18.6541 30.8328C18.6541 30.0665 19.2753 29.4453 20.0416 29.4453C20.0416 29.4453 20.0416 29.4453 20.0416 29.4453L24.1614 29.445C26.4533 29.445 27.0452 29.2477 27.6033 28.9493C28.121 28.6724 28.5191 28.2743 28.796 27.7566C29.0944 27.1985 29.2917 26.6066 29.2917 24.3147L29.2917 12.6836C29.2917 10.3917 29.0944 9.79979 28.796 9.24173C28.5191 8.72397 28.121 8.32591 27.6033 8.04901C27.0452 7.75056 26.4533 7.55332 24.1614 7.55332H20.0708C20.0611 7.55352 20.0514 7.55362 20.0416 7.55362C19.2753 7.55362 18.6541 6.93242 18.6541 6.16612C18.6541 5.39983 19.2753 4.77862 20.0416 4.77862C20.0416 4.77862 20.0416 4.77862 20.0416 4.77862L24.1614 4.77832C26.5812 4.77832 27.737 4.97359 28.9119 5.60198C29.9133 6.13751 30.7075 6.93168 31.243 7.93305C31.8714 9.10803 32.0667 10.2638 32.0667 12.6836V24.3147C32.0667 26.7345 31.8714 27.8903 31.243 29.0653C30.7075 30.0666 29.9133 30.8608 28.9119 31.3963Z"
-                      fill="#828282"
-                    />
-                    <path
-                      d="M14.4356 23.6849L18.2335 19.887H6.0125C5.24621 19.887 4.625 19.2658 4.625 18.4995C4.625 17.7332 5.24621 17.112 6.0125 17.112H18.2338L14.4356 13.3138C13.8937 12.7719 13.8937 11.8934 14.4356 11.3515C14.9774 10.8097 15.8559 10.8097 16.3978 11.3515L22.5644 17.5182C23.1063 18.0601 23.1063 18.9386 22.5644 19.4804L16.3978 25.6471C15.8559 26.1889 14.9774 26.1889 14.4356 25.6471C13.8937 25.1052 13.8937 24.2267 14.4356 23.6849Z"
-                      fill="#828282"
-                    />
-                  </g>
+            <svg
+              className="svg"
+              viewBox="0 0 36 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="door_arrow_left_outline_24">
+                <g id="&#226;&#134;&#179; Icon Color">
+                  <path
+                    d="M28.9119 31.3963C27.737 32.0247 26.5812 32.22 24.1614 32.22H20.0708C20.0611 32.2202 20.0514 32.2203 20.0416 32.2203C19.2753 32.2203 18.6541 31.5991 18.6541 30.8328C18.6541 30.0665 19.2753 29.4453 20.0416 29.4453C20.0416 29.4453 20.0416 29.4453 20.0416 29.4453L24.1614 29.445C26.4533 29.445 27.0452 29.2477 27.6033 28.9493C28.121 28.6724 28.5191 28.2743 28.796 27.7566C29.0944 27.1985 29.2917 26.6066 29.2917 24.3147L29.2917 12.6836C29.2917 10.3917 29.0944 9.79979 28.796 9.24173C28.5191 8.72397 28.121 8.32591 27.6033 8.04901C27.0452 7.75056 26.4533 7.55332 24.1614 7.55332H20.0708C20.0611 7.55352 20.0514 7.55362 20.0416 7.55362C19.2753 7.55362 18.6541 6.93242 18.6541 6.16612C18.6541 5.39983 19.2753 4.77862 20.0416 4.77862C20.0416 4.77862 20.0416 4.77862 20.0416 4.77862L24.1614 4.77832C26.5812 4.77832 27.737 4.97359 28.9119 5.60198C29.9133 6.13751 30.7075 6.93168 31.243 7.93305C31.8714 9.10803 32.0667 10.2638 32.0667 12.6836V24.3147C32.0667 26.7345 31.8714 27.8903 31.243 29.0653C30.7075 30.0666 29.9133 30.8608 28.9119 31.3963Z"
+                    fill="#828282"
+                  />
+                  <path
+                    d="M14.4356 23.6849L18.2335 19.887H6.0125C5.24621 19.887 4.625 19.2658 4.625 18.4995C4.625 17.7332 5.24621 17.112 6.0125 17.112H18.2338L14.4356 13.3138C13.8937 12.7719 13.8937 11.8934 14.4356 11.3515C14.9774 10.8097 15.8559 10.8097 16.3978 11.3515L22.5644 17.5182C23.1063 18.0601 23.1063 18.9386 22.5644 19.4804L16.3978 25.6471C15.8559 26.1889 14.9774 26.1889 14.4356 25.6471C13.8937 25.1052 13.8937 24.2267 14.4356 23.6849Z"
+                    fill="#828282"
+                  />
                 </g>
-              </svg>
+              </g>
+            </svg>
             <span className="exitText">Çıxış</span>
           </div>
         </div>
         <div className="rightSide">
-          <h5>Analiz nəticələri </h5>
-          <div className="insideRightSide">
-            <div className="headerBox">
-              <span>Tarix</span>
-              <span>Fayl adı</span>
-            </div>
-            <div className="bodyMainBox">
-              <div className="bodyBox">
-                <div className="dateText">
-                  <span className="date">11/12/2023</span>
-                  <span className="text">Fitosanitar ekspertiza cavab</span>
-                </div>
-                <button>Yüklə</button>
-              </div>
-              <div className="bodyBox">
-                <div className="dateText">
-                  <span className="date">11/12/2023</span>
-                  <span className="text">Fitosanitar ekspertiza cavab</span>
-                </div>
-                <button>Yüklə</button>
-              </div>
-            </div>
+          <div className="rightHeader">
+            {location.pathname === "/userAccount/addAnalysis" ? <Link className="mb-4" to="">Geri</Link> : <h5>Analiz nəticələri </h5>}
+            <Link to="addAnalysis">Elave et</Link>
           </div>
+          <Outlet/>
+          {/* <div className="container">
+            <h1>Analiz nəticələri </h1>
+            <Data posts={currentPosts} loading={loading} />
+            <Pagination
+              postsPerPage={postsPerPage}
+              totalPosts={posts.length}
+              paginate={paginate}
+            />
+          </div> */}
         </div>
       </div>
     </div>
   );
 };
 
-export default UserAccount;
+export default UserAccountLayout;

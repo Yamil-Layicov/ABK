@@ -144,7 +144,6 @@ const AdminNews = () => {
     queryFn: () => api.get("blogs"),
   });
 
-  console.log(blogData?.data)
 
   const { isLoading: isLoadingCategories, data: categoryData } = useQuery({
     queryKey: ["categories"],
@@ -199,7 +198,6 @@ const AdminNews = () => {
         <div className="createNewBtn">
           <button onClick={createCategory}>Yeni kateqoriya yarat +</button>
         </div>
-
         <table>
           <thead>
             <tr>
