@@ -1,5 +1,16 @@
+import { useQuery } from '@tanstack/react-query';
+import api from '../../../../admin/api/posts';
+
 
 const MainRightSide = () => {
+
+  const { isLoading, data } = useQuery({
+    queryKey: ["analyses"],
+    queryFn: () => api.get("analyses"),
+  });
+
+  console.log(data?.data);
+
   return (
     <div>
         <div className="insideRightSide">
