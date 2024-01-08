@@ -122,15 +122,39 @@
                 font-weight: 600;
               }
             }
+            .buttons{
+              display: flex;
+              gap: 10px;
+              button {
+                border: none;
+                border-radius: 10px;
+                padding: calc(13px / 2) calc(31px / 2);
+                color: white;
+                font-size: 15px;
+                border: 1px solid transparent;
+                transition: all .3s ease-in-out;
 
-            button {
-              border: none;
-              background: #10d0a1;
-              border-radius: 10px;
-              padding: calc(13px / 2) calc(31px / 2);
-              color: white;
-              font-size: 15px;
+                
+
+                &:first-child{
+                  background: #10d0a1;
+                  &:hover{
+                    color: black;
+                    border: 1px solid #10d0a1;
+                    background-color: transparent;
+                  }
+                }
+                &:last-child{
+                  background: red;
+                  &:hover{
+                    color: black;
+                    border: 1px solid red;
+                    background-color: transparent;
+                  }
+                }
+              }
             }
+            
           }
         }
       }

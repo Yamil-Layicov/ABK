@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import "./userAccountLayout.scss";
 import axios from "axios";
 import Data from "./data/Data";
@@ -6,13 +6,15 @@ import Pagination from "./pagination/Pagination";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import MainRightSide from "./mainRightSide/MainRightSide";
 import AddAnalysis from "./addAnalysis/AddAnalysis";
+const EditUserModal = lazy(() => import("./editUserModal/EditUserModal"));
 
 const UserAccountLayout = () => {
   const [isChecked, setChecked] = useState(false);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(10);
+  const [postsPerPage] = useState(5);
+  const [showModalUser, setShowModalUser] = useState(false)
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -38,15 +40,23 @@ const UserAccountLayout = () => {
 
   const location = useLocation();
 
+  const showModal = () => {
+    setShowModalUser(true);
+  };
+
+  const closeModal = () => {
+    setShowModalUser(false);
+  };
+
   return (
-    <div className="userAccount">
+    <div className="userAccount" >
       <div className="intoAccount">
         <div className="leftSide">
           <div>
             <h3>Hasil Əliyev</h3>
             <div className="idBox">
               <span>#12345</span>
-              <span>
+              <span onClick={() => showModal()} style={{cursor:"pointer"}}>
                 <svg
                   width="24"
                   height="24"
@@ -139,6 +149,15 @@ const UserAccountLayout = () => {
           </div> */}
         </div>
       </div>
+      {/* {showModalUser && <EditUserModal setShowModalUser={setShowModalUser}/>} */}
+      {showModalUser && (
+        <Suspense fallback={<div>Loading...</div>}>
+          <EditUserModal
+            showModal={showModal}
+            closeModal={closeModal}
+          />
+        </Suspense>
+      )}
     </div>
   );
 };
